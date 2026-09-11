@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-key="site_title">Reed Media | میدیای سوور</title>
-
     <meta name="google-site-verification" content="4asTH8tQNePs5PJKrN4kHXn6fEJjQzibpMfcF6vaP_s" />
     <meta name="description" content="میدیای سوور (Reed Media) - پێگەیەکی هەواڵیی سەربەخۆیە بۆ بڵاوکردنەوەی هەواڵە بەپەلەکانی کوردستان، جیهان و ئابووری.">
-    <meta name="keywords" content="Reed Media, میدیای سوور, ڕید میدیا, هەواڵی بەپەلە, کوردستان, هەواڵ">
-
-    <!-- مێتاداتای فەرمی Schema.org بۆ گووگڵ بە لینکی گیت‌هەب -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,7 +16,6 @@
       "logo": "https://reedmediatv.github.io/news-2.jpg"
     }
     </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,6 +30,7 @@
         .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
         .pulse { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
         .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; }
         .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
         .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
@@ -146,12 +142,13 @@
     <div class="breaking-bar">
         <span class="breaking-tag"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="breaking_tag">بەپەلە</span></span>
         <div class="ticker-container">
-            <span class="breaking-text" data-key="ticker_news">نرخی نەوت 6٪ بەرزبووەوە و لە بازاڕەکانی جیهاندا گەیشتە 107 دۆلار بۆ هەر بەرمیلێک • دەزگا ئەمنییەکان بەدواداچوون بۆ تیرۆرکردنی شەڕڤان سیپان حوزنی دەکەن.</span>
+            <span class="breaking-text" data-key="ticker_news">نرخی نەوت 6٪ بەرزبووەوە و لە بازاڕەکانی جیهاندا گەیشتە 107 دۆلار • ئیرادەی چینایەتی و گۆڕانکاری لە عێراق لە نووسینی شاباز مەحمود.</span>
         </div>
     </div>
 
     <main class="layout-container">
         <section>
+            <!-- بەشی سەرەکی -->
             <div id="home">
                 <div class="section-header">
                     <div class="section-title"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-key="sec_home">سەرەکی • هەواڵی گرنگ</span></div>
@@ -177,6 +174,7 @@
                 </a>
             </div>
 
+            <!-- بەشی هەواڵە بەپەلەکان -->
             <div id="breaking">
                 <div class="section-header">
                     <div class="section-title"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="sec_breaking">هەواڵە بەپەلەکان</span></div>
@@ -184,6 +182,19 @@
                 </div>
 
                 <div class="cards-grid">
+                    <a href="post-4.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
+                            <time class="post-time-badge" datetime="2026-09-11T12:45:00+03:00"></time>
+                            <span class="view-badge">
+                                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span class="view-count" data-id="post-4" data-date="2026-09-11T12:45:00+03:00" data-base="185" data-rate="3.5">0</span>
+                            </span>
+                        </div>
+                        <h3 data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="post4_desc">تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە کە ساڵانێکە لە سنگی ملیۆنان مرۆڤدا کەپک کراوە...</p>
+                    </a>
+
                     <a href="post-3.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="breaking_tag">بەپەلە</span>
@@ -196,38 +207,127 @@
                         <h3 data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</h3>
                         <p class="card-desc" style="font-size: 13px;" data-key="oil_desc">لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد و گەیشتە 107 دۆلاری ئەمریکی.</p>
                     </a>
-
-                    <a href="post-2.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
-                        <div class="post-meta-line">
-                            <span class="cat-pill" data-key="breaking_tag">بەپەلە</span>
-                            <time class="post-time-badge" datetime="2026-09-11T09:10:00+03:00"></time>
-                            <span class="view-badge">
-                                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                                <span class="view-count" data-id="post-2" data-date="2026-09-11T09:10:00+03:00" data-base="420" data-rate="1.5">0</span>
-                            </span>
-                        </div>
-                        <h3 data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h3>
-                        <p class="card-desc" style="font-size: 13px;" data-key="breaking_info">دەزگا ئەمنییەکان بەدواداچوونی چڕ بۆ تاوانبارانی ئەم کردەوەیە دەکەن لە سنووری حەسەکە و دێرەزۆر.</p>
-                    </a>
                 </div>
             </div>
-            
-            <div style="margin-bottom: 50px;"></div>
+
+            <!-- بەشی کوردستان -->
+            <div id="kurdistan">
+                <div class="section-header">
+                    <div class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="sec_kurdistan">هەواڵەکانی کوردستان</span></div>
+                    <span class="section-badge" data-key="badge_local">ناوخۆ</span>
+                </div>
+                <div class="cards-grid">
+                    <a href="post-2.html" class="news-card">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="nav_kurdistan">کوردستان</span>
+                            <time class="post-time-badge" datetime="2026-09-11T09:10:00+03:00"></time>
+                        </div>
+                        <h3 data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="main_desc">وردەکاری ڕفاندن و تیرۆرکردنی شەڕڤانی هێزەکانی لیوای حەسەکە.</p>
+                    </a>
+                    <div class="news-card">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="nav_kurdistan">کوردستان</span>
+                            <time class="post-time-badge" datetime="2026-09-11T07:45:00+03:00"></time>
+                        </div>
+                        <h3 data-key="kurd_news2_t">بارودۆخی ئەمنی لە ناوچەکانی ڕۆژئاوا</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="kurd_news2_d">هێزە ئەمنییەکان ڕێوشوێنی نوێیان بۆ پاراستنی سەقامگیری گرتووەتەبەر.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بەشی جیهان -->
+            <div id="world">
+                <div class="section-header">
+                    <div class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg><span data-key="sec_world">هەواڵەکانی جیهان</span></div>
+                    <span class="section-badge" data-key="badge_global">نێودەوڵەتی</span>
+                </div>
+                <div class="cards-grid">
+                    <div class="news-card">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="nav_world">جیهان</span>
+                            <time class="post-time-badge" datetime="2026-09-10T14:30:00+03:00"></time>
+                        </div>
+                        <h3 data-key="world_news1_t">پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="world_news1_d">چۆن تەکنەلۆژیا و ئامرازە دیجیتاڵییەکان خزمەت بە ڕاستگۆیی میدیا دەکەن.</p>
+                    </div>
+                    <div class="news-card">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="nav_world">جیهان</span>
+                            <time class="post-time-badge" datetime="2026-09-10T12:00:00+03:00"></time>
+                        </div>
+                        <h3 data-key="world_news2_t">کۆبوونەوە نێودەوڵەتییەکان بۆ سەقامگیری ڕۆژهەڵاتی ناوەڕاست</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="world_news2_d">هەوڵە دیپلۆماسییەکان بۆ کەمکردنەوەی ئاڵۆزییە هەرێمییەکان بەردەوامن.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بەشی ئابووری -->
+            <div id="economy">
+                <div class="section-header">
+                    <div class="section-title"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span data-key="sec_economy">هەواڵ و ئاماری ئابووری</span></div>
+                    <span class="section-badge" data-key="badge_finance">بازاڕەکان</span>
+                </div>
+                <a href="post-3.html" class="news-card">
+                    <div class="post-meta-line">
+                        <span class="cat-pill" data-key="nav_economy">ئابووری</span>
+                        <time class="post-time-badge" datetime="2026-09-11T10:40:00+03:00"></time>
+                    </div>
+                    <h3 data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</h3>
+                    <p class="card-desc" data-key="oil_desc">لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد و گەیشتە 107 دۆلاری ئەمریکی.</p>
+                </a>
+            </div>
+
+            <!-- بەشی ئەرشیف -->
+            <div id="archive">
+                <div class="section-header">
+                    <div class="section-title"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg><span data-key="sec_archive">ئەرشیفی گشتی بابەتەکان</span></div>
+                    <span class="section-badge" data-key="badge_history">تەواوی هەواڵەکان</span>
+                </div>
+                <table class="archive-table">
+                    <tbody>
+                        <tr>
+                            <td><a href="post-4.html" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</a></td>
+                            <td class="archive-date"><time datetime="2026-09-11T12:45:00+03:00"></time></td>
+                        </tr>
+                        <tr>
+                            <td><a href="post-3.html" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار بۆ هەر بەرمیلێک</a></td>
+                            <td class="archive-date"><time datetime="2026-09-11T10:40:00+03:00"></time></td>
+                        </tr>
+                        <tr>
+                            <td><a href="post-2.html" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</a></td>
+                            <td class="archive-date"><time datetime="2026-09-11T09:10:00+03:00"></time></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </section>
 
+        <!-- بەشی لای راست (Sidebar) -->
         <aside>
             <div class="sidebar-box">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg><span data-key="side_cats">بەشەکان</span></div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <a href="#breaking" class="side-cat-link"><span data-key="nav_breaking">بەپەلە</span><span style="color: var(--red); font-family: 'Inter', sans-serif;">(٢)</span></a>
                     <a href="#kurdistan" class="side-cat-link"><span data-key="nav_kurdistan">کوردستان</span><span style="color: var(--red); font-family: 'Inter', sans-serif;">(٢)</span></a>
+                    <a href="#world" class="side-cat-link"><span data-key="nav_world">جیهان</span><span style="color: var(--red); font-family: 'Inter', sans-serif;">(٢)</span></a>
+                    <a href="#economy" class="side-cat-link"><span data-key="nav_economy">ئابووری</span><span style="color: var(--red); font-family: 'Inter', sans-serif;">(١)</span></a>
                 </div>
             </div>
 
             <div class="sidebar-box">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg><span data-key="side_trend">زۆرترین خوێندراوەکان</span></div>
-                <a href="post-2.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی</span></a>
-                <a href="post-3.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</span></a>
+                <a href="post-4.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</span></a>
+                <a href="post-2.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی</span></a>
+                <a href="post-3.html" class="trend-item"><span class="trend-num">٣</span><span class="trend-text" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</span></a>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span data-key="side_about_t">دەربارەی میدیا</span></div>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;" data-key="side_about_d">
+                    <strong>Reed Media</strong> پێگەیەکی هەواڵیی سەربەخۆیە بۆ گواستنەوەی ڕاستییەکان بەوپەڕی متمانە و خێرایی.
+                </p>
             </div>
         </aside>
     </main>
@@ -235,14 +335,59 @@
     <footer>
         <div class="footer-inner">
             <div><strong style="color: #fff; font-size: 16px; font-family: 'Inter', sans-serif;">REED MEDIA</strong><p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p></div>
+            <div class="footer-links">
+                <a href="#home" data-key="nav_home">سەرەکی</a>
+                <a href="#breaking" data-key="nav_breaking">بەپەلە</a>
+                <a href="#kurdistan" data-key="nav_kurdistan">کوردستان</a>
+                <a href="#archive" data-key="nav_archive">ئەرشیف</a>
+            </div>
         </div>
     </footer>
 
     <script>
         const translations = {
-            ku: { site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", nav_world: "جیهان", nav_economy: "ئابووری", nav_archive: "ئەرشیف", breaking_tag: "بەپەلە", ticker_news: "نرخی نەوت 6٪ بەرزبووەوە و لە بازاڕەکانی جیهاندا گەیشتە 107 دۆلار بۆ هەر بەرمیلێک • دەزگا ئەمنییەکان بەدواداچوون بۆ تیرۆرکردنی شەڕڤان سیپان حوزنی دەکەن.", sec_home: "سەرەکی • هەواڵی گرنگ", badge_lead: "مانشێتی ڕۆژ", main_cat: "کوردستان • بەپەلە", main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", main_desc: "شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک لێرە بکە بۆ خوێندنەوەی تەواوی ڕاپۆرتەکە.", sec_breaking: "هەواڵە بەپەلەکان", badge_urgent: "نوێکراوەتەوە", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد و گەیشتە 107 دۆلاری ئەمریکی.", breaking_info: "دەزگا ئەمنییەکان بەدواداچوونی چڕ بۆ تاوانبارانی ئەم کردەوەیە دەکەن لە سنووری حەسەکە و دێرەزۆر.", side_cats: "بەشەکان", side_trend: "زۆرترین خوێندراوەکان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026" },
-            en: { site_title: "Reed Media | Red Media", live_badge: "LIVE BROADCAST", logo_sub: "Red Media", slogan: "Independent & Fast Journalism", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", nav_world: "World", nav_economy: "Economy", nav_archive: "Archive", breaking_tag: "BREAKING", ticker_news: "Oil prices jump 6% reaching $107 per barrel in global trading • Security operations ongoing regarding Sipan Hozni case.", sec_home: "Home • Featured Story", badge_lead: "Lead Headline", main_cat: "Kurdistan • Breaking", main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", main_desc: "Fighter Sipan Hozni was abducted by militants from his home and assassinated in Deir ez-Zor...", sec_breaking: "Breaking News", badge_urgent: "Updated", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", breaking_info: "Security forces launch extensive operations to apprehend perpetrators.", side_cats: "Categories", side_trend: "Most Read", footer_text: "All rights reserved © Reed Media 2026" },
-            ar: { site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", nav_world: "عالم", nav_economy: "اقتصاد", nav_archive: "الأرشيف", breaking_tag: "عاجل", ticker_news: "أسعار النفط تقفز بنسبة 6% وتصل إلى 107 دولارات للبرميل • استمرار التحقيقات في قضية اغتيال سيبان حوزني.", sec_home: "الرئيسية • أبرز الأخبار", badge_lead: "مانشيت اليوم", main_cat: "كردستان • عاجل", main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", main_desc: "المقاتل سيبان حوزني، تم اختطافه من قبل مسلحين ومن ثم اغتياله في دير الزور...", sec_breaking: "الأخبار العاجلة", badge_urgent: "محدّث", oil_title: "أسعار النفط تقفز 6% وتصل إلى 107 دولارات للبرميل", oil_desc: "ارتفاع حاد في أسواق الطاقة العالمية مع تداول خام النفط عند 107 دولارات للبرميل.", breaking_info: "الأجهزة الأمنية تجري ملاحقات مكثفة للجناة والمسلحين.", side_cats: "الأقسام", side_trend: "الأكثر قراءة", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026" }
+            ku: { 
+                site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا", 
+                nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", nav_world: "جیهان", nav_economy: "ئابووری", nav_archive: "ئەرشیف", 
+                breaking_tag: "بەپەلە", breaking_tag_opinion: "بۆچوون • بەپەلە", ticker_news: "نرخی نەوت 6٪ بەرزبووەوە و لە بازاڕەکانی جیهاندا گەیشتە 107 دۆلار • ئیرادەی چینایەتی و گۆڕانکاری لە عێراق لە نووسینی شاباز مەحمود.", 
+                sec_home: "سەرەکی • هەواڵی گرنگ", badge_lead: "مانشێتی ڕۆژ", main_cat: "کوردستان • بەپەلە", main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", main_desc: "شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک لێرە بکە بۆ خوێندنەوەی تەواوی ڕاپۆرتەکە.", 
+                sec_breaking: "هەواڵە بەپەلەکان", badge_urgent: "نوێکراوەتەوە", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد و گەیشتە 107 دۆلاری ئەمریکی.", breaking_info: "دەزگا ئەمنییەکان بەدواداچوونی چڕ بۆ تاوانبارانی ئەم کردەوەیە دەکەن لە سنووری حەسەکە و دێرەزۆر.", 
+                sec_kurdistan: "هەواڵەکانی کوردستان", badge_local: "ناوخۆ", kurd_news2_t: "بارودۆخی ئەمنی لە ناوچەکانی ڕۆژئاوا", kurd_news2_d: "هێزە ئەمنییەکان ڕێوشوێنی نوێیان بۆ پاراستنی سەقامگیری گرتووەتەبەر.",
+                sec_world: "هەواڵەکانی جیهان", badge_global: "نێودەوڵەتی", world_news1_t: "پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا", world_news1_d: "چۆن تەکنەلۆژیا و ئامرازە دیجیتاڵییەکان خزمەت بە ڕاستگۆیی میدیا دەکەن.",
+                world_news2_t: "کۆبوونەوە نێودەوڵەتییەکان بۆ سەقامگیری ڕۆژهەڵاتی ناوەڕاست", world_news2_d: "هەوڵە دیپلۆماسییەکان بۆ کەمکردنەوەی ئاڵۆزییە هەرێمییەکان بەردەوامن.",
+                sec_economy: "هەواڵ و ئاماری ئابووری", badge_finance: "بازاڕەکان", sec_archive: "ئەرشیفی گشتی بابەتەکان", badge_history: "تەواوی هەواڵەکان",
+                side_cats: "بەشەکان", side_trend: "زۆرترین خوێندراوەکان", side_about_t: "دەربارەی میدیا", side_about_d: "Reed Media پێگەیەکی هەواڵیی سەربەخۆیە بۆ گواستنەوەی ڕاستییەکان بەوپەڕی متمانە و خێرایی.", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026",
+                post4_title: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ",
+                post4_desc: "تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە کە ساڵانێکە لە سنگی ملیۆنان مرۆڤدا کەپک کراوە..."
+            },
+            en: { 
+                site_title: "Reed Media | Red Media News", live_badge: "LIVE BROADCAST", logo_sub: "Red Media", slogan: "Independent & Fast Journalism", 
+                nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", nav_world: "World", nav_economy: "Economy", nav_archive: "Archive", 
+                breaking_tag: "BREAKING", breaking_tag_opinion: "Opinion • Breaking", ticker_news: "Oil prices jump 6% reaching $107 per barrel • Class Will and Change in Iraq by Shabaz Mahmud.", 
+                sec_home: "Home • Featured Story", badge_lead: "Lead Headline", main_cat: "Kurdistan • Breaking", main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", main_desc: "Fighter Sipan Hozni was abducted by militants from his home and assassinated in Deir ez-Zor... Click here to read full coverage.", 
+                sec_breaking: "Breaking News", badge_urgent: "Updated", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", breaking_info: "Security forces launch extensive operations to apprehend perpetrators across Hasakah and Deir ez-Zor borders.", 
+                sec_kurdistan: "Kurdistan News", badge_local: "Local", kurd_news2_t: "Security updates across Rojava regions", kurd_news2_d: "Internal security units implement new measures to safeguard civilian stability.",
+                sec_world: "World News", badge_global: "International", world_news1_t: "Developing Independent Digital Media Platforms", world_news1_d: "How technology and modern tools empower newsrooms to deliver verified facts.",
+                world_news2_t: "International summits aimed at Middle East peace", world_news2_d: "Diplomatic efforts intensify to reduce cross-regional tensions.",
+                sec_economy: "Economy & Market Statistics", badge_finance: "Markets", sec_archive: "Archive Directory", badge_history: "All Reports",
+                side_cats: "Categories", side_trend: "Most Read", side_about_t: "About Media", side_about_d: "Reed Media is an independent news network dedicated to broadcasting accurate and fast reporting.", footer_text: "All rights reserved © Reed Media 2026",
+                post4_title: "Class Will and Change in Iraq: Communism as the Horizon of Emancipation",
+                post4_desc: "The struggle to change society is the explosion of class anger suppressed for years in the chests of millions of deprived people..."
+            },
+            ar: { 
+                site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة", 
+                nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", nav_world: "عالم", nav_economy: "اقتصاد", nav_archive: "الأرشيف", 
+                breaking_tag: "عاجل", breaking_tag_opinion: "آراء • عاجل", ticker_news: "أسعار النفط تقفز بنسبة 6% وتصل إلى 107 دولارات • الإرادة الطبقية والتغيير في العراق بقلم شاباز محمود.", 
+                sec_home: "الرئيسية • أبرز الأخبار", badge_lead: "مانشيت اليوم", main_cat: "كردستان • عاجل", main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", main_desc: "المقاتل سيبان حوزني، عضو لواء الحسكة، تم اختطافه من قبل مسلحين ومن ثم اغتياله في دير الزور... اضغط لقراءة التفاصيل الكاملة.", 
+                sec_breaking: "الأخبار العاجلة", badge_urgent: "محدّث", oil_title: "أسعار النفط تقفز 6% وتصل إلى 107 دولارات للبرميل", oil_desc: "ارتفاع حاد في أسواق الطاقة العالمية مع تداول خام النفط عند 107 دولارات للبرميل.", breaking_info: "الأجهزة الأمنية تجري ملاحقات مكثفة للجناة والمسلحين في حدود الحسكة ودير الزور.", 
+                sec_kurdistan: "أخبار كردستان", badge_local: "محلي", kurd_news2_t: "الأوضاع الأمنية في مناطق روجآفا", kurd_news2_d: "القوات الأمنية تفرض إجراءات وقائية جديدة لحماية الاستقرار.",
+                sec_world: "أخبار العالم", badge_global: "دولي", world_news1_t: "تطوير المنصات الإعلامية المستقلة في العصر الرقمي", world_news1_d: "كيف تسهم التكنولوجيا والأدوات الرقمية في تعزيز العمل الصحفي المستقل.",
+                world_news2_t: "مؤتمرات دولية لتعزيز الاستقرار في الشرق الأوسط", world_news2_d: "تواصل الجهود الدبلوماسية لاحتواء التصعيد الإقليمي.",
+                sec_economy: "الاقتصاد وأرقام الأسواق", badge_finance: "الأسواق", sec_archive: "الأرشيف العام", badge_history: "كافة المواد",
+                side_cats: "الأقسام", side_trend: "الأكثر قراءة", side_about_t: "عن المنصة", side_about_d: "ريد ميديا شبكة إعلامية مستقلة تسعى لنقل الحقائق والوقائع بأقصى درجات الدقة والسرعة.", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026",
+                post4_title: "الإرادة الطبقية والتغيير في العراق: الشيوعية كأفق لتحرر الإنسان",
+                post4_desc: "النضال من أجل تغيير المجتمع هو انفجار للغضب الطبقي المكبوت منذ سنوات في صدور الملايين من المحرومين..."
+            }
         };
 
         function setLang(lang) {
