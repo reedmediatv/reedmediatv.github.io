@@ -1,1 +1,635 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="site_title">Reed Media | میدیای سوور</title>
+
+    <!-- فۆنت -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --red: #DC2626;
+            --dark-red: #991B1B;
+            --white: #FFFFFF;
+            --light-gray: #F8FAFC;
+            --dark: #0F172A;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* شریتی سەرەوە و زمانەکان */
+        .top-bar {
+            background-color: var(--dark);
+            color: #94A3B8;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .live-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #FFFFFF;
+            background-color: var(--red);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .pulse {
+            width: 7px;
+            height: 7px;
+            background: #fff;
+            border-radius: 50%;
+            animation: blink 1.2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 4px;
+            border-radius: 6px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: #CBD5E1;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .lang-btn.active {
+            background-color: var(--red);
+            color: #FFFFFF;
+        }
+
+        /* سەرپەڕە */
+        header {
+            background-color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--red);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 700;
+            border-inline-start: 2px solid var(--border);
+            padding-inline-start: 10px;
+        }
+
+        /* مێنۆی سەرەکی بەشەکان */
+        nav {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--red);
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 15px;
+        }
+
+        .nav-link {
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #334155;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+
+        /* شریتی هەواڵی بەپەلەی جوڵاو */
+        .breaking-bar {
+            background-color: #FEF2F2;
+            border-bottom: 1px solid #FEE2E2;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .breaking-tag {
+            background-color: var(--red);
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 11px;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .ticker-container {
+            flex-grow: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .breaking-text {
+            display: inline-block;
+            color: var(--dark-red);
+            font-weight: 700;
+            white-space: nowrap;
+            animation: scroll-news 16s linear infinite;
+        }
+
+        .ticker-container:hover .breaking-text,
+        .ticker-container:active .breaking-text {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-news {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ستراکچەری سەرەکی: دوو ستوونی */
+        .layout-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 1fr 310px;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .layout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* کارتی سەرەکی */
+        .main-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .main-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .cat {
+            color: var(--red);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .main-card h1 {
+            font-size: 21px;
+            margin: 8px 0;
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* هەواڵە کورتەکان */
+        .sub-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .sub-card h3 {
+            font-size: 16px;
+            margin: 6px 0;
+            color: var(--dark);
+        }
+
+        /* ستوونی تەنیشت */
+        .sidebar-box {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--red);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trend-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .trend-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .trend-num {
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--red);
+            line-height: 1;
+        }
+
+        .trend-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            line-height: 1.4;
+        }
+
+        /* ئەرشیف */
+        .archive-box {
+            background-color: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .archive-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .archive-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #F8FAFC;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            border: 1px solid #E2E8F0;
+        }
+
+        .archive-link:hover {
+            background: #FEF2F2;
+            color: var(--red);
+            border-color: #FECACA;
+        }
+
+        .archive-badge {
+            background: #E2E8F0;
+            color: #475569;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* بنپێ */
+        footer {
+            background-color: var(--dark);
+            color: #94A3B8;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 13px;
+            border-top: 3px solid var(--red);
+        }
+
+        .footer-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شریتی سەرەوە -->
+    <div class="top-bar">
+        <div class="live-tag">
+            <span class="pulse"></span>
+            <span data-key="live_badge">پەخشی ڕاستەوخۆ</span>
+        </div>
+        
+        <div class="lang-switcher">
+            <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+            <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
+        </div>
+    </div>
+
+    <!-- سەرپەڕە -->
+    <header>
+        <div class="logo-area">
+            <div class="logo">REED <span>MEDIA</span></div>
+            <div class="logo-sub" data-key="logo_sub">میدیای سوور</div>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
+            ڕۆژنامەگەری سەربەخۆ و خێرا
+        </div>
+    </header>
+
+    <!-- مێنۆی بەشەکان -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-link active">سەرەکی</a>
+            <a href="#breaking" class="nav-link">هەواڵی بەپەلە</a>
+            <a href="#kurdistan" class="nav-link">کوردستان</a>
+            <a href="#world" class="nav-link">جیهان</a>
+            <a href="#economy" class="nav-link">ئابووری</a>
+            <a href="#sports" class="nav-link">وەرزش</a>
+            <a href="#archive" class="nav-link">📂 ئەرشیف</a>
+        </div>
+    </nav>
+
+    <!-- شریتی هەواڵی بەپەلەی جوڵاو -->
+    <div class="breaking-bar" id="breaking">
+        <span class="breaking-tag" data-key="breaking_tag">بەپەلە</span>
+        <div class="ticker-container">
+            <span class="breaking-text">تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر دوای ڕفاندنی لە گوندەواری حەسەکە لەلایەن چەکدارە تیرۆریستەکانەوە.</span>
+        </div>
+    </div>
+
+    <!-- ناوەڕۆک -->
+    <main class="layout-container">
+
+        <section>
+            <!-- هەواڵی سەرەکی -->
+            <a href="post-2.html">
+                <article class="main-card">
+                    <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی">
+                    <div class="card-body">
+                        <span class="cat">بەپەلە • کوردستان</span>
+                        <h1>تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h1>
+                        <p class="card-desc">شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارە تیرۆریستەکانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک بکە بۆ خوێندنەوەی درێژەی هەواڵەکە.</p>
+                    </div>
+                </article>
+            </a>
+
+            <!-- هەواڵەکانی تر -->
+            <a href="post-1.html">
+                <div class="sub-card">
+                    <span class="cat">تەکنەلۆژیا و میدیا</span>
+                    <h3>پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</h3>
+                    <p class="card-desc">چۆن بەرنامەسازی و تەکنەلۆژیای سەردەم کارئاسانی بۆ گەشەسەندنی ژوورە هەواڵییەکان دەکەن...</p>
+                </div>
+            </a>
+
+            <div class="sub-card" id="economy">
+                <span class="cat" data-key="news1_cat">ئابووری</span>
+                <h3 data-key="news1_title">نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا</h3>
+                <p class="card-desc" data-key="news1_desc">ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە.</p>
+            </div>
+
+            <!-- ئەرشیف -->
+            <div class="archive-box" id="archive">
+                <h3 style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                    📂 ئەرشیفی هەواڵ و بابەتەکان
+                </h3>
+                <p style="font-size: 13px; color: var(--text-muted);">هەموو ئەو هەواڵ و بابەتانەی پێشتر بڵاوکراونەتەوە:</p>
+                
+                <ul class="archive-list">
+                    <li>
+                        <a href="post-2.html" class="archive-link">
+                            <span>تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر</span>
+                            <span class="archive-badge">ئەمڕۆ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="post-1.html" class="archive-link">
+                            <span>پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ</span>
+                            <span class="archive-badge">دوێنێ</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ستوونی تەنیشت -->
+        <aside>
+            <div class="sidebar-box">
+                <div class="sidebar-title">📁 بەشەکان</div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600;">
+                    <a href="#kurdistan" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
+                        <span>کوردستان</span>
+                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                    </a>
+                    <a href="#economy" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
+                        <span>ئابووری</span>
+                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                    </a>
+                    <a href="#world" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
+                        <span>جیهان و تەکنەلۆژیا</span>
+                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">🔥 زۆرترین خوێندراوەکان</div>
+                <a href="post-2.html" class="trend-item">
+                    <span class="trend-num">١</span>
+                    <span class="trend-text">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە حەسەکە</span>
+                </a>
+                <a href="post-1.html" class="trend-item">
+                    <span class="trend-num">٢</span>
+                    <span class="trend-text">پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</span>
+                </a>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">ℹ️ دەربارەی میدیا</div>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
+                    <strong>Reed Media</strong> پلاتفۆرمێکی هەواڵیی سەربەخۆیە بۆ گواستنەوەی ڕاستییەکان بە خێرایی و بێلایەنانە.
+                </p>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- بنپێ -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <strong style="color: #fff; font-size: 15px;">REED MEDIA</strong>
+                <p style="margin-top: 4px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">سەرەکی</a>
+                <a href="#archive">ئەرشیف</a>
+                <a href="#breaking">بەپەلە</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زمانی ماڵپەڕ -->
+    <script>
+        const translations = {
+            ku: {
+                site_title: "Reed Media | میدیای سوور",
+                live_badge: "پەخشی ڕاستەوخۆ",
+                logo_sub: "میدیای سوور",
+                breaking_tag: "بەپەلە",
+                news1_cat: "ئابووری",
+                news1_title: "نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا",
+                news1_desc: "ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە.",
+                footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
+            },
+            en: {
+                site_title: "Reed Media | Red Media News",
+                live_badge: "LIVE BROADCAST",
+                logo_sub: "Red Media",
+                breaking_tag: "BREAKING",
+                news1_cat: "Economy",
+                news1_title: "Latest Trends and Market Shifts in Global Finance",
+                news1_desc: "A comprehensive economic summary of stock markets and financial activities this week.",
+                footer_text: "All rights reserved © Reed Media 2026"
+            },
+            ar: {
+                site_title: "ريد ميديا | الإعلام الأحمر",
+                live_badge: "بث مباشر",
+                logo_sub: "الإعلام الأحمر",
+                breaking_tag: "عاجل",
+                news1_cat: "اقتصاد",
+                news1_title: "أحدث التطورات والتغيرات في الأسواق المالية العالمية",
+                news1_desc: "تقرير شامل حول حركة البورصات والمؤشرات الاقتصادية الرئيسية لهذا الأسبوع.",
+                footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026"
+            }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = (lang === 'ku' ? 'ckb' : lang);
+            document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('btn-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            localStorage.setItem('reed_lang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('reed_lang') || 'ku';
+            setLang(currentLang);
+        });
+    </script>
+
+</body>
+  
+</html>
 
