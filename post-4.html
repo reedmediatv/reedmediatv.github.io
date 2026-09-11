@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="site_title">Reed Media | میدیای سوور</title>
-    <meta name="google-site-verification" content="4asTH8tQNePs5PJKrN4kHXn6fEJjQzibpMfcF6vaP_s" />
+    <title data-key="title_tag">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق - Reed Media</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
     <style>
-        :root { --red: #D91C24; --dark-red: #A8131A; --white: #FFFFFF; --dark: #0B0F19; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; scroll-behavior: smooth; text-decoration: none; color: inherit; }
+        :root { --red: #D91C24; --dark: #0B0F19; --white: #FFFFFF; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; text-decoration: none; color: inherit; }
         body { background-color: #F1F5F9; line-height: 1.65; }
         .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
@@ -19,71 +17,33 @@
         .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
         .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
         header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
-        .logo-area { display: flex; align-items: center; gap: 12px; }
         .logo { font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Inter', sans-serif; }
         .logo span { color: var(--dark); }
-        .logo-sub { font-size: 13px; color: var(--text-muted); font-weight: 800; border-inline-start: 2px solid var(--border); padding-inline-start: 12px; }
-        
         nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
         .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
-        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; color: #1E293B; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; border-bottom: 3px solid transparent; }
+        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; border-bottom: 3px solid transparent;}
         .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
         .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom-color: var(--red); }
-        
-        .breaking-bar { background-color: #FEF2F2; border-bottom: 1px solid #FEE2E2; padding: 10px 20px; display: flex; align-items: center; gap: 12px; font-size: 13px; overflow: hidden; }
-        .breaking-tag { background-color: var(--red); color: #FFFFFF; padding: 4px 10px; border-radius: 4px; font-weight: 900; font-size: 12px; display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; }
-        .breaking-tag svg { width: 14px; height: 14px; fill: currentColor; }
-        .ticker-container { flex-grow: 1; overflow: hidden; white-space: nowrap; }
-        .breaking-text { display: inline-block; color: var(--dark-red); font-weight: 800; animation: scroll-news 18s linear infinite; }
-        @keyframes scroll-news { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        
-        .layout-container { max-width: 1100px; margin: 25px auto; padding: 0 15px; display: grid; grid-template-columns: 1fr 330px; gap: 25px; }
-        @media (max-width: 850px) { .layout-container { grid-template-columns: 1fr; } }
-        
-        /* شێوازی جیاکەرەوەی ڕوون بۆ بەشەکان بۆ ئەوەی تێکەڵ نەبن */
-        .category-section { 
-            padding-bottom: 35px; 
-            margin-bottom: 35px; 
-            border-bottom: 3px dashed #CBD5E1; /* هێڵێکی جیاکەرەوەی جوان */
-            scroll-margin-top: 85px; /* بۆ ئەوەی لە کاتی کلیککردن نەچێتە ژێر مێنۆکە */
-        }
-        .category-section:last-of-type {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .section-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin: 0 0 18px; }
-        .section-title { font-size: 18px; font-weight: 900; color: var(--dark); display: flex; align-items: center; gap: 8px; position: relative; }
-        .section-title svg { width: 20px; height: 20px; stroke: var(--red); fill: none; stroke-width: 2.2; }
-        .section-title::after { content: ''; position: absolute; bottom: -12px; right: 0; width: 100%; height: 3px; background-color: var(--red); }
-        html[dir="ltr"] .section-title::after { right: auto; left: 0; }
-        .section-badge { font-size: 12px; font-weight: 700; color: var(--text-muted); background: #E2E8F0; padding: 3px 9px; border-radius: 4px; }
-        
-        .main-card { background-color: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 14px rgba(0,0,0,0.03); transition: 0.25s; }
-        .main-card:hover { transform: translateY(-3px); }
-        .main-card img { width: 100%; height: 340px; object-fit: cover; }
-        .card-body { padding: 24px; }
-        .post-meta-line { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-        .cat-pill { display: inline-block; background: #FEE2E2; color: var(--red); font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 4px; }
-        .post-time-badge, .view-badge { font-size: 12px; font-weight: 800; color: var(--text-muted); background: #F8FAFC; border: 1px solid var(--border); padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; }
-        .view-badge svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
-        .main-card h2 { font-size: 23px; font-weight: 900; margin-bottom: 12px; line-height: 1.45; color: var(--dark); }
-        .card-desc { color: #475569; font-size: 15px; line-height: 1.7; }
-        
-        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 620px) { .cards-grid { grid-template-columns: 1fr; } }
-        .news-card { background-color: var(--white); border-radius: 10px; padding: 18px; border: 1px solid var(--border); transition: 0.2s; display: block; }
-        .news-card:hover { border-color: var(--red); }
-        .news-card h3 { font-size: 16px; font-weight: 800; margin: 8px 0; color: var(--dark); line-height: 1.5; }
-        
-        .sidebar-box { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 18px; margin-bottom: 22px; }
-        .sidebar-title { font-size: 15px; font-weight: 900; color: var(--dark); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--red); display: flex; align-items: center; gap: 8px; }
-        .sidebar-title svg { width: 18px; height: 18px; stroke: var(--red); fill: none; stroke-width: 2; }
-        .trend-item { display: flex; gap: 12px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--border); }
-        .trend-num { font-size: 22px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Inter', sans-serif; }
-        .trend-text { font-size: 13px; font-weight: 700; color: #334155; line-height: 1.45; }
-        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); }
+        .article-container { max-width: 800px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 12px; border: 1px solid var(--border); }
+        .article-cat { background: #FEE2E2; color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 15px; display: inline-block; padding: 4px 12px; border-radius: 4px;}
+        .article-title { font-size: 30px; font-weight: 900; margin-bottom: 20px; line-height: 1.5; color: var(--dark); }
+        .article-meta-wrapper { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .meta-info-group { display: flex; flex-direction: column; gap: 12px; }
+        .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .article-author { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--white); background: var(--dark); padding: 6px 14px; border-radius: 6px; }
+        .article-author svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .article-date, .view-badge { font-size: 12px; font-weight: 800; color: var(--text-muted); background: #F8FAFC; border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; }
+        .view-badge svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .fb-share-btn { display: inline-flex; align-items: center; gap: 6px; background-color: #F1F5F9; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 800; transition: 0.2s; border: 1px solid var(--border); }
+        .fb-share-btn:hover { background-color: #E2E8F0; color: var(--dark); }
+        .fb-share-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .article-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
+        .article-content { font-size: 17px; line-height: 2; color: #334155; font-weight: 500;}
+        .article-content p { margin-bottom: 20px; text-align: justify; }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: var(--dark); color: var(--white); border-radius: 6px; font-weight: 800; transition: 0.2s;}
+        .back-btn:hover { background: var(--red); }
+        @media (max-width: 600px) { .article-container { margin: 20px 15px; padding: 20px; } .article-title { font-size: 24px; } }
+        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); text-align: center;}
     </style>
 </head>
 <body>
@@ -99,183 +59,116 @@
 
     <header>
         <div class="logo-area">
-            <div class="logo">REED <span>MEDIA</span></div>
-            <div class="logo-sub" data-key="logo_sub">میدیای سوور</div>
+            <a href="index.html" class="logo">REED <span>MEDIA</span></a>
         </div>
-        <div style="font-size: 12px; color: var(--text-muted); font-weight: 700;" data-key="slogan">ڕۆژنامەگەری سەربەخۆ و خێرا</div>
     </header>
 
-    <!-- مێنۆکان بە لینکی ئاسایی خلیسکێنە کاردەکەن (href="#...") -->
     <nav>
         <div class="nav-inner">
-            <a href="#home-featured" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-key="nav_home">سەرەکی</span></a>
-            <a href="#breaking" class="nav-link"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="nav_breaking">بەپەلە</span></a>
-            <a href="#kurdistan" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="nav_kurdistan">کوردستان</span></a>
-            <a href="#world" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg><span data-key="nav_world">جیهان</span></a>
-            <a href="#economy" class="nav-link"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span data-key="nav_economy">ئابووری</span></a>
-            <a href="#archive" class="nav-link"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg><span data-key="nav_archive">ئەرشیف</span></a>
+            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-key="nav_home">سەرەکی</span></a>
+            <a href="index.html#breaking" class="nav-link active"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="nav_breaking">بەپەلە</span></a>
+            <a href="index.html#kurdistan" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="nav_kurdistan">کوردستان</span></a>
         </div>
     </nav>
 
-    <div class="breaking-bar">
-        <span class="breaking-tag"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="breaking_tag">بەپەلە</span></span>
-        <div class="ticker-container">
-            <span class="breaking-text" data-key="ticker_news">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار • ئیرادەی چینایەتی و گۆڕانکاری لە عێراق لە نووسینی شاباز مەحمود.</span>
+    <main class="article-container">
+        <span class="article-cat" data-key="article_cat">بۆچوون • بەپەلە</span>
+        <h1 class="article-title" data-key="article_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</h1>
+        
+        <div class="article-meta-wrapper">
+            <div class="meta-info-group">
+                <div class="article-author">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span data-key="author_name">نووسینی: شاباز مەحمود</span>
+                </div>
+                <div class="meta-row">
+                    <div class="article-date">
+                        <span data-key="post_time_label">کاتی بڵاوکردنەوە:</span>
+                        <time datetime="2026-09-11T12:45:00+03:00"></time>
+                    </div>
+                    <div class="view-badge">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span id="post-view-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                <span data-key="fb_share_text">هاوبەشبکە</span>
+            </a>
         </div>
-    </div>
 
-    <main class="layout-container">
-        <section>
-            
-            <!-- بەشی ١: مانشێتی ڕۆژ -->
-            <div id="home-featured" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-key="sec_home">سەرەکی • هەواڵی گرنگ</span></div>
-                    <span class="section-badge" data-key="badge_lead">مانشێتی ڕۆژ</span>
-                </div>
-                <a href="post-2.html">
-                    <article class="main-card">
-                        <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی">
-                        <div class="card-body">
-                            <div class="post-meta-line">
-                                <span class="cat-pill" data-key="main_cat">کوردستان • بەپەلە</span>
-                                <time class="post-time-badge" datetime="2026-09-11T09:10:00+03:00"></time>
-                                <span class="view-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="view-count" data-id="post-2" data-date="2026-09-11T09:10:00+03:00" data-base="420" data-rate="1.5">0</span></span>
-                            </div>
-                            <h2 data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h2>
-                            <p class="card-desc" data-key="main_desc">شەڕڤان سیپان حوزنی لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...</p>
-                        </div>
-                    </article>
-                </a>
-            </div>
-
-            <!-- بەشی ٢: بەپەلە -->
-            <div id="breaking" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="sec_breaking">هەواڵە بەپەلەکان</span></div>
-                    <span class="section-badge" data-key="badge_urgent">نوێکراوەتەوە</span>
-                </div>
-                <div class="cards-grid">
-                    <a href="post-4.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
-                        <div class="post-meta-line">
-                            <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
-                            <time class="post-time-badge" datetime="2026-09-11T12:45:00+03:00"></time>
-                            <span class="view-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="view-count" data-id="post-4" data-date="2026-09-11T12:45:00+03:00" data-base="185" data-rate="3.5">0</span></span>
-                        </div>
-                        <h3 data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</h3>
-                        <p class="card-desc" style="font-size: 13px;" data-key="post4_desc">تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە...</p>
-                    </a>
-                    <a href="post-3.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
-                        <div class="post-meta-line">
-                            <span class="cat-pill" data-key="breaking_tag">بەپەلە</span>
-                            <time class="post-time-badge" datetime="2026-09-11T10:40:00+03:00"></time>
-                            <span class="view-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="view-count" data-id="post-3" data-date="2026-09-11T10:40:00+03:00" data-base="135" data-rate="2.2">0</span></span>
-                        </div>
-                        <h3 data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</h3>
-                        <p class="card-desc" style="font-size: 13px;" data-key="oil_desc">لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد.</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- بەشی ٣: کوردستان -->
-            <div id="kurdistan" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="sec_kurdistan">هەواڵەکانی کوردستان</span></div>
-                </div>
-                <div class="cards-grid">
-                    <a href="post-2.html" class="news-card">
-                        <div class="post-meta-line">
-                            <span class="cat-pill" data-key="nav_kurdistan">کوردستان</span>
-                            <time class="post-time-badge" datetime="2026-09-11T09:10:00+03:00"></time>
-                        </div>
-                        <h3 data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h3>
-                        <p class="card-desc" style="font-size: 13px;" data-key="main_desc">شەڕڤان سیپان حوزنی لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- بەشی ٤: جیهان -->
-            <div id="world" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg><span data-key="nav_world">جیهان</span></div>
-                </div>
-                <div style="padding: 20px; background: #fff; border: 1px solid var(--border); border-radius: 8px; text-align: center; color: var(--text-muted); font-size: 14px;" data-key="no_news">لە ئێستادا هیچ هەواڵێک لەم بەشەدا نییە.</div>
-            </div>
-
-            <!-- بەشی ٥: ئابووری -->
-            <div id="economy" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span data-key="nav_economy">ئابووری</span></div>
-                </div>
-                <div class="cards-grid">
-                    <a href="post-3.html" class="news-card">
-                        <div class="post-meta-line">
-                            <span class="cat-pill" data-key="nav_economy">ئابووری</span>
-                            <time class="post-time-badge" datetime="2026-09-11T10:40:00+03:00"></time>
-                        </div>
-                        <h3 data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</h3>
-                    </a>
-                </div>
-            </div>
-
-            <!-- بەشی ٦: ئەرشیف -->
-            <div id="archive" class="category-section">
-                <div class="section-header">
-                    <div class="section-title"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg><span data-key="nav_archive">ئەرشیف</span></div>
-                </div>
-                <div style="padding: 20px; background: #fff; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 700;">
-                    <a href="post-4.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border);" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق...</a>
-                    <a href="post-3.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border);" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە...</a>
-                    <a href="post-2.html" style="display: block; padding: 10px;" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی...</a>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 50px;"></div>
-        </section>
-
-        <!-- سایت بار -->
-        <aside>
-            <div class="sidebar-box">
-                <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg><span data-key="side_trend">زۆرترین خوێندراوەکان</span></div>
-                <a href="post-4.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</span></a>
-                <a href="post-2.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</span></a>
-                <a href="post-3.html" class="trend-item"><span class="trend-num">٣</span><span class="trend-text" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</span></a>
-            </div>
-        </aside>
+        <img src="news-4.jpg" alt="ئیرادەی چینایەتی" class="article-img">
+        
+        <div class="article-content">
+            <p data-key="p1">تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی لەناو کتێبخانەکان یان مانۆڕێکی تەکتیکی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە کە ساڵانێکە لە سنگی ملیۆنان مرۆڤی بێبەشدا کەپک کراوە.</p>
+            <p data-key="p2">کاتێک سەیری واقیعی ئابووری و کۆمەڵایەتیی عێراقی ئەمڕۆ دەکەین، لەبەردەم سیستەمێکدا دەوەستینەوە کە ژیان و کەرامەتی مرۆڤی کردووەتە قوربانیی قازانجی کەمینەیەک و ڕەوتی تاڵانکاریی دەسەڵاتدارانی سەرمایەدار و هێزە تایفییەکان.</p>
+            <p data-key="p3">لە عێراقدا خەڵکی زەحمەتکێش و کرێکاران ڕۆژانە باجی سیستەمێک دەدەن کە تێیدا بێکاری، هەژاریی بڕستبڕ، داڕمانی خزمەتگوزارییە کۆمەڵایەتییەکان و تیرۆری ڕێکخراو کراونەتە ئەمری واقع.</p>
+            <p data-key="p4">لە ناخەوە پرسیارە بنەڕەتییەکە ئەمەیە.. ئایا دەبێت ڕێگە بدەین ئەم کۆمەڵگەیە تا سەر بەم ئاڕاستەیەدا بڕوات؟ ئایا دەبێت چاوەڕێی سندوقەکانی هەڵبژاردنی تەزویر، ڕیفۆرمی ناو جەناحە بۆرژواکان، یان ئاڵوگۆڕی سەردارە ئایینی و خێڵەکییەکان بێین؟</p>
+            <p data-key="p5">کۆمۆنیزمی کرێکاری لەم خاڵەوە دەست پێدەکات لە ڕەتکردنەوەی ڕەهای ئەم بێدەرەتانییە. کۆمۆنیزم لە عێراقدا تەنها باوەڕبوون نییە بە تێزە ئابوورییەکان یان دەستەواژە مێژووییەکان بەڵکو دەربڕینی ئەو ئیرادە ڕادیکاڵەی کۆمەڵگەیە کە دەڵێت ئەم دۆخە چیتر قبوڵکراو نییە!</p>
+            <p data-key="p6">سەرمایەداری و دەسەڵاتی تاڵانکاری لە عێراق ژیانی ملیۆنان مرۆڤیان بەستووەتەوە بە زەلیلکاریی ڕۆژانە بۆ دەستکەوتنی پارووە نانێک کاتێک تەواوی سەروەتی وڵات لەلایەن کەمینەیەکی دەسەڵاتدارەوە دەتاڵانرێت. منداڵێک کە لە شارەکانی عێراقدا لەبەر نەبوونی دەرمان یان بەهۆی هەژارییەوە پاشەڕۆکی ژیان زبڵ کۆدەکاتەوە، تاوانبار نییە بەڵکو قوربانیی کۆمەڵگەیەکە کە لەسەر بنەمای کێبڕکێ چەوساندنەوە و بازرگانیکردن بە هێزی کاری مرۆڤەوە ڕاوەستاوە.</p>
+            <p data-key="p7">ئێمە کۆمەڵگەیەکمان دەوێت کە بنەماکەی لەسەر ئازادیی ڕەها یەکسانیی تەواوی ئابووری و کۆمەڵایەتی و خۆشگوزەرانیی هەمووان بێت. کۆمەڵگەیەک کە تێیدا هاوکاریی کۆمەڵایەتی شوێنی ململانێی چینایەتی و جەنگی تایفی بگرێتەوە. عێراق بە هەموو سەروەت ئیمکانات و تەکنەلۆژیایەی هەیەتی دەتوانێت باشترین ژیان بۆ سەرجەم دانیشتووانی دابین بکات بەو مەرجەی دەسەڵاتی ئابووری و سیاسی لە دەستی چەوسێنەران دەربهێنرێت و بسپێردرێت بە ئیرادەی راستەوخۆی کرێکاران و جەماوەری بێبەش.</p>
+            <p data-key="p8">ئەم گۆڕانکارییە بە سازشکاری و ڕێککەوتن لەگەڵ هێزە تایفی و بۆرژوازییەکان بەدی ناهێت. ئیرادەی گۆڕانکاری لە عێراق پێویستی بە جۆشدانەوەی هۆشیاریی چینایەتی و ڕێکخستنی بزووتنەوەیەکی سەربەخۆ ڕادیکاڵ و بێپێچ و پەنای کرێکاری و ئازادیخوازانەیە. حزبێک و ڕەوتێکمان دەوێت کە ئاڵای شۆڕشی کۆمەڵایەتی بەرز بکاتەوە و ڕاستەوخۆ دەست ببات بۆ وەرگرتنی دەسەڵات لە پێناو دامەزراندنی کۆمەڵگەیەکی سۆسیالیستی.</p>
+            <p data-key="p9">داهاتووی عێراق لە نێوان دوو ئاسۆدا یەکلایی دەبێتەوە... یان بەردەوامیی بەربەرییەتی تاڵانکاری، هەژاری و جەنگی تایفی. یان سەرکەوتنی ئیرادەی شۆڕشگێڕانەی خەڵکی زەحمەتکێش بۆ دروستکردنی جیهانێک کە تێیدا مرۆڤ بەهای راستەقینەی خۆی دەستبکەوێتەوە.</p>
+            <p data-key="p10">خەباتی ئێمە بەردەوامە چونکە باوەڕمان بە توانای بێسنووری مرۆڤ هەیە بۆ دروستکردنی ئایندەیەکی بەختەوەر و ئازاد خۆشگوزەران ....</p>
+            <p data-key="p11">مێژووی خەبات بۆ دادپەروەری نیشانی داوە کاتێک ئینسانەکان لە بارودۆخێکی ئازاددا توانای بیرکردنەوەیان هەبێت هیچیتر جگە لە یەکسانی ئازادی و هاوکاریی کۆمەڵایەتی هەڵنابژێرن. ئاسۆی سۆسیالیزم لەگەڵ ڕاستەقینەترین ئاواتەکانی مرۆڤدا هاوئاهەنگە.</p>
+            <p data-key="p12">کۆمۆنیزمی کرێکاری ئامرازێکە لە دەستی ئێوەدا لە دەستی هەر مرۆڤێکدا کە ڕەتیدەکاتەوە ملکەچی بەربەرییەتی ئێستا بێت. ئەمە بانگەوازێکە بۆ وەرچەرخاندنی مێژوو و بەدیهێنانی جیهانێک کە شایستەی ناوی مرۆڤ بێت.</p>
+        </div>
+        <a href="index.html" class="back-btn" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
     </main>
 
     <footer>
-        <div class="footer-inner" style="max-width: 1100px; margin: 0 auto; text-align: center;">
-            <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
-            <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
-        </div>
+        <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
+        <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
     </footer>
 
     <script>
         const translations = {
             ku: { 
-                site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
-                nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", nav_world: "جیهان", nav_economy: "ئابووری", nav_archive: "ئەرشیف",
-                breaking_tag: "بەپەلە", ticker_news: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار • ئیرادەی چینایەتی و گۆڕانکاری لە عێراق لە نووسینی شاباز مەحمود.",
-                sec_home: "سەرەکی • هەواڵی گرنگ", badge_lead: "مانشێتی ڕۆژ", main_cat: "کوردستان • بەپەلە", main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", main_desc: "شەڕڤان سیپان حوزنی لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...",
-                sec_breaking: "هەواڵە بەپەلەکان", badge_urgent: "نوێکراوەتەوە", breaking_tag_opinion: "بۆچوون • بەپەلە", post4_title: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ", post4_desc: "تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە...",
-                sec_kurdistan: "هەواڵەکانی کوردستان", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد.", no_news: "لە ئێستادا هیچ هەواڵێک لەم بەشەدا نییە.", side_trend: "زۆرترین خوێندراوەکان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
+                title_tag: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "بۆچوون • بەپەلە", fb_share_text: "هاوبەشبکە", article_title: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ", author_name: "نووسینی: شاباز مەحمود",
+                p1: "تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی لەناو کتێبخانەکان یان مانۆڕێکی تەکتیکی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە کە ساڵانێکە لە سنگی ملیۆنان مرۆڤی بێبەشدا کەپک کراوە.",
+                p2: "کاتێک سەیری واقیعی ئابووری و کۆمەڵایەتیی عێراقی ئەمڕۆ دەکەین، لەبەردەم سیستەمێکدا دەوەستینەوە کە ژیان و کەرامەتی مرۆڤی کردووەتە قوربانیی قازانجی کەمینەیەک و ڕەوتی تاڵانکاریی دەسەڵاتدارانی سەرمایەدار و هێزە تایفییەکان.",
+                p3: "لە عێراقدا خەڵکی زەحمەتکێش و کرێکاران ڕۆژانە باجی سیستەمێک دەدەن کە تێیدا بێکاری، هەژاریی بڕستبڕ، داڕمانی خزمەتگوزارییە کۆمەڵایەتییەکان و تیرۆری ڕێکخراو کراونەتە ئەمری واقع.",
+                p4: "لە ناخەوە پرسیارە بنەڕەتییەکە ئەمەیە.. ئایا دەبێت ڕێگە بدەین ئەم کۆمەڵگەیە تا سەر بەم ئاڕاستەیەدا بڕوات؟ ئایا دەبێت چاوەڕێی سندوقەکانی هەڵبژاردنی تەزویر، ڕیفۆرمی ناو جەناحە بۆرژواکان، یان ئاڵوگۆڕی سەردارە ئایینی و خێڵەکییەکان بێین؟",
+                p5: "کۆمۆنیزمی کرێکاری لەم خاڵەوە دەست پێدەکات لە ڕەتکردنەوەی ڕەهای ئەم بێدەرەتانییە. کۆمۆنیزم لە عێراقدا تەنها باوەڕبوون نییە بە تێزە ئابوورییەکان یان دەستەواژە مێژووییەکان بەڵکو دەربڕینی ئەو ئیرادە ڕادیکاڵەی کۆمەڵگەیە کە دەڵێت ئەم دۆخە چیتر قبوڵکراو نییە!",
+                p6: "سەرمایەداری و دەسەڵاتی تاڵانکاری لە عێراق ژیانی ملیۆنان مرۆڤیان بەستووەتەوە بە زەلیلکاریی ڕۆژانە بۆ دەستکەوتنی پارووە نانێک کاتێک تەواوی سەروەتی وڵات لەلایەن کەمینەیەکی دەسەڵاتدارەوە دەتاڵانرێت.",
+                p7: "ئێمە کۆمەڵگەیەکمان دەوێت کە بنەماکەی لەسەر ئازادیی ڕەها یەکسانیی تەواوی ئابووری و کۆمەڵایەتی و خۆشگوزەرانیی هەمووان بێت.",
+                p8: "ئەم گۆڕانکارییە بە سازشکاری و ڕێککەوتن لەگەڵ هێزە تایفی و بۆرژوازییەکان بەدی ناهێت. ئیرادەی گۆڕانکاری لە عێراق پێویستی بە جۆشدانەوەی هۆشیاریی چینایەتی و ڕێکخستنی بزووتنەوەیەکی سەربەخۆ ڕادیکاڵ و بێپێچ و پەنای کرێکاری و ئازادیخوازانەیە.",
+                p9: "داهاتووی عێراق لە نێوان دوو ئاسۆدا یەکلایی دەبێتەوە... یان بەردەوامیی بەربەرییەتی تاڵانکاری، هەژاری و جەنگی تایفی. یان سەرکەوتنی ئیرادەی شۆڕشگێڕانەی خەڵکی زەحمەتکێش...",
+                p10: "خەباتی ئێمە بەردەوامە چونکە باوەڕمان بە توانای بێسنووری مرۆڤ هەیە بۆ دروستکردنی ئایندەیەکی بەختەوەر و ئازاد خۆشگوزەران ....",
+                p11: "مێژووی خەبات بۆ دادپەروەری نیشانی داوە کاتێک ئینسانەکان لە بارودۆخێکی ئازاددا توانای بیرکردنەوەیان هەبێت هیچیتر جگە لە یەکسانی ئازادی و هاوکاریی کۆمەڵایەتی هەڵنابژێرن.",
+                p12: "کۆمۆنیزمی کرێکاری ئامرازێکە لە دەستی ئێوەدا لە دەستی هەر مرۆڤێکدا کە ڕەتیدەکاتەوە ملکەچی بەربەرییەتی ئێستا بێت. ئەمە بانگەوازێکە بۆ وەرچەرخاندنی مێژوو و بەدیهێنانی جیهانێک کە شایستەی ناوی مرۆڤ بێت."
             },
             en: { 
-                site_title: "Reed Media | Red Media News", live_badge: "LIVE", logo_sub: "Red Media", slogan: "Independent & Fast Journalism",
-                nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", nav_world: "World", nav_economy: "Economy", nav_archive: "Archive",
-                breaking_tag: "BREAKING", ticker_news: "Oil prices jump 6% reaching $107 per barrel • Class Will and Change in Iraq by Shabaz Mahmud.",
-                sec_home: "Home • Featured Story", badge_lead: "Lead Headline", main_cat: "Kurdistan • Breaking", main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", main_desc: "Fighter Sipan Hozni was abducted by militants and assassinated later...",
-                sec_breaking: "Breaking News", badge_urgent: "Updated", breaking_tag_opinion: "Opinion • Breaking", post4_title: "Class Will and Change in Iraq: Communism as the Horizon of Emancipation", post4_desc: "The struggle to change society is the explosion of class anger suppressed for years...",
-                sec_kurdistan: "Kurdistan News", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", no_news: "There is currently no news in this section.", side_trend: "Most Read", footer_text: "All rights reserved © Reed Media 2026"
+                title_tag: "Class Will and Change in Iraq - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published Time:", back_btn: "Back to Home", article_cat: "Opinion • Breaking", fb_share_text: "Share", article_title: "Class Will and Change in Iraq: Communism as the Horizon of Human Emancipation", author_name: "By Shabaz Mahmud",
+                p1: "The struggle to change society, before being a verbal conflict, is the explosion of class anger suppressed for years in the chests of millions of deprived people.",
+                p2: "When we look at the economic and social reality of Iraq today, we face a system that has sacrificed human life and dignity for the profit of a few.",
+                p3: "In Iraq, working people pay the daily price of a system where unemployment, extreme poverty, and organized terrorism have become realities.",
+                p4: "The fundamental question is: Should we allow society to continue in this direction?",
+                p5: "Worker's communism starts from this point: the absolute rejection of this helplessness.",
+                p6: "Capitalism and looting power in Iraq have tied the lives of millions to daily humiliation.",
+                p7: "We want a society based on absolute freedom, economic and social equality, and prosperity for all.",
+                p8: "This change will not come through compromise with sectarian and bourgeois forces.",
+                p9: "The future of Iraq will be decided between two horizons...",
+                p10: "Our struggle continues because we believe in the boundless capacity of humanity.",
+                p11: "The history of the struggle for justice has shown that humans choose equality and freedom.",
+                p12: "Worker's communism is a tool in your hands to reject current barbarism."
             },
             ar: { 
-                site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة",
-                nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", nav_world: "عالم", nav_economy: "اقتصاد", nav_archive: "الأرشيف",
-                breaking_tag: "عاجل", ticker_news: "أسعار النفط تقفز بنسبة 6% وتصل إلى 107 دولارات • الإرادة الطبقية والتغيير في العراق بقلم شاباز محمود.",
-                sec_home: "الرئيسية • أبرز الأخبار", badge_lead: "مانشيت اليوم", main_cat: "كردستان • عاجل", main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", main_desc: "المقاتل سيبان حوزني تم اختطافه من قبل مسلحين ومن ثم اغتياله...",
-                sec_breaking: "الأخبار العاجلة", badge_urgent: "محدّث", breaking_tag_opinion: "آراء • عاجل", post4_title: "الإرادة الطبقية والتغيير في العراق: الشيوعية كأفق لتحرر الإنسان", post4_desc: "النضال من أجل تغيير المجتمع هو انفجار للغضب الطبقي المكبوت منذ سنوات...",
-                sec_kurdistan: "أخبار كردستان", oil_title: "أسعار النفط تقفز 6% وتصل إلى 107 دولارات للبرميل", oil_desc: "ارتفاع حاد في أسواق الطاقة العالمية مع تداول خام النفط عند 107 دولارات.", no_news: "لا توجد أخبار في هذا القسم حالياً.", side_trend: "الأكثر قراءة", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026"
+                title_tag: "الإرادة الطبقية والتغيير في العراق - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "آراء • عاجل", fb_share_text: "مشاركة", article_title: "الإرادة الطبقية والتغيير في العراق: الشيوعية كأفق لتحرر الإنسان", author_name: "بقلم: شاباز محمود",
+                p1: "النضال من أجل تغيير المجتمع قبل أن يكون صراعاً كلامياً هو انفجار للغضب الطبقي المكبوت منذ سنوات في صدور الملايين من المحرومين.",
+                p2: "عندما ننظر إلى الواقع الاقتصادي والاجتماعي للعراق اليوم، فإننا نقف أمام نظام جعل حياة الإنسان وكرامته قرباناً لأرباح قلة.",
+                p3: "في العراق، يدفع الكادحون الثمن اليومي لنظام أصبحت فيه البطالة والفقر المدقع والإرهاب المنظم أمراً واقعاً.",
+                p4: "السؤال الأساسي من الداخل هو: هل يجب أن نستمر في هذا الاتجاه؟",
+                p5: "تبدأ الشيوعية العمالية من هذه النقطة: الرفض المطلق لهذا العجز.",
+                p6: "لقد ربطت الرأسمالية وسلطة النهب حياة ملايين البشر بالإذلال اليومي.",
+                p7: "نحن نريد مجتمعاً يقوم على الحرية المطلقة والمساواة الاقتصادية والاجتماعية الكاملة.",
+                p8: "هذا التغيير لن يتحقق عبر المساومة مع القوى الطائفية والبرجوازية.",
+                p9: "مستقبل العراق سيُحسم بين أفقين...",
+                p10: "نضالنا مستمر لأننا نؤمن بقدرة الإنسان بلا حدود.",
+                p11: "أظهر تاريخ النضال من أجل العدالة أن البشر يختارون دائماً المساواة والحرية.",
+                p12: "الشيوعية العمالية هي أداة في يد كل إنسان يرفض الخضوع للهمجية الحالية."
             }
         };
 
@@ -288,36 +181,23 @@
         }
 
         function updateSmartFeatures(lang) {
+            document.getElementById('fb-share').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
             document.querySelectorAll("time[datetime]").forEach(el => {
                 const diff = Math.floor((new Date() - new Date(el.getAttribute("datetime"))) / 1000); 
                 if (lang === 'en') { if (diff < 60) el.textContent = "Just now"; else if (diff < 3600) el.textContent = `${Math.floor(diff/60)}m ago`; else if (diff < 86400) el.textContent = `${Math.floor(diff/3600)}h ago`; else el.textContent = `${Math.floor(diff/86400)}d ago`; } 
                 else if (lang === 'ar') { if (diff < 60) el.textContent = "الآن"; else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`; else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`; else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`; } 
                 else { if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`; }
             });
-            document.querySelectorAll('.view-count').forEach(el => {
-                const id = el.getAttribute('data-id'); const pubDate = new Date(el.getAttribute('data-date')); const baseViews = parseInt(el.getAttribute('data-base')); const rate = parseFloat(el.getAttribute('data-rate')); 
-                const minutes = Math.max(0, Math.floor((new Date() - pubDate) / 60000)); let views = baseViews + Math.floor(minutes * rate);
-                if (localStorage.getItem('view_' + id)) { views += 1; } el.textContent = views.toLocaleString('en-US');
-            });
         }
 
-        window.addEventListener('DOMContentLoaded', () => { 
-            setLang(localStorage.getItem('reed_lang') || 'ku'); 
-            
-            // ئەکتیڤکردنی مێنۆکان لە کاتی خلیسکاندندا
-            const sections = document.querySelectorAll('.category-section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 150) { current = section.getAttribute('id'); }
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
-                });
-            });
+        window.addEventListener('DOMContentLoaded', () => {
+            setLang(localStorage.getItem('reed_lang') || 'ku');
+            const postId = "post-4"; const pubDate = new Date("2026-09-11T12:45:00+03:00");
+            const baseViews = 185; const rate = 3.5; 
+            const minutes = Math.max(0, Math.floor((new Date() - pubDate) / 60000));
+            let totalViews = baseViews + Math.floor(minutes * rate);
+            if (!localStorage.getItem('view_' + postId)) { localStorage.setItem('view_' + postId, 'true'); totalViews += 1; } else { totalViews += 1; }
+            document.getElementById('post-view-count').textContent = totalViews.toLocaleString('en-US');
         });
     </script>
 </body>
