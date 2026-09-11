@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نرخی نەوت بەرزبووەوە - Reed Media</title>
+    <title data-key="title_tag">تیرۆرکردنی شەڕڤان سیپان حوزنی - Reed Media</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root { --red: #D91C24; --dark: #0B0F19; --white: #FFFFFF; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; text-decoration: none; color: inherit; }
         body { background-color: #F1F5F9; line-height: 1.65; }
-        .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+        .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
         .pulse { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; }
-        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; transition: 0.2s; }
+        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
         .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
         header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
         .logo { font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Inter', sans-serif; }
         .logo span { color: var(--dark); }
         nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
         .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
-        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; }
+        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; border-bottom: 3px solid transparent;}
         .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
-        .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; }
+        .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom-color: var(--red); }
         .article-container { max-width: 800px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 12px; border: 1px solid var(--border); }
         .article-cat { background: #FEE2E2; color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 15px; display: inline-block; padding: 4px 12px; border-radius: 4px;}
         .article-title { font-size: 30px; font-weight: 900; margin-bottom: 20px; line-height: 1.5; color: var(--dark); }
@@ -47,11 +47,11 @@
 <body>
 
     <div class="top-bar">
-        <div class="live-tag"><span class="pulse"></span>پەخشی ڕاستەوخۆ</div>
+        <div class="live-tag"><span class="pulse"></span><span data-key="live_badge">پەخشی ڕاستەوخۆ</span></div>
         <div class="lang-switcher">
-            <a href="post-3.html" class="lang-btn active">کوردی</a>
-            <a href="en/post-3.html" class="lang-btn">English</a>
-            <a href="ar/post-3.html" class="lang-btn">العربية</a>
+            <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+            <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
         </div>
     </div>
 
@@ -63,25 +63,22 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>سەرەکی</a>
-            <a href="index.html#breaking" class="nav-link"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>بەپەلە</a>
-            <a href="index.html#kurdistan" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>کوردستان</a>
-            <a href="index.html#world" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>جیهان</a>
-            <a href="index.html#economy" class="nav-link active"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>ئابووری</a>
-            <a href="index.html#archive" class="nav-link"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg>ئەرشیف</a>
+            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-key="nav_home">سەرەکی</span></a>
+            <a href="index.html#breaking" class="nav-link"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="nav_breaking">بەپەلە</span></a>
+            <a href="index.html#kurdistan" class="nav-link active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="nav_kurdistan">کوردستان</span></a>
         </div>
     </nav>
 
     <main class="article-container">
-        <span class="article-cat">ئابووری • بازاڕەکان</span>
-        <h1 class="article-title">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار بۆ هەر بەرمیلێک</h1>
+        <span class="article-cat" data-key="article_cat">کوردستان • بەپەلە</span>
+        <h1 class="article-title" data-key="article_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h1>
         
         <div class="article-meta-wrapper">
             <div class="meta-info-group">
                 <div class="meta-row">
                     <div class="article-date">
-                        <span>کاتی بڵاوکردنەوە:</span>
-                        <time datetime="2026-09-11T10:40:00+03:00"></time>
+                        <span data-key="post_time_label">کاتی بڵاوکردنەوە:</span>
+                        <time datetime="2026-09-11T09:10:00+03:00"></time>
                     </div>
                     <div class="view-badge">
                         <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -92,33 +89,53 @@
 
             <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
                 <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
-                <span>هاوبەشبکە</span>
+                <span data-key="fb_share_text">هاوبەشبکە</span>
             </a>
         </div>
 
-        <img src="news-3.jpg" alt="نرخی نەوت" class="article-img">
+        <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی" class="article-img">
         
         <div class="article-content">
-            <p>لەگەڵ کردنەوەی بازاڕەکانی جیهاندا بۆ ئەمڕۆ، نرخی بەرمیلێک نەوتی خاو بازدانێکی گەورەی بەخۆیەوە بینی و بە ڕێژەی 6٪ بەرزبووەوە.</p>
-            <p>بەپێی دوایین ئامارەکان، نرخی نەوت گەیشتە 107 دۆلاری ئەمریکی، ئەمەش کاریگەری ڕاستەوخۆی دەبێت لەسەر ئابووریی وڵاتانی ناوچەکە و نرخی کاڵاکان لە بازاڕە ناوخۆییەکاندا.</p>
+            <p data-key="p1">بەپێی زانیارییە سەرەتاییەکان، شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی سەر بە عەشیرەتی ئەبو حەسەن لە ناوچەی حەسەکە ڕفێندرا.</p>
+            <p data-key="p2">دواتر تەرمەکەی لە ناوچەکانی دێرەزۆر دۆزرایەوە کە بە شێوەیەکی دڕندانە تیرۆرکرابوو. دەزگا ئەمنییەکان دەستیان بە لێکۆڵینەوەیەکی چڕ کردووە بۆ دۆزینەوە و دەستگیرکردنی ئەنجامدەرانی ئەم تاوانە.</p>
         </div>
-        <a href="index.html" class="back-btn">گەڕانەوە بۆ سەرەکی</a>
+        <a href="index.html" class="back-btn" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
     </main>
 
     <footer>
         <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
-        <p style="margin-top: 5px;">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+        <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
     </footer>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
+        const translations = {
+            ku: { title_tag: "تیرۆرکردنی شەڕڤان سیپان حوزنی - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "کوردستان • بەپەلە", fb_share_text: "هاوبەشبکە", article_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", p1: "بەپێی زانیارییە سەرەتاییەکان، شەڕڤان سیپان حوزنی لەلایەن چەکدارانی سەر بە عەشیرەتی ئەبو حەسەن ڕفێندرا.", p2: "دواتر تەرمەکەی لە ناوچەکانی دێرەزۆر دۆزرایەوە کە بە شێوەیەکی دڕندانە تیرۆرکرابوو." },
+            en: { title_tag: "Assassination of Sipan Hozni - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published:", back_btn: "Back to Home", article_cat: "Kurdistan • Breaking", fb_share_text: "Share", article_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", p1: "According to reports, fighter Sipan Hozni was abducted by militants in the Hasakah region.", p2: "His body was later found in Deir ez-Zor after a brutal assassination." },
+            ar: { title_tag: "اغتيال سيبان حوزني - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "كردستان • عاجل", fb_share_text: "مشاركة", article_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", p1: "حسب المعلومات الأولية، تم اختطاف المقاتل سيبان حوزني من قبل مسلحين في منطقة الحسكة.", p2: "عُثر على جثته لاحقاً في دير الزور بعد تعرضه لاغتيال وحشي." }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = (lang === 'ku' ? 'ckb' : lang); document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+            document.querySelectorAll('[data-key]').forEach(el => { const key = el.getAttribute('data-key'); if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(document.getElementById('btn-' + lang)) document.getElementById('btn-' + lang).classList.add('active');
+            localStorage.setItem('reed_lang', lang); updateSmartFeatures(lang);
+        }
+
+        function updateSmartFeatures(lang) {
             document.getElementById('fb-share').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
             document.querySelectorAll("time[datetime]").forEach(el => {
                 const diff = Math.floor((new Date() - new Date(el.getAttribute("datetime"))) / 1000); 
-                if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`;
+                if (lang === 'en') { if (diff < 60) el.textContent = "Just now"; else if (diff < 3600) el.textContent = `${Math.floor(diff/60)}m ago`; else if (diff < 86400) el.textContent = `${Math.floor(diff/3600)}h ago`; else el.textContent = `${Math.floor(diff/86400)}d ago`; } 
+                else if (lang === 'ar') { if (diff < 60) el.textContent = "الآن"; else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`; else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`; else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`; } 
+                else { if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`; }
             });
-            const postId = "post-3"; const pubDate = new Date("2026-09-11T10:40:00+03:00");
-            const baseViews = 135; const rate = 2.2; 
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setLang(localStorage.getItem('reed_lang') || 'ku');
+            const postId = "post-2"; const pubDate = new Date("2026-09-11T09:10:00+03:00");
+            const baseViews = 420; const rate = 1.5; 
             const minutes = Math.max(0, Math.floor((new Date() - pubDate) / 60000));
             let totalViews = baseViews + Math.floor(minutes * rate);
             if (!localStorage.getItem('view_' + postId)) { localStorage.setItem('view_' + postId, 'true'); totalViews += 1; } else { totalViews += 1; }
