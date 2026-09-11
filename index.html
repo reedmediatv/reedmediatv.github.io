@@ -3,160 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reed Media | میدیای سوور</title>
-    <meta name="google-site-verification" content="4asTH8tQNePs5PJKrN4kHXn6fEJjQzibpMfcF6vaP_s" />
-    <meta name="description" content="میدیای سوور (Reed Media) - پێگەیەکی هەواڵیی سەربەخۆیە بۆ بڵاوکردنەوەی هەواڵە بەپەلەکانی کوردستان، جیهان و ئابووری.">
+    <title data-key="title_tag">تیرۆرکردنی شەڕڤان سیپان حوزنی - Reed Media</title>
     
+    <!-- مێتاداتای فەرمی Schema.org بۆ گووگڵ و AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە",
+      "image": ["http://reedmedia.page.gd/news-2.jpg"],
+      "datePublished": "2026-09-11T09:10:00+03:00",
+      "dateModified": "2026-09-11T09:10:00+03:00",
+      "author": [{ "@type": "Organization", "name": "Reed Media", "url": "http://reedmedia.page.gd" }],
+      "publisher": { "@type": "Organization", "name": "Reed Media", "logo": { "@type": "ImageObject", "url": "http://reedmedia.page.gd/news-2.jpg" } }
+    }
+    </script>
+
+    <!-- فۆنتەکان -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root { --red: #D91C24; --dark: #0B0F19; --white: #FFFFFF; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; text-decoration: none; }
         body { background-color: #F1F5F9; color: var(--text-dark); line-height: 1.65; }
-        .top-bar { background-color: var(--dark); padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
-        .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-weight: 800; font-size: 11px; }
+
+        .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
         .pulse { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; }
+        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
+
         header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
-        .logo { font-size: 26px; font-weight: 900; color: var(--red); font-family: 'Inter', sans-serif; }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo { font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; letter-spacing: -0.8px; font-family: 'Inter', sans-serif; }
         .logo span { color: var(--dark); }
+        .logo-sub { font-size: 13px; color: var(--text-muted); font-weight: 800; border-inline-start: 2px solid var(--border); padding-inline-start: 12px; }
+
         nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
         .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
-        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; color: #1E293B; display: inline-flex; align-items: center; gap: 8px; }
-        .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom: 3px solid var(--red); }
-        .layout-container { max-width: 1100px; margin: 25px auto; padding: 0 15px; display: grid; grid-template-columns: 1fr 330px; gap: 25px; }
-        @media (max-width: 850px) { .layout-container { grid-template-columns: 1fr; } }
-        .section-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin: 35px 0 18px; }
-        .section-title { font-size: 18px; font-weight: 900; color: var(--dark); }
-        .main-card { background-color: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-        .main-card img { width: 100%; height: 340px; object-fit: cover; }
-        .card-body { padding: 24px; }
-        .cat-pill { background: #FEE2E2; color: var(--red); font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
-        .main-card h2 { font-size: 23px; font-weight: 900; margin-bottom: 12px; color: var(--dark); }
-        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 620px) { .cards-grid { grid-template-columns: 1fr; } }
-        .news-card { background-color: var(--white); border-radius: 10px; padding: 18px; border: 1px solid var(--border); }
-        .news-card h3 { font-size: 16px; font-weight: 800; margin: 8px 0; color: var(--dark); }
-        .archive-table { width: 100%; background: var(--white); border-radius: 10px; border: 1px solid var(--border); border-collapse: collapse; }
-        .archive-table tr { border-bottom: 1px solid var(--border); }
-        .archive-table td { padding: 14px 18px; font-size: 14px; font-weight: 700; color: var(--dark); }
-        .archive-date time { color: var(--text-muted); font-size: 12px; font-weight: 800; background: #F1F5F9; padding: 4px 8px; border-radius: 4px; }
-        .sidebar-box { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 18px; margin-bottom: 22px; }
-        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); text-align: center;}
+        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; color: #1E293B; display: inline-flex; align-items: center; gap: 8px; border-bottom: 3px solid transparent; transition: all 0.2s; }
+        .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .nav-link:hover, .nav-link.active { color: var(--red); border-bottom-color: var(--red); background: #FEF2F2; }
+
+        .article-container { max-width: 800px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid var(--border); }
+        .article-cat { background: #FEE2E2; color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 15px; display: inline-block; padding: 4px 12px; border-radius: 4px;}
+        .article-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; line-height: 1.5; color: var(--dark); }
+        .article-date { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; font-weight: 700;}
+        .article-date time { background: #F8FAFC; padding: 4px 10px; border-radius: 4px; font-weight: 800; color: var(--dark); border: 1px solid var(--border); }
+        .article-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
+        .article-content { font-size: 16.5px; line-height: 1.9; color: #334155; }
+        .article-content p { margin-bottom: 18px; }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: var(--dark); color: var(--white); border-radius: 6px; font-weight: 800; transition: 0.2s;}
+        .back-btn:hover { background: var(--red); }
+        @media (max-width: 600px) { .article-container { margin: 20px 15px; padding: 20px; } .article-title { font-size: 22px; } }
+
+        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); }
+        .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-links { display: flex; gap: 16px; font-weight: 700; }
+        .footer-links a:hover { color: #fff; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="live-tag"><span class="pulse"></span> پەخشی ڕاستەوخۆ</div>
+        <div class="live-tag">
+            <span class="pulse"></span>
+            <span data-key="live_badge">پەخشی ڕاستەوخۆ</span>
+        </div>
+        <div class="lang-switcher">
+            <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+            <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
+        </div>
     </div>
 
     <header>
-        <div class="logo">REED <span>MEDIA</span></div>
-        <div style="font-size: 12px; color: var(--text-muted); font-weight: 700;">ڕۆژنامەگەری سەربەخۆ و خێرا</div>
+        <div class="logo-area">
+            <a href="index.html" class="logo">REED <span>MEDIA</span></a>
+            <div class="logo-sub" data-key="logo_sub">میدیای سوور</div>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 700;" data-key="slogan">ڕۆژنامەگەری سەربەخۆ و خێرا</div>
     </header>
 
     <nav>
         <div class="nav-inner">
-            <a href="#" class="nav-link active">سەرەکی</a>
-            <a href="#breaking" class="nav-link">بەپەلە</a>
-            <a href="#kurdistan" class="nav-link">کوردستان</a>
-            <a href="#economy" class="nav-link">ئابووری</a>
+            <a href="index.html" class="nav-link">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span data-key="nav_home">سەرەکی</span>
+            </a>
+            <a href="index.html#breaking" class="nav-link">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span data-key="nav_breaking">بەپەلە</span>
+            </a>
+            <a href="index.html#kurdistan" class="nav-link active">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span data-key="nav_kurdistan">کوردستان</span>
+            </a>
         </div>
     </nav>
 
-    <main class="layout-container">
-        <section>
-            <div id="home">
-                <div class="section-header">
-                    <div class="section-title">سەرەکی • مانشێتی ڕۆژ</div>
-                </div>
-                <a href="post-2.html">
-                    <article class="main-card">
-                        <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی">
-                        <div class="card-body">
-                            <span class="cat-pill">کوردستان • بەپەلە</span>
-                            <h2>تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h2>
-                            <p style="color: #475569;">شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...</p>
-                        </div>
-                    </article>
-                </a>
-            </div>
+    <main class="article-container">
+        <span class="article-cat" data-key="article_cat">کوردستان • بەپەلە</span>
+        <h1 class="article-title" data-key="article_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h1>
+        
+        <div class="article-date">
+            <span data-key="post_time_label">کاتی بڵاوکردنەوە:</span>
+            <time datetime="2026-09-11T09:10:00+03:00"></time>
+        </div>
 
-            <div id="breaking">
-                <div class="section-header">
-                    <div class="section-title">هەواڵە بەپەلەکان</div>
-                </div>
-                <div class="cards-grid">
-                    <a href="post-3.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
-                        <span class="cat-pill">بەپەلە</span>
-                        <h3>نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار</h3>
-                    </a>
-                    <a href="post-2.html" class="news-card" style="border-inline-start: 4px solid var(--red);">
-                        <span class="cat-pill">بەپەلە</span>
-                        <h3>تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر</h3>
-                    </a>
-                </div>
-            </div>
-
-            <div id="archive">
-                <div class="section-header">
-                    <div class="section-title">ئەرشیفی گشتی</div>
-                </div>
-                <table class="archive-table">
-                    <tbody>
-                        <tr>
-                            <td><a href="post-3.html">نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار بۆ هەر بەرمیلێک</a></td>
-                            <td class="archive-date">
-                                <!-- لێرەدا کاتی ڕاستەقینە بۆ ڕۆبۆتەکە دانراوە -->
-                                <time datetime="2026-09-11T10:45:00+03:00">نوێ دەکرێتەوە...</time>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="post-2.html">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</a></td>
-                            <td class="archive-date">
-                                <!-- لێرەدا کاتی ڕاستەقینە بۆ ڕۆبۆتەکە دانراوە -->
-                                <time datetime="2026-09-11T08:15:00+03:00">نوێ دەکرێتەوە...</time>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <aside>
-            <div class="sidebar-box">
-                <h3 style="margin-bottom:10px; color:var(--dark);">دەربارەی میدیا</h3>
-                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
-                    Reed Media پێگەیەکی هەواڵیی سەربەخۆیە بۆ گواستنەوەی ڕاستییەکان بەوپەڕی متمانە و خێرایی.
-                </p>
-            </div>
-        </aside>
+        <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی" class="article-img">
+        
+        <div class="article-content">
+            <p data-key="para_1">بەپێی زانیارییە سەرەتاییەکان، شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی سەر بە عەشیرەتی ئەبو حەسەن لە ناوچەی حەسەکە ڕفێندرا.</p>
+            <p data-key="para_2">دواتر تەرمەکەی لە ناوچەکانی دێرەزۆر دۆزرایەوە کە بە شێوەیەکی دڕندانە تیرۆرکرابوو. دەزگا ئەمنییەکان دەستیان بە لێکۆڵینەوەیەکی چڕ کردووە بۆ دۆزینەوە و دەستگیرکردنی ئەنجامدەرانی ئەم تاوانە.</p>
+        </div>
+        <a href="index.html" class="back-btn" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
     </main>
 
     <footer>
-        <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
-        <p style="margin-top: 5px;">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+        <div class="footer-inner">
+            <div>
+                <strong style="color: #fff; font-size: 16px; font-family: 'Inter', sans-serif;">REED MEDIA</strong>
+                <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html" data-key="nav_home">سەرەکی</a>
+                <a href="index.html#kurdistan" data-key="nav_kurdistan">کوردستان</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- کۆدی زیرەک بۆ گۆڕینی کاتەکان -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        const translations = {
+            ku: {
+                title_tag: "تیرۆرکردنی شەڕڤان سیپان حوزنی - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
+                nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", 
+                footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026",
+                post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی",
+                article_cat: "کوردستان • بەپەلە", article_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە",
+                para_1: "بەپێی زانیارییە سەرەتاییەکان، شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارانی سەر بە عەشیرەتی ئەبو حەسەن لە ناوچەی حەسەکە ڕفێندرا.",
+                para_2: "دواتر تەرمەکەی لە ناوچەکانی دێرەزۆر دۆزرایەوە کە بە شێوەیەکی دڕندانە تیرۆرکرابوو. دەزگا ئەمنییەکان دەستیان بە لێکۆڵینەوەیەکی چڕ کردووە بۆ دۆزینەوە و دەستگیرکردنی ئەنجامدەرانی ئەم تاوانە."
+            },
+            en: {
+                title_tag: "Assassination of Sipan Hozni - Reed Media", live_badge: "LIVE BROADCAST", logo_sub: "Red Media", slogan: "Independent & Fast Journalism",
+                nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", 
+                footer_text: "All rights reserved © Reed Media 2026",
+                post_time_label: "Published Time:", back_btn: "Back to Home",
+                article_cat: "Kurdistan • Breaking", article_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah",
+                para_1: "According to initial reports, fighter Sipan Hozni, a member of the Hasakah Brigade, was abducted by militants belonging to the Abu Hassan tribe in the Hasakah region.",
+                para_2: "His body was later discovered in the Deir ez-Zor areas, having been brutally assassinated. Security agencies have launched an intensive investigation to track down the perpetrators."
+            },
+            ar: {
+                title_tag: "اغتيال سيبان حوزني - ريد ميديا", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة",
+                nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", 
+                footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026",
+                post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية",
+                article_cat: "كردستان • عاجل", article_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة",
+                para_1: "وفقاً للمعلومات الأولية، تم اختطاف المقاتل سيبان حوزني، عضو لواء الحسكة، من قبل مسلحين ينتمون لعشيرة أبو حسن في منطقة الحسكة.",
+                para_2: "تم العثور على جثته لاحقاً في مناطق دير الزور بعد تعرضه لاغتيال وحشي. وبدأت الأجهزة الأمنية تحقيقات مكثفة للقبض على منفذي الجريمة."
+            }
+        };
+
+        function updateDynamicTime(lang) {
             document.querySelectorAll("time[datetime]").forEach(el => {
                 const postDate = new Date(el.getAttribute("datetime"));
                 const now = new Date();
                 const diff = Math.floor((now - postDate) / 1000); 
-                
-                if (diff < 60) {
-                    el.textContent = "ئێستا";
-                } else if (diff < 3600) {
-                    el.textContent = `پێش ${Math.floor(diff/60)} خولەک`;
-                } else if (diff < 86400) {
-                    el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`;
+
+                if (lang === 'en') {
+                    if (diff < 60) el.textContent = "Just now";
+                    else if (diff < 3600) el.textContent = `${Math.floor(diff/60)}m ago`;
+                    else if (diff < 86400) el.textContent = `${Math.floor(diff/3600)}h ago`;
+                    else el.textContent = `${Math.floor(diff/86400)}d ago`;
+                } else if (lang === 'ar') {
+                    if (diff < 60) el.textContent = "الآن";
+                    else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`;
+                    else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`;
+                    else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`;
                 } else {
-                    el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`;
+                    if (diff < 60) el.textContent = "ئێستا";
+                    else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`;
+                    else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`;
+                    else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`;
                 }
             });
+        }
+
+        function setLang(lang) {
+            document.documentElement.lang = (lang === 'ku' ? 'ckb' : lang);
+            document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById('btn-' + lang);
+            if (activeBtn) activeBtn.classList.add('active');
+            localStorage.setItem('reed_lang', lang);
+            updateDynamicTime(lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('reed_lang') || 'ku';
+            setLang(currentLang);
         });
     </script>
 </body>
