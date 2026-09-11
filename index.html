@@ -411,7 +411,7 @@
                 } else if (lang === 'ar') {
                     if (diff < 60) el.textContent = "الآن"; else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`; else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`; else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`;
                 } else {
-                    if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`;
+                    if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`;
                 }
             });
 
