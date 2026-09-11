@@ -166,14 +166,27 @@
             });
         }
 
+        async function registerRealView(postId, baseViews) {
+            let viewElement = document.getElementById('post-view-count');
+            try {
+                let url = `https://api.counterapi.dev/v1/reedmedia/${postId}`;
+                if (!localStorage.getItem('real_view_' + postId)) {
+                    url = `https://api.counterapi.dev/v1/reedmedia/${postId}/up`;
+                    localStorage.setItem('real_view_' + postId, 'true');
+                }
+                let response = await fetch(url);
+                let data = await response.json();
+                let realClicks = data.count || 0;
+                viewElement.textContent = (baseViews + realClicks).toLocaleString('en-US');
+            } catch(error) {
+                viewElement.textContent = baseViews.toLocaleString('en-US');
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             setLang(localStorage.getItem('reed_lang') || 'ku');
-            const postId = "post-5"; const pubDate = new Date("2026-09-12T10:00:00+03:00");
-            const baseViews = 65; const rate = 2.5; 
-            const minutes = Math.max(0, Math.floor((new Date() - pubDate) / 60000));
-            let totalViews = baseViews + Math.floor(minutes * rate);
-            if (!localStorage.getItem('view_' + postId)) { localStorage.setItem('view_' + postId, 'true'); totalViews += 1; } else { totalViews += 1; }
-            document.getElementById('post-view-count').textContent = totalViews.toLocaleString('en-US');
+            
+            registerRealView("post-5", 65); 
         });
     </script>
 </body>
