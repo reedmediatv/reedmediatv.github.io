@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-key="site_title">Reed Media | میدیای سوور</title>
 
-    <!-- فۆنت -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,7 +26,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Vazirmatn', sans-serif;
-            transition: background-color 0.2s, color 0.2s;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -41,7 +40,6 @@
             color: inherit;
         }
 
-        /* شریتی سەرەوە و زمانەکان */
         .top-bar {
             background-color: var(--dark);
             color: #94A3B8;
@@ -101,7 +99,6 @@
             color: #FFFFFF;
         }
 
-        /* سەرپەڕە */
         header {
             background-color: var(--white);
             padding: 15px 20px;
@@ -122,7 +119,6 @@
             font-weight: 900;
             color: var(--red);
             line-height: 1.1;
-            letter-spacing: 0.5px;
         }
 
         .logo span {
@@ -137,13 +133,11 @@
             padding-inline-start: 10px;
         }
 
-        /* مێنۆی سەرەکی بەشەکان */
         nav {
             background-color: var(--white);
             border-bottom: 2px solid var(--red);
             overflow-x: auto;
             white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
         }
 
         .nav-inner {
@@ -159,15 +153,12 @@
             font-size: 14px;
             color: #334155;
             display: inline-block;
-            border-bottom: 3px solid transparent;
         }
 
         .nav-link:hover, .nav-link.active {
             color: var(--red);
-            border-bottom-color: var(--red);
         }
 
-        /* شریتی هەواڵی بەپەلەی جوڵاو */
         .breaking-bar {
             background-color: #FEF2F2;
             border-bottom: 1px solid #FEE2E2;
@@ -177,7 +168,6 @@
             gap: 12px;
             font-size: 13px;
             overflow: hidden;
-            position: relative;
         }
 
         .breaking-tag {
@@ -188,7 +178,6 @@
             font-weight: 800;
             font-size: 11px;
             flex-shrink: 0;
-            z-index: 2;
         }
 
         .ticker-container {
@@ -201,13 +190,7 @@
             display: inline-block;
             color: var(--dark-red);
             font-weight: 700;
-            white-space: nowrap;
-            animation: scroll-news 16s linear infinite;
-        }
-
-        .ticker-container:hover .breaking-text,
-        .ticker-container:active .breaking-text {
-            animation-play-state: paused;
+            animation: scroll-news 18s linear infinite;
         }
 
         @keyframes scroll-news {
@@ -215,7 +198,6 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* ستراکچەری سەرەکی: دوو ستوونی */
         .layout-container {
             max-width: 1000px;
             margin: 20px auto;
@@ -231,14 +213,12 @@
             }
         }
 
-        /* کارتی سەرەکی */
         .main-card {
             background-color: var(--white);
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         .main-card img {
@@ -255,7 +235,6 @@
             color: var(--red);
             font-size: 12px;
             font-weight: 800;
-            text-transform: uppercase;
         }
 
         .main-card h1 {
@@ -271,14 +250,12 @@
             line-height: 1.6;
         }
 
-        /* هەواڵە کورتەکان */
         .sub-card {
             background-color: var(--white);
             border-radius: 12px;
             padding: 16px;
             border: 1px solid var(--border);
             margin-bottom: 15px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
         }
 
         .sub-card h3 {
@@ -287,7 +264,6 @@
             color: var(--dark);
         }
 
-        /* ستوونی تەنیشت */
         .sidebar-box {
             background: var(--white);
             border-radius: 12px;
@@ -303,9 +279,6 @@
             margin-bottom: 12px;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--red);
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .trend-item {
@@ -316,41 +289,23 @@
             border-bottom: 1px dashed var(--border);
         }
 
-        .trend-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
         .trend-num {
             font-size: 18px;
             font-weight: 900;
             color: var(--red);
-            line-height: 1;
         }
 
         .trend-text {
             font-size: 13px;
             font-weight: 600;
             color: #334155;
-            line-height: 1.4;
         }
 
-        /* ئەرشیف */
         .archive-box {
             background-color: var(--white);
             border-radius: 12px;
             border: 1px solid var(--border);
             padding: 20px;
-            margin-top: 10px;
-        }
-
-        .archive-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
         }
 
         .archive-link {
@@ -362,29 +317,14 @@
             border-radius: 6px;
             font-size: 13px;
             font-weight: 600;
-            color: #334155;
+            margin-top: 8px;
             border: 1px solid #E2E8F0;
         }
 
-        .archive-link:hover {
-            background: #FEF2F2;
-            color: var(--red);
-            border-color: #FECACA;
-        }
-
-        .archive-badge {
-            background: #E2E8F0;
-            color: #475569;
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        /* بنپێ */
         footer {
             background-color: var(--dark);
             color: #94A3B8;
-            padding: 30px 20px;
+            padding: 25px 20px;
             margin-top: 40px;
             font-size: 13px;
             border-top: 3px solid var(--red);
@@ -394,25 +334,15 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
             align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
-        }
-
-        .footer-links a:hover {
-            color: #FFFFFF;
         }
     </style>
 </head>
 <body>
 
-    <!-- شریتی سەرەوە -->
     <div class="top-bar">
         <div class="live-tag">
             <span class="pulse"></span>
@@ -426,181 +356,204 @@
         </div>
     </div>
 
-    <!-- سەرپەڕە -->
     <header>
         <div class="logo-area">
             <div class="logo">REED <span>MEDIA</span></div>
             <div class="logo-sub" data-key="logo_sub">میدیای سوور</div>
         </div>
-        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;" data-key="slogan">
             ڕۆژنامەگەری سەربەخۆ و خێرا
         </div>
     </header>
 
-    <!-- مێنۆی بەشەکان -->
     <nav>
         <div class="nav-inner">
-            <a href="index.html" class="nav-link active">سەرەکی</a>
-            <a href="#breaking" class="nav-link">هەواڵی بەپەلە</a>
-            <a href="#kurdistan" class="nav-link">کوردستان</a>
-            <a href="#world" class="nav-link">جیهان</a>
-            <a href="#economy" class="nav-link">ئابووری</a>
-            <a href="#sports" class="nav-link">وەرزش</a>
-            <a href="#archive" class="nav-link">📂 ئەرشیف</a>
+            <a href="index.html" class="nav-link" data-key="nav_home">سەرەکی</a>
+            <a href="#breaking" class="nav-link" data-key="nav_breaking">بەپەلە</a>
+            <a href="#kurdistan" class="nav-link" data-key="nav_kurdistan">کوردستان</a>
+            <a href="#economy" class="nav-link" data-key="nav_economy">ئابووری</a>
+            <a href="#world" class="nav-link" data-key="nav_world">جیهان</a>
+            <a href="#archive" class="nav-link" data-key="nav_archive">📂 ئەرشیف</a>
         </div>
     </nav>
 
-    <!-- شریتی هەواڵی بەپەلەی جوڵاو -->
     <div class="breaking-bar" id="breaking">
         <span class="breaking-tag" data-key="breaking_tag">بەپەلە</span>
         <div class="ticker-container">
-            <span class="breaking-text">تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر دوای ڕفاندنی لە گوندەواری حەسەکە لەلایەن چەکدارە تیرۆریستەکانەوە.</span>
+            <span class="breaking-text" data-key="ticker_news">تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر دوای ڕفاندنی لە گوندەواری حەسەکە لەلایەن چەکدارە تیرۆریستەکانەوە.</span>
         </div>
     </div>
 
-    <!-- ناوەڕۆک -->
     <main class="layout-container">
 
         <section>
-            <!-- هەواڵی سەرەکی -->
-            <a href="post-2.html">
-                <article class="main-card">
-                    <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی">
-                    <div class="card-body">
-                        <span class="cat">بەپەلە • کوردستان</span>
-                        <h1>تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h1>
-                        <p class="card-desc">شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارە تیرۆریستەکانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک بکە بۆ خوێندنەوەی درێژەی هەواڵەکە.</p>
-                    </div>
-                </article>
-            </a>
+            <!-- هەواڵی سەرەکی - کوردستان -->
+            <div id="kurdistan">
+                <a href="post-2.html">
+                    <article class="main-card">
+                        <img src="news-2.jpg" alt="شەڕڤان سیپان حوزنی">
+                        <div class="card-body">
+                            <span class="cat" data-key="main_cat">بەپەلە • کوردستان</span>
+                            <h1 data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</h1>
+                            <p class="card-desc" data-key="main_desc">شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارە تیرۆریستەکانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک بکە بۆ خوێندنەوەی تەواوی بابەتەکە.</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
 
-            <!-- هەواڵەکانی تر -->
-            <a href="post-1.html">
-                <div class="sub-card">
-                    <span class="cat">تەکنەلۆژیا و میدیا</span>
-                    <h3>پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</h3>
-                    <p class="card-desc">چۆن بەرنامەسازی و تەکنەلۆژیای سەردەم کارئاسانی بۆ گەشەسەندنی ژوورە هەواڵییەکان دەکەن...</p>
-                </div>
-            </a>
-
+            <!-- بەشی ئابووری -->
             <div class="sub-card" id="economy">
-                <span class="cat" data-key="news1_cat">ئابووری</span>
-                <h3 data-key="news1_title">نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا</h3>
-                <p class="card-desc" data-key="news1_desc">ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە.</p>
+                <span class="cat" data-key="econ_cat">ئابووری</span>
+                <h3 data-key="econ_title">نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا</h3>
+                <p class="card-desc" data-key="econ_desc">ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە لە ئاستی جیهان.</p>
+            </div>
+
+            <!-- بەشی جیهان -->
+            <div class="sub-card" id="world">
+                <span class="cat" data-key="world_cat">جیهان و تەکنەلۆژیا</span>
+                <h3 data-key="world_title">پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</h3>
+                <p class="card-desc" data-key="world_desc">چۆن تەکنەلۆژیا و ژیریی دەستکرد کاریگەری لەسەر خێرایی گەیاندنی زانیارییە دروستەکان دروست دەکەن.</p>
             </div>
 
             <!-- ئەرشیف -->
             <div class="archive-box" id="archive">
-                <h3 style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                    📂 ئەرشیفی هەواڵ و بابەتەکان
-                </h3>
-                <p style="font-size: 13px; color: var(--text-muted);">هەموو ئەو هەواڵ و بابەتانەی پێشتر بڵاوکراونەتەوە:</p>
-                
-                <ul class="archive-list">
-                    <li>
-                        <a href="post-2.html" class="archive-link">
-                            <span>تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر</span>
-                            <span class="archive-badge">ئەمڕۆ</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="post-1.html" class="archive-link">
-                            <span>پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ</span>
-                            <span class="archive-badge">دوێنێ</span>
-                        </a>
-                    </li>
-                </ul>
+                <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 10px;" data-key="arch_title">📂 ئەرشیفی هەواڵەکان</h3>
+                <a href="post-2.html" class="archive-link">
+                    <span data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</span>
+                    <span style="font-size: 11px; background: #E2E8F0; padding: 2px 6px; border-radius: 4px;" data-key="badge_today">ئەمڕۆ</span>
+                </a>
             </div>
         </section>
 
-        <!-- ستوونی تەنیشت -->
         <aside>
             <div class="sidebar-box">
-                <div class="sidebar-title">📁 بەشەکان</div>
-                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600;">
-                    <a href="#kurdistan" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
-                        <span>کوردستان</span>
-                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                <div class="sidebar-title" data-key="side_cats">📁 بەشەکان</div>
+                <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600;">
+                    <a href="#kurdistan" style="display: flex; justify-content: space-between; padding: 6px; background: #F8FAFC; border-radius: 4px;">
+                        <span data-key="nav_kurdistan">کوردستان</span>
+                        <span style="color: var(--red);">(١)</span>
                     </a>
-                    <a href="#economy" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
-                        <span>ئابووری</span>
-                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                    <a href="#economy" style="display: flex; justify-content: space-between; padding: 6px; background: #F8FAFC; border-radius: 4px;">
+                        <span data-key="nav_economy">ئابووری</span>
+                        <span style="color: var(--red);">(١)</span>
                     </a>
-                    <a href="#world" style="display: flex; justify-content: space-between; padding: 6px; border-radius: 4px; background: #F8FAFC;">
-                        <span>جیهان و تەکنەلۆژیا</span>
-                        <span style="color: var(--red); font-weight: bold;">(١)</span>
+                    <a href="#world" style="display: flex; justify-content: space-between; padding: 6px; background: #F8FAFC; border-radius: 4px;">
+                        <span data-key="nav_world">جیهان</span>
+                        <span style="color: var(--red);">(١)</span>
                     </a>
                 </div>
             </div>
 
             <div class="sidebar-box">
-                <div class="sidebar-title">🔥 زۆرترین خوێندراوەکان</div>
+                <div class="sidebar-title" data-key="side_trend">🔥 زۆرترین خوێندراوەکان</div>
                 <a href="post-2.html" class="trend-item">
                     <span class="trend-num">١</span>
-                    <span class="trend-text">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە حەسەکە</span>
+                    <span class="trend-text" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە حەسەکە</span>
                 </a>
-                <a href="post-1.html" class="trend-item">
-                    <span class="trend-num">٢</span>
-                    <span class="trend-text">پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا</span>
-                </a>
-            </div>
-
-            <div class="sidebar-box">
-                <div class="sidebar-title">ℹ️ دەربارەی میدیا</div>
-                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
-                    <strong>Reed Media</strong> پلاتفۆرمێکی هەواڵیی سەربەخۆیە بۆ گواستنەوەی ڕاستییەکان بە خێرایی و بێلایەنانە.
-                </p>
             </div>
         </aside>
 
     </main>
 
-    <!-- بنپێ -->
     <footer>
         <div class="footer-inner">
             <div>
                 <strong style="color: #fff; font-size: 15px;">REED MEDIA</strong>
                 <p style="margin-top: 4px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
             </div>
-            <div class="footer-links">
-                <a href="index.html">سەرەکی</a>
-                <a href="#archive">ئەرشیف</a>
-                <a href="#breaking">بەپەلە</a>
+            <div style="display: flex; gap: 12px;">
+                <a href="index.html" data-key="nav_home">سەرەکی</a>
+                <a href="#breaking" data-key="nav_breaking">بەپەلە</a>
+                <a href="#archive" data-key="nav_archive">ئەرشیف</a>
             </div>
         </div>
     </footer>
 
-    <!-- زمانی ماڵپەڕ -->
+    <!-- کۆدی تەواوی زمانەکان -->
     <script>
         const translations = {
             ku: {
                 site_title: "Reed Media | میدیای سوور",
                 live_badge: "پەخشی ڕاستەوخۆ",
                 logo_sub: "میدیای سوور",
+                slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
+                nav_home: "سەرەکی",
+                nav_breaking: "بەپەلە",
+                nav_kurdistan: "کوردستان",
+                nav_economy: "ئابووری",
+                nav_world: "جیهان",
+                nav_archive: "📂 ئەرشیف",
                 breaking_tag: "بەپەلە",
-                news1_cat: "ئابووری",
-                news1_title: "نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا",
-                news1_desc: "ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە.",
+                ticker_news: "تیرۆرکردنی شەڕڤان سیپان حوزنی لە دێرەزۆر دوای ڕفاندنی لە گوندەواری حەسەکە لەلایەن چەکدارە تیرۆریستەکانەوە.",
+                main_cat: "بەپەلە • کوردستان",
+                main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە",
+                main_desc: "شەڕڤان سیپان حوزنی، ئەندامی لیوای حەسەکە لەلایەن چەکدارە تیرۆریستەکانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا... کلیک بکە بۆ خوێندنەوەی تەواوی بابەتەکە.",
+                econ_cat: "ئابووری",
+                econ_title: "نوێترین گۆڕانکارییەکان لە بازاڕی دارایی جیهاندا",
+                econ_desc: "ڕاپۆرتێکی گشتگیر دەربارەی ئامارە نوێیەکانی بۆرسە و بازاڕەکانی ئەم هەفتەیە لە ئاستی جیهان.",
+                world_cat: "جیهان و تەکنەلۆژیا",
+                world_title: "پەرەپێدانی پلاتفۆرمی میدیایی سەربەخۆ لە سەردەمی نوێدا",
+                world_desc: "چۆن تەکنەلۆژیا و ژیریی دەستکرد کاریگەری لەسەر خێرایی گەیاندنی زانیارییە دروستەکان دروست دەکەن.",
+                arch_title: "📂 ئەرشیفی هەواڵەکان",
+                badge_today: "ئەمڕۆ",
+                side_cats: "📁 بەشەکان",
+                side_trend: "🔥 زۆرترین خوێندراوەکان",
                 footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
             },
             en: {
                 site_title: "Reed Media | Red Media News",
                 live_badge: "LIVE BROADCAST",
                 logo_sub: "Red Media",
+                slogan: "Independent & Fast Journalism",
+                nav_home: "Home",
+                nav_breaking: "Breaking",
+                nav_kurdistan: "Kurdistan",
+                nav_economy: "Economy",
+                nav_world: "World",
+                nav_archive: "📂 Archive",
                 breaking_tag: "BREAKING",
-                news1_cat: "Economy",
-                news1_title: "Latest Trends and Market Shifts in Global Finance",
-                news1_desc: "A comprehensive economic summary of stock markets and financial activities this week.",
+                ticker_news: "Fighter Sipan Hozni assassinated in Deir ez-Zor after abduction from Hasakah countryside.",
+                main_cat: "Breaking • Kurdistan",
+                main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah",
+                main_desc: "Fighter Sipan Hozni, member of the Hasakah Brigade, was abducted by militants from his home and assassinated in Deir ez-Zor.",
+                econ_cat: "Economy",
+                econ_title: "Latest Trends and Market Shifts in Global Finance",
+                econ_desc: "A comprehensive market analysis and economic outlook across global exchanges this week.",
+                world_cat: "World & Tech",
+                world_title: "Developing Independent Digital Media Platforms",
+                world_desc: "How technology and modern tools empower independent newsrooms to deliver verified facts.",
+                arch_title: "📂 News Archive",
+                badge_today: "Today",
+                side_cats: "📁 Categories",
+                side_trend: "🔥 Most Read",
                 footer_text: "All rights reserved © Reed Media 2026"
             },
             ar: {
                 site_title: "ريد ميديا | الإعلام الأحمر",
                 live_badge: "بث مباشر",
                 logo_sub: "الإعلام الأحمر",
+                slogan: "صحافة مستقلة وسريعة",
+                nav_home: "الرئيسية",
+                nav_breaking: "عاجل",
+                nav_kurdistan: "كردستان",
+                nav_economy: "اقتصاد",
+                nav_world: "عالم",
+                nav_archive: "📂 الأرشيف",
                 breaking_tag: "عاجل",
-                news1_cat: "اقتصاد",
-                news1_title: "أحدث التطورات والتغيرات في الأسواق المالية العالمية",
-                news1_desc: "تقرير شامل حول حركة البورصات والمؤشرات الاقتصادية الرئيسية لهذا الأسبوع.",
+                ticker_news: "اغتيال المقاتل سيبان حوزني في دير الزور بعد اختطافه من ريف الحسكة.",
+                main_cat: "عاجل • كردستان",
+                main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة",
+                main_desc: "المقاتل سيبان حوزني، عضو لواء الحسكة، تم اختطافه من قبل مسلحين ومن ثم اغتياله في ريف دير الزور.",
+                econ_cat: "اقتصاد",
+                econ_title: "أحدث التطورات والتغيرات في الأسواق المالية العالمية",
+                econ_desc: "تقرير شامل حول حركة البورصات والمؤشرات الاقتصادية الرئيسية لهذا الأسبوع عالمياً.",
+                world_cat: "عالم وتكنولوجيا",
+                world_title: "تطوير المنصات الإعلامية المستقلة في العصر الرقمي",
+                world_desc: "كيف تسهم التكنولوجيا في تعزيز العمل الصحفي المستقل ونقل الحقائق بدقة وسرعة.",
+                arch_title: "📂 أرشيف الأخبار",
+                badge_today: "اليوم",
+                side_cats: "📁 الأقسام",
+                side_trend: "🔥 الأكثر قراءة",
                 footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026"
             }
         };
@@ -630,6 +583,4 @@
     </script>
 
 </body>
-  
 </html>
-
