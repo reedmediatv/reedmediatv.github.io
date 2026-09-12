@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title_tag">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شوراییە - Reed Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --red: #D91C24; --dark: #0B0F19; --white: #FFFFFF; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; text-decoration: none; color: inherit; }
+        body { background-color: #F1F5F9; line-height: 1.65; }
+        .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
+        .pulse { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; }
+        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
+        header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+        .logo { font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Inter', sans-serif; }
+        .logo span { color: var(--dark); }
+        nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
+        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; border-bottom: 3px solid transparent;}
+        .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom-color: var(--red); }
+        .article-container { max-width: 800px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 12px; border: 1px solid var(--border); }
+        .article-cat { background: #FEE2E2; color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 15px; display: inline-block; padding: 4px 12px; border-radius: 4px;}
+        .article-title { font-size: 28px; font-weight: 900; margin-bottom: 20px; line-height: 1.5; color: var(--dark); }
+        .article-meta-wrapper { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .meta-info-group { display: flex; flex-direction: column; gap: 12px; }
+        .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .article-author { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--white); background: var(--dark); padding: 6px 14px; border-radius: 6px; }
+        .article-author svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .article-date, .view-badge { font-size: 12px; font-weight: 800; color: var(--text-muted); background: #F8FAFC; border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; }
+        .view-badge svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .fb-share-btn { display: inline-flex; align-items: center; gap: 6px; background-color: #F1F5F9; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 800; transition: 0.2s; border: 1px solid var(--border); }
+        .fb-share-btn:hover { background-color: #E2E8F0; color: var(--dark); }
+        .fb-share-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .article-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
+        .article-content { font-size: 17px; line-height: 2.1; color: #334155; font-weight: 500;}
+        .article-content p { margin-bottom: 18px; text-align: justify; }
+        .article-content strong { color: var(--dark); font-weight: 900; display: block; margin-top: 25px; margin-bottom: 5px; font-size: 18px;}
+        .back-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: var(--dark); color: var(--white); border-radius: 6px; font-weight: 800; transition: 0.2s;}
+        .back-btn:hover { background: var(--red); }
+        @media (max-width: 600px) { .article-container { margin: 20px 15px; padding: 20px; } .article-title { font-size: 22px; } }
+        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); text-align: center;}
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="live-tag"><span class="pulse"></span><span data-key="live_badge">پەخشی ڕاستەوخۆ</span></div>
+        <div class="lang-switcher">
+            <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+            <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-area">
+            <a href="index.html" class="logo">REED <span>MEDIA</span></a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-key="nav_home">سەرەکی</span></a>
+            <a href="index.html#breaking" class="nav-link active"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="nav_breaking">بەپەلە</span></a>
+            <a href="index.html#kurdistan" class="nav-link"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="nav_kurdistan">کوردستان</span></a>
+        </div>
+    </nav>
+
+    <main class="article-container">
+        <span class="article-cat" data-key="article_cat">بۆچوون • بەپەلە</span>
+        <h1 class="article-title" data-key="article_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە</h1>
+        
+        <div class="article-meta-wrapper">
+            <div class="meta-info-group">
+                <div class="article-author">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span data-key="author_name">نووسەر : شاباز مەحموود</span>
+                </div>
+                <div class="meta-row">
+                    <div class="article-date">
+                        <span data-key="post_time_label">کاتی بڵاوکردنەوە:</span>
+                        <!-- کاتی ئێستا دانراوە بۆ ئەوەی ڕاستەقینە بێت -->
+                        <time datetime="2026-09-12T13:10:00+03:00"></time>
+                    </div>
+                    <div class="view-badge">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span id="post-view-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                <span data-key="fb_share_text">هاوبەشبکە</span>
+            </a>
+        </div>
+
+        <img src="news-7.jpg" alt="قەیرانەکان" class="article-img">
+        
+        <div class="article-content">
+            <p data-key="p1">لە ئایندەی سیاسیی عێراقدا، تاقیکردنەوەی چارەسەرە تەقلیدییەکان و پشت بەستن بە بەڵێنەکانی چاکسازی لە سەرەوە، هیچی تر وەڵامدەری قەیرانە پێکهاتەیییەکان نابێت. پاشەکشەی بەردەوامی ئاستی گوزەران، بێکاریی بەرفراوان، داڕمانی خزمەتگوزارییەکان و جیاکاریی، نیشانەی باڵادەستیی سیستەمێکە کە توانای دابینکردنی مافە سەرەتاییەکانی کۆمەڵگەی نەماوە. لە بەرامبەر ئەم بنبەستە مێژوویییەدا، ئاراستەکردنی خەباتی سیاسی بەرەو بەدیلێکی جێگیر و شۆڕشگێڕانە دەبێتە خواستێکی پێویست.</p>
+            <p data-key="p2">ئەم بەدیلە پێشنیارکراوە، لەسەر بنەمای پێکهێنانی حکومەتی شورایی و دەسەڵاتی ڕاستەوخۆی خەڵک، وەک ئەلتەرناتیڤێکی گونجاوتر بۆ ئایندەی عێراق دەخرێتەڕوو کە لەسەر ئەم پایە بنەڕەتییانە ڕادەوەستێت:</p>
+            
+            <strong data-key="h1">١. جێگیرکردنی دەسەڵاتی شورایی و دەستەبەرکردنی ئیرادەی ڕاستەوخۆ</strong>
+            <p data-key="p3">گواستنەوە لە سیستەمی بڕیاردانی ناوەندیی حزبی بەرەو حوکمڕانیی ڕاستەوخۆ لە ڕێگەی پێکهێنانی شورای کرێکاران، فەرمانبەران، مامۆستایان، ژنان، خوێندکاران و دانیشتووانی گەڕەک و شوێنەکانی کار لە سەرانسەری عێراقدا. لەم مودێلەدا، کۆنگرەی سەرانسەریی نوێنەرانی شوراکان دەبێتە باڵاترین مەرجەعی یاسادانان و جێبەجێکردن تا ئیرادەی سیاسی بێ واسیطە لە دەستی جەماوەر خۆیدا بێت.</p>
+            
+            <strong data-key="h2">٢. دابینکردنی ئاسایشی ئابووری و خۆڕاییکردنی خزمەتگوزارییە سەرەکییەکان</strong>
+            <p data-key="p4">مافی ژیانێکی شایستە لە ڕێگەی بەرزکردنەوەی بەردەوامی مووچەی کرێکاران، کارمەندان، مامۆستایان، خانەنشینان و کەمدئەندامان بەپێی ئاستی گرانی مسۆگەر دەکرێت. دابینکردنی هەلی کار یان بڕینەوەی بیمەی بێکاریی شایستە بۆ تەواوی بێکارانی ئامادە بەکار، لەگەڵ خۆڕاییکردنی تەواوەتیی خزمەتگوزارییەکانی تەندروستی، پەروەردە، ئاو و کارەبا، دەبنە پایەی سەرەکیی بەرنامەی ئابووریی ئەم بەدیلە.</p>
+            
+            <strong data-key="h3">٣. دارایی، شەفافییەتی تەواو و نەهێشتنی تاڵانی</strong>
+            <p data-key="p5">یەکخستنی سەرجەم بانکەکان لەژێر ئیدارەی بانکیی گشتیدا و خستنەڕووی شەفافی تەواوی داهاتەکانی نەوت، خەرجی و بودجەی وڵات لەژێر چاوەدێریی ڕاستەوخۆی نوێنەرانی شوراکاندا. هەروەها هەڵوەشاندنەوەی سەرجەم ئەو گرێبەست و پەیماننامانەی زیان بە بەرژەوەندیی گشتی دەگەیەنن، لەگەڵ دادگاییکردنی ئاشکرای بەرپرسانی گەندەڵ و تاوانبار.</p>
+            
+            <strong data-key="h4">٤. عەلمانیەتی بەکردەوە، یەکسانیی تەواو و سەروەریی مافەکانی هاوڵاتی</strong>
+            <p data-key="p6">جیابوونەوەی ڕەهای دین لە دەوڵەت و پەروەردە، و سڕینەوەی تەواوی ئەو یاسایانەی سەرچاوەی دینی یان جیاکارییان هەیە. جێگیرکردنی یەکسانیی هەمەلایەنەی ژن و پیاو لە تەواوی مافە سیاسی و کۆمەڵایەتییەکاندا، دابینکردنی مافی هاوڵاتیبوونی یەکسان بێ ڕەچاوکردنی زمان، ڕەگەز، دین یان ئەتنیک، و هەڵوەشاندنەوەی سزای لەسێدارەدان و زیندانی هەتاهەتایی.</p>
+            
+            <strong data-key="h5">٥. چارەسەری دیموکراتیک و سەربەخۆ بۆ پرسە سیاسییەکان</strong>
+            <p data-key="p7">یەکلاکردنەوەی پەیوەندییەکانی نێوان هەرێم و دەوڵەتی ناوەند و مافی دیاریکردنی چارەنووسی گەلان لە ڕێگەی گەڕانەوەی ڕاستەوخۆ بۆ دەنگ و ئیرادەی جەماوەر لە پرۆسەیەکی ئازاد و دیموکراتیکدا، نەک لە ڕێگەی ڕێککەوتنی ژێرخانووی حزبی و سەربازییەوە.</p>
+            
+            <p data-key="p8">ئەم بەدیلە شوراییە وەک نەخشەڕێگەیەکی کردەیی بۆ ئایندەی عێراق، تەنیا ڕێگەی گونجاوە بۆ کۆتاییهێنان بە بازنەی بەستراوی قەیرانەکان، دوورخستنەوەی کۆمەڵگە لە توندوتیژی، و بنیاتنانی سیستەمێک کە لەسەر ئازادی، یەکسانی و رفاهی گشتی ڕاوەستابێت.</p>
+        </div>
+        <a href="index.html" class="back-btn" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
+    </main>
+
+    <footer>
+        <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
+        <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ku: { 
+                title_tag: "ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شوراییە - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "بۆچوون • بەپەلە", fb_share_text: "هاوبەشبکە", article_title: "ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە", author_name: "نووسەر : شاباز مەحموود",
+                p1: "لە ئایندەی سیاسیی عێراقدا، تاقیکردنەوەی چارەسەرە تەقلیدییەکان و پشت بەستن بە بەڵێنەکانی چاکسازی لە سەرەوە، هیچی تر وەڵامدەری قەیرانە پێکهاتەیییەکان نابێت. پاشەکشەی بەردەوامی ئاستی گوزەران، بێکاریی بەرفراوان، داڕمانی خزمەتگوزارییەکان و جیاکاریی، نیشانەی باڵادەستیی سیستەمێکە کە توانای دابینکردنی مافە سەرەتاییەکانی کۆمەڵگەی نەماوە. لە بەرامبەر ئەم بنبەستە مێژوویییەدا، ئاراستەکردنی خەباتی سیاسی بەرەو بەدیلێکی جێگیر و شۆڕشگێڕانە دەبێتە خواستێکی پێویست.",
+                p2: "ئەم بەدیلە پێشنیارکراوە، لەسەر بنەمای پێکهێنانی حکومەتی شورایی و دەسەڵاتی ڕاستەوخۆی خەڵک، وەک ئەلتەرناتیڤێکی گونجاوتر بۆ ئایندەی عێراق دەخرێتەڕوو کە لەسەر ئەم پایە بنەڕەتییانە ڕادەوەستێت:",
+                h1: "١. جێگیرکردنی دەسەڵاتی شورایی و دەستەبەرکردنی ئیرادەی ڕاستەوخۆ",
+                p3: "گواستنەوە لە سیستەمی بڕیاردانی ناوەندیی حزبی بەرەو حوکمڕانیی ڕاستەوخۆ لە ڕێگەی پێکهێنانی شورای کرێکاران، فەرمانبەران، مامۆستایان، ژنان، خوێندکاران و دانیشتووانی گەڕەک و شوێنەکانی کار لە سەرانسەری عێراقدا. لەم مودێلەدا، کۆنگرەی سەرانسەریی نوێنەرانی شوراکان دەبێتە باڵاترین مەرجەعی یاسادانان و جێبەجێکردن تا ئیرادەی سیاسی بێ واسیطە لە دەستی جەماوەر خۆیدا بێت.",
+                h2: "٢. دابینکردنی ئاسایشی ئابووری و خۆڕاییکردنی خزمەتگوزارییە سەرەکییەکان",
+                p4: "مافی ژیانێکی شایستە لە ڕێگەی بەرزکردنەوەی بەردەوامی مووچەی کرێکاران، کارمەندان، مامۆستایان، خانەنشینان و کەمدئەندامان بەپێی ئاستی گرانی مسۆگەر دەکرێت. دابینکردنی هەلی کار یان بڕینەوەی بیمەی بێکاریی شایستە بۆ تەواوی بێکارانی ئامادە بەکار، لەگەڵ خۆڕاییکردنی تەواوەتیی خزمەتگوزارییەکانی تەندروستی، پەروەردە، ئاو و کارەبا، دەبنە پایەی سەرەکیی بەرنامەی ئابووریی ئەم بەدیلە.",
+                h3: "٣. دارایی، شەفافییەتی تەواو و نەهێشتنی تاڵانی",
+                p5: "یەکخستنی سەرجەم بانکەکان لەژێر ئیدارەی بانکیی گشتیدا و خستنەڕووی شەفافی تەواوی داهاتەکانی نەوت، خەرجی و بودجەی وڵات لەژێر چاوەدێریی ڕاستەوخۆی نوێنەرانی شوراکاندا. هەروەها هەڵوەشاندنەوەی سەرجەم ئەو گرێبەست و پەیماننامانەی زیان بە بەرژەوەندیی گشتی دەگەیەنن، لەگەڵ دادگاییکردنی ئاشکرای بەرپرسانی گەندەڵ و تاوانبار.",
+                h4: "٤. عەلمانیەتی بەکردەوە، یەکسانیی تەواو و سەروەریی مافەکانی هاوڵاتی",
+                p6: "جیابوونەوەی ڕەهای دین لە دەوڵەت و پەروەردە، و سڕینەوەی تەواوی ئەو یاسایانەی سەرچاوەی دینی یان جیاکارییان هەیە. جێگیرکردنی یەکسانیی هەمەلایەنەی ژن و پیاو لە تەواوی مافە سیاسی و کۆمەڵایەتییەکاندا، دابینکردنی مافی هاوڵاتیبوونی یەکسان بێ ڕەچاوکردنی زمان، ڕەگەز، دین یان ئەتنیک، و هەڵوەشاندنەوەی سزای لەسێدارەدان و زیندانی هەتاهەتایی.",
+                h5: "٥. چارەسەری دیموکراتیک و سەربەخۆ بۆ پرسە سیاسییەکان",
+                p7: "یەکلاکردنەوەی پەیوەندییەکانی نێوان هەرێم و دەوڵەتی ناوەند و مافی دیاریکردنی چارەنووسی گەلان لە ڕێگەی گەڕانەوەی ڕاستەوخۆ بۆ دەنگ و ئیرادەی جەماوەر لە پرۆسەیەکی ئازاد و دیموکراتیکدا، نەک لە ڕێگەی ڕێککەوتنی ژێرخانووی حزبی و سەربازییەوە.",
+                p8: "ئەم بەدیلە شوراییە وەک نەخشەڕێگەیەکی کردەیی بۆ ئایندەی عێراق، تەنیا ڕێگەی گونجاوە بۆ کۆتاییهێنان بە بازنەی بەستراوی قەیرانەکان، دوورخستنەوەی کۆمەڵگە لە توندوتیژی، و بنیاتنانی سیستەمێک کە لەسەر ئازادی، یەکسانی و رفاهی گشتی ڕاوەستابێت."
+            },
+            en: { 
+                title_tag: "The Way Out of Crises: Establishing Direct Council Power - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published Time:", back_btn: "Back to Home", article_cat: "Opinion • Breaking", fb_share_text: "Share", article_title: "The Way Out of Crises: Establishing Direct Council Power of the Masses", author_name: "By: Shabaz Mahmud",
+                p1: "In the political future of Iraq, experimenting with traditional solutions and relying on top-down reform promises will no longer answer structural crises. Continuous decline in living standards, widespread unemployment, collapse of services, and discrimination are signs of the dominance of a system no longer capable of providing basic rights. In the face of this historical deadlock, directing political struggle toward a stable and revolutionary alternative is necessary.",
+                p2: "This proposed alternative, based on forming a council government and direct power of the people, is presented as a more suitable option for Iraq's future, resting on these fundamental pillars:",
+                h1: "1. Establishing Council Power and Securing Direct Will",
+                p3: "Transitioning from a central party decision-making system to direct governance through forming councils of workers, employees, teachers, women, students, and neighborhood residents across Iraq. In this model, a nationwide congress of council representatives becomes the highest legislative and executive authority.",
+                h2: "2. Economic Security and Free Basic Services",
+                p4: "The right to a decent life is guaranteed by constantly raising salaries according to the cost of living. Providing job opportunities or adequate unemployment insurance for all those ready to work, along with completely free healthcare, education, water, and electricity.",
+                h3: "3. Finance, Full Transparency, and Ending Plunder",
+                p5: "Unifying all banks under public banking administration and offering full transparency of oil revenues and the state budget under the direct supervision of council representatives. Also, canceling all contracts harmful to public interests and publicly trying corrupt officials.",
+                h4: "4. Practical Secularism, Full Equality, and Citizen Rights",
+                p6: "Absolute separation of religion from the state and education, and erasing all laws based on religious sources or discrimination. Establishing comprehensive equality between men and women in all political and social rights, providing equal citizenship regardless of language, race, religion, or ethnicity, and abolishing the death penalty.",
+                h5: "5. Democratic and Independent Resolution for Political Issues",
+                p7: "Settling relations between the region and the central state and the right of nations to self-determination through a direct return to the voice and will of the masses in a free democratic process, not through backroom military and partisan deals.",
+                p8: "This council alternative as a practical roadmap for the future of Iraq is the only suitable way to end the vicious cycle of crises, distance society from violence, and build a system based on freedom, equality, and public welfare."
+            },
+            ar: { 
+                title_tag: "طريق الخلاص من الأزمات: إرساء السلطة المجالسية - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "آراء • عاجل", fb_share_text: "مشاركة", article_title: "طريق الخلاص من الأزمات: إرساء السلطة المجالسية المباشرة للجماهير", author_name: "بقلم: شاباز محمود",
+                p1: "في المستقبل السياسي للعراق، لن تكون تجربة الحلول التقليدية والاعتماد على وعود الإصلاح الفوقية قادرة على الاستجابة للأزمات الهيكلية. التراجع المستمر في مستوى المعيشة، والبطالة الواسعة، وانهيار الخدمات، هي علامات على هيمنة نظام لم يعد قادراً على توفير الحقوق الأساسية. أمام هذا المأزق التاريخي، يصبح توجيه النضال السياسي نحو بديل مستقر وثوري مطلباً ضرورياً.",
+                p2: "هذا البديل المقترح، القائم على تشكيل حكومة مجالسية (شورى) والسلطة المباشرة للشعب، يُطرح كبديل أنسب لمستقبل العراق، ويرتكز على هذه الدعائم الأساسية:",
+                h1: "1. إرساء السلطة المجالسية وضمان الإرادة المباشرة",
+                p3: "الانتقال من نظام اتخاذ القرار الحزبي المركزي إلى الحكم المباشر من خلال تشكيل مجالس للعمال والموظفين والمعلمين والنساء والطلاب وسكان الأحياء. في هذا النموذج، يصبح المؤتمر الوطني لممثلي المجالس أعلى سلطة تشريعية وتنفيذية لتبقى الإرادة السياسية بيد الجماهير مباشرة.",
+                h2: "2. توفير الأمن الاقتصادي ومجانية الخدمات الأساسية",
+                p4: "يُكفل الحق في حياة كريمة من خلال الرفع المستمر لرواتب العمال والموظفين بما يتناسب مع غلاء المعيشة. توفير فرص العمل أو تأمين بطالة لائق، مع المجانية الكاملة لخدمات الصحة والتعليم والماء والكهرباء.",
+                h3: "3. المالية، الشفافية التامة، وإنهاء النهب",
+                p5: "توحيد جميع البنوك تحت إدارة مصرفية عامة وعرض شفافية كاملة لعائدات النفط والميزانية تحت الإشراف المباشر لممثلي المجالس. كذلك إلغاء جميع العقود التي تضر بالمصلحة العامة، ومحاكمة المسؤولين الفاسدين علناً.",
+                h4: "4. العلمانية العملية، المساواة التامة، وسيادة حقوق المواطن",
+                p6: "الفصل المطلق للدين عن الدولة والتعليم، وإلغاء جميع القوانين ذات المصادر الدينية أو التمييزية. إرساء المساواة الشاملة بين الرجل والمرأة في كافة الحقوق السياسية والاجتماعية، وتوفير حق المواطنة المتساوية بغض النظر عن اللغة أو العرق أو الدين، وإلغاء عقوبة الإعدام.",
+                h5: "5. حل ديمقراطي ومستقل للقضايا السياسية",
+                p7: "حسم العلاقات بين الإقليم والدولة المركزية وحق تقرير المصير للشعوب من خلال العودة المباشرة لصوت وإرادة الجماهير في عملية حرة وديمقراطية، وليس من خلال الصفقات الحزبية والعسكرية.",
+                p8: "هذا البديل المجالسي كخارطة طريق عملية لمستقبل العراق، هو السبيل الوحيد لإنهاء حلقة الأزمات المفرغة، وإبعاد المجتمع عن العنف، وبناء نظام يرتكز على الحرية والمساواة والرفاه العام."
+            }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = (lang === 'ku' ? 'ckb' : lang); document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+            document.querySelectorAll('[data-key]').forEach(el => { const key = el.getAttribute('data-key'); if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(document.getElementById('btn-' + lang)) document.getElementById('btn-' + lang).classList.add('active');
+            localStorage.setItem('reed_lang', lang); updateSmartFeatures(lang);
+        }
+
+        function updateSmartFeatures(lang) {
+            document.getElementById('fb-share').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+            document.querySelectorAll("time[datetime]").forEach(el => {
+                const diff = Math.floor((new Date() - new Date(el.getAttribute("datetime"))) / 1000); 
+                if (lang === 'en') { if (diff < 60) el.textContent = "Just now"; else if (diff < 3600) el.textContent = `${Math.floor(diff/60)}m ago`; else if (diff < 86400) el.textContent = `${Math.floor(diff/3600)}h ago`; else el.textContent = `${Math.floor(diff/86400)}d ago`; } 
+                else if (lang === 'ar') { if (diff < 60) el.textContent = "الآن"; else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`; else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`; else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`; } 
+                else { if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`; }
+            });
+        }
+
+        async function registerRealView(postId, baseViews) {
+            let viewElement = document.getElementById('post-view-count');
+            try {
+                let url = `https://api.counterapi.dev/v1/reedmedia/${postId}`;
+                if (!localStorage.getItem('real_view_' + postId)) {
+                    url = `https://api.counterapi.dev/v1/reedmedia/${postId}/up`;
+                    localStorage.setItem('real_view_' + postId, 'true');
+                }
+                let response = await fetch(url);
+                let data = await response.json();
+                let realClicks = data.count || 0;
+                viewElement.textContent = (baseViews + realClicks).toLocaleString('en-US');
+            } catch(error) {
+                viewElement.textContent = baseViews.toLocaleString('en-US');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setLang(localStorage.getItem('reed_lang') || 'ku');
+            registerRealView("post-7", 130); 
+        });
+    </script>
+</body>
+</html>
 
