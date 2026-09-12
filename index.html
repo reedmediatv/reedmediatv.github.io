@@ -33,7 +33,7 @@
         .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
         .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom-color: var(--red); }
         
-        /* دیزاینە نوێیەکەی شریتی هەواڵ - هاوشێوەی NRT */
+        /* شریتی هەواڵەکان */
         .breaking-bar { background-color: var(--dark); border-bottom: 3px solid var(--red); padding: 0; display: flex; align-items: stretch; font-size: 15px; overflow: hidden; color: var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         .breaking-tag { background-color: var(--red); color: #FFFFFF; padding: 12px 20px; font-weight: 900; font-size: 15px; display: flex; align-items: center; gap: 8px; flex-shrink: 0; z-index: 10; position: relative; box-shadow: -4px 0 12px rgba(0,0,0,0.4); }
         html[dir="ltr"] .breaking-tag { box-shadow: 4px 0 12px rgba(0,0,0,0.4); }
@@ -123,16 +123,16 @@
         </div>
     </nav>
 
-    <!-- شریتی نوێی هەواڵەکان -->
     <div class="breaking-bar">
         <span class="breaking-tag"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="breaking_tag">سەردێڕ</span></span>
         <div class="ticker-container">
             <div class="ticker-track">
-                <a href="post-6.html" class="breaking-text" data-key="ticker_1">دۆناڵد ترەمپ: ئەگەر دووبارە ببمە سەرۆک 5,000 دۆلار بە هەر ئەمریکیەک دەدەم</a>
+                <!-- هەواڵە نوێیەکە خرایە ڕیزی یەکەمی سەردێڕەکان -->
+                <a href="post-7.html" class="breaking-text" data-key="ticker_1">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شوراییە ــ شاباز مەحموود</a>
                 <span class="ticker-sep">|</span>
-                <a href="post-5.html" class="breaking-text" data-key="ticker_2">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن! ــ ئاکام کوردی</a>
+                <a href="post-6.html" class="breaking-text" data-key="ticker_2">دۆناڵد ترەمپ: ئەگەر دووبارە ببمە سەرۆک 5,000 دۆلار بە هەر ئەمریکیەک دەدەم</a>
                 <span class="ticker-sep">|</span>
-                <a href="post-4.html" class="breaking-text" data-key="ticker_3">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق ــ لە نووسینی شاباز مەحمود</a>
+                <a href="post-5.html" class="breaking-text" data-key="ticker_3">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن! ــ ئاکام کوردی</a>
             </div>
         </div>
     </div>
@@ -167,6 +167,18 @@
                     <span class="section-badge" data-key="badge_urgent">نوێکراوەتەوە</span>
                 </div>
                 <div class="cards-grid">
+                    
+                    <!-- هەواڵە نوێیەکەی شاباز مەحموود لێرە زیاد کرا -->
+                    <a href="post-7.html" class="news-card red-border">
+                        <div class="post-meta-line">
+                            <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
+                            <time class="post-time-badge" datetime="2026-09-12T13:10:00+03:00"></time>
+                            <span class="view-badge"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="view-count" data-id="post-7" data-base="130">130</span></span>
+                        </div>
+                        <h3 data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە</h3>
+                        <p class="card-desc" style="font-size: 13px;" data-key="post7_desc">لە ئایندەی سیاسیی عێراقدا، تاقیکردنەوەی چارەسەرە تەقلیدییەکان و پشت بەستن بە بەڵێنەکانی چاکسازی لە سەرەوە...</p>
+                    </a>
+
                     <a href="post-4.html" class="news-card red-border">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
@@ -242,11 +254,11 @@
                     <div class="section-title"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg><span data-key="nav_archive">ئەرشیف</span></div>
                 </div>
                 <div style="padding: 20px; background: #fff; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 700;">
+                    <a href="post-7.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border); transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شوراییە...</a>
                     <a href="post-6.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border); transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="post6_title">ئەگەر دووبارە ببمە سەرۆکی ئەمریکا...</a>
                     <a href="post-5.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border); transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</a>
                     <a href="post-4.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border); transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق...</a>
                     <a href="post-3.html" style="display: block; padding: 10px; border-bottom: 1px solid var(--border); transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="oil_title">نرخی نەوت 6٪ بەرزبووەوە...</a>
-                    <a href="post-2.html" style="display: block; padding: 10px; transition: 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='inherit'" data-key="main_title">تیرۆرکردنی شەڕڤان سیپان حوزنی...</a>
                 </div>
             </div>
 
@@ -255,9 +267,9 @@
         <aside>
             <div class="sidebar-box">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg><span data-key="side_trend">زۆرترین خوێندراوەکان</span></div>
-                <a href="post-5.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</span></a>
-                <a href="post-6.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="post6_title">ئەگەر دووبارە ببمە سەرۆکی ئەمریکا 5,000 دۆلار بە هەر ئەمریکیەک دەدەم</span></a>
-                <a href="post-4.html" class="trend-item"><span class="trend-num">٣</span><span class="trend-text" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</span></a>
+                <a href="post-7.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە</span></a>
+                <a href="post-5.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</span></a>
+                <a href="post-6.html" class="trend-item"><span class="trend-num">٣</span><span class="trend-text" data-key="post6_title">ئەگەر دووبارە ببمە سەرۆکی ئەمریکا 5,000 دۆلار بە هەر ئەمریکیەک دەدەم</span></a>
             </div>
         </aside>
     </main>
@@ -274,8 +286,13 @@
             ku: { 
                 site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
                 nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", nav_world: "جیهان", nav_economy: "ئابووری", nav_archive: "ئەرشیف",
-                breaking_tag: "سەردێڕ", ticker_1: "دۆناڵد ترەمپ: ئەگەر دووبارە ببمە سەرۆک 5,000 دۆلار بە هەر ئەمریکیەک دەدەم", ticker_2: "کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن! ــ ئاکام کوردی", ticker_3: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق ــ لە نووسینی شاباز مەحمود",
+                breaking_tag: "سەردێڕ", 
+                ticker_1: "ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شوراییە ــ شاباز مەحموود", 
+                ticker_2: "دۆناڵد ترەمپ: ئەگەر دووبارە ببمە سەرۆک 5,000 دۆلار بە هەر ئەمریکیەک دەدەم", 
+                ticker_3: "کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن! ــ ئاکام کوردی",
                 sec_home: "سەرەکی • هەواڵی گرنگ", badge_lead: "مانشێتی ڕۆژ", 
+                
+                post7_title: "ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە", post7_desc: "لە ئایندەی سیاسیی عێراقدا، تاقیکردنەوەی چارەسەرە تەقلیدییەکان و پشت بەستن بە بەڵێنەکانی چاکسازی لە سەرەوە...",
                 post6_title: "ئەگەر دووبارە ببمە سەرۆکی ئەمریکا 5,000 دۆلار بە هەر ئەمریکیەک دەدەم", post6_desc: "دۆناڵد ترەمپ بەڵێنی پێدانی بڕە پارەیەک دەدات بە هەر هاوڵاتییەکی ئەمریکی ئەگەر بێت و هەڵبژاردنەکان بباتەوە...",
                 post5_cat: "بۆچوون • ڕاپۆرت", post5_title: "کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!", post5_desc: "پێم وایە لەئێستادا، بەدوای پاکەوان و کارمەندانی ژینگەپارێز، کارمەندانی کۆمپانیا سکیوریتیەکان مەحرومترین و بێبەش ترین کەسانێکن لەم وڵاتەدا...",
                 main_cat: "کوردستان • بەپەلە", main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", main_desc: "شەڕڤان سیپان حوزنی لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...",
@@ -285,8 +302,13 @@
             en: { 
                 site_title: "Reed Media | Red Media News", live_badge: "LIVE", logo_sub: "Red Media", slogan: "Independent & Fast Journalism",
                 nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", nav_world: "World", nav_economy: "Economy", nav_archive: "Archive",
-                breaking_tag: "HEADLINE", ticker_1: "Donald Trump: If I become US President again, I will give $5,000 to every American", ticker_2: "Security Company Employees Are Human Too! - Akam Kurdi", ticker_3: "Class Will and Change in Iraq - By Shabaz Mahmud",
+                breaking_tag: "HEADLINE", 
+                ticker_1: "The Way Out of Crises: Establishing Direct Council Power - By Shabaz Mahmud", 
+                ticker_2: "Donald Trump: If I become US President again, I will give $5,000 to every American", 
+                ticker_3: "Security Company Employees Are Human Too! - Akam Kurdi",
                 sec_home: "Home • Featured Story", badge_lead: "Lead Headline", 
+                
+                post7_title: "The Way Out of Crises: Establishing Direct Council Power of the Masses", post7_desc: "In the political future of Iraq, experimenting with traditional solutions and relying on top-down reform promises will no longer answer structural crises...",
                 post6_title: "If I become US President again, I will give $5,000 to every American", post6_desc: "Donald Trump promises to give a sum of money to every American citizen if he wins the election...",
                 post5_cat: "Opinion • Report", post5_title: "Security Company Employees Are Human Too!", post5_desc: "I believe that currently, after cleaners and environmental workers, security company employees are the most deprived and marginalized people...",
                 main_cat: "Kurdistan • Breaking", main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", main_desc: "Fighter Sipan Hozni was abducted by militants and assassinated later...",
@@ -296,8 +318,13 @@
             ar: { 
                 site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة",
                 nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", nav_world: "عالم", nav_economy: "اقتصاد", nav_archive: "الأرشيف",
-                breaking_tag: "عناوين", ticker_1: "دونالد ترامب: إذا أصبحت رئيساً سأمنح 5000 دولار لكل أمريكي", ticker_2: "موظفو الشركات الأمنية بشر أيضاً! - آكام كردي", ticker_3: "الإرادة الطبقية والتغيير في العراق - بقلم شاباز محمود",
+                breaking_tag: "عناوين", 
+                ticker_1: "طريق الخلاص من الأزمات: إرساء السلطة المجالسية - بقلم شاباز محمود", 
+                ticker_2: "دونالد ترامب: إذا أصبحت رئيساً سأمنح 5000 دولار لكل أمريكي", 
+                ticker_3: "موظفو الشركات الأمنية بشر أيضاً! - آكام كردي",
                 sec_home: "الرئيسية • أبرز الأخبار", badge_lead: "مانشيت اليوم", 
+                
+                post7_title: "طريق الخلاص من الأزمات: إرساء السلطة المجالسية المباشرة للجماهير", post7_desc: "في المستقبل السياسي للعراق، لن تكون تجربة الحلول التقليدية والاعتماد على وعود الإصلاح الفوقية قادرة على الاستجابة للأزمات الهيكلية...",
                 post6_title: "إذا أصبحت رئيساً لأمريكا مرة أخرى، سأمنح 5000 دولار لكل أمريكي", post6_desc: "يعد دونالد ترامب بمنح مبلغ من المال لكل مواطن أمريكي إذا فاز في الانتخابات...",
                 post5_cat: "آراء • تقرير", post5_title: "موظفو الشركات الأمنية بشر أيضاً!", post5_desc: "أعتقد أنه في الوقت الحالي، بعد عمال النظافة وعمال البيئة، فإن موظفي الشركات الأمنية هم الأشخاص الأكثر حرماناً وتهميشاً...",
                 main_cat: "كردستان • عاجل", main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", main_desc: "المقاتل سيبان حوزني تم اختطافه من قبل مسلحين ومن ثم اغتياله...",
