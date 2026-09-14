@@ -24,9 +24,8 @@
         
         header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
         .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo { font-size: 26px; font-weight: 900; color: var(--red); line-height: 1; font-family: 'Inter', sans-serif; }
-        .logo span { color: var(--dark); }
-        .logo-sub { font-size: 13px; color: var(--text-muted); font-weight: 800; border-inline-start: 2px solid var(--border); padding-inline-start: 12px; }
+        .logo { font-size: 26px; font-weight: 900; line-height: 1; transition: 0.2s; }
+        .logo:hover { opacity: 0.8; }
         
         nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
         .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
@@ -104,10 +103,15 @@
         </div>
     </div>
 
+    <!-- لۆگۆ نوێیەکەی ئێرە گۆڕدرا بەو شێوەیەی داوات کرد -->
     <header>
         <div class="logo-area">
-            <a href="index.html" class="logo">REED <span>MEDIA</span></a>
-            <div class="logo-sub" data-key="logo_sub">میدیای سوور</div>
+            <a href="index.html" class="logo" style="font-family: 'Noto Sans Arabic', 'Inter', sans-serif; font-size: 24px; color: var(--dark);">
+                میدیای <span style="color: var(--red) !important;">سوور</span> 
+                <span style="color: #CBD5E1 !important; margin: 0 8px; font-weight: 400;">|</span> 
+                <span style="color: var(--red) !important; font-family: 'Inter', sans-serif;">Reed</span> 
+                <span style="color: var(--dark) !important; font-family: 'Inter', sans-serif;">Media</span>
+            </a>
         </div>
         <div style="font-size: 12px; color: var(--text-muted); font-weight: 700;" data-key="slogan">ڕۆژنامەگەری سەربەخۆ و خێرا</div>
     </header>
@@ -294,7 +298,7 @@
     <script>
         const translations = {
             ku: { 
-                site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", logo_sub: "میدیای سوور", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
+                site_title: "Reed Media | میدیای سوور", live_badge: "پەخشی ڕاستەوخۆ", slogan: "ڕۆژنامەگەری سەربەخۆ و خێرا",
                 nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", nav_world: "جیهان", nav_economy: "ئابووری", nav_archive: "ئەرشیف",
                 breaking_tag: "سەردێڕ", 
                 ticker_1: "دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات", 
@@ -313,7 +317,7 @@
                 sec_kurdistan: "هەواڵەکانی کوردستان", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد.", side_trend: "زۆرترین خوێندراوەکان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
             },
             en: { 
-                site_title: "Reed Media | Red Media News", live_badge: "LIVE", logo_sub: "Red Media", slogan: "Independent & Fast Journalism",
+                site_title: "Reed Media | Red Media News", live_badge: "LIVE", slogan: "Independent & Fast Journalism",
                 nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", nav_world: "World", nav_economy: "Economy", nav_archive: "Archive",
                 breaking_tag: "HEADLINE", 
                 ticker_1: "Kurdistan Region Security Agency arrests ISIS Emir and 22 members in Khurmal", 
@@ -332,7 +336,7 @@
                 sec_kurdistan: "Kurdistan News", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", side_trend: "Most Read", footer_text: "All rights reserved © Reed Media 2026"
             },
             ar: { 
-                site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", logo_sub: "الإعلام الأحمر", slogan: "صحافة مستقلة وسريعة",
+                site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", slogan: "صحافة مستقلة وسريعة",
                 nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", nav_world: "عالم", nav_economy: "اقتصاد", nav_archive: "الأرشيف",
                 breaking_tag: "عناوين", 
                 ticker_1: "جهاز أمن إقليم كردستان يعتقل أميراً لداعش و22 عنصراً في خرمال", 
