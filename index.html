@@ -103,7 +103,6 @@
         </div>
     </div>
 
-    <!-- لۆگۆ نوێیەکەی ئێرە گۆڕدرا بەو شێوەیەی داوات کرد -->
     <header>
         <div class="logo-area">
             <a href="index.html" class="logo" style="font-family: 'Noto Sans Arabic', 'Inter', sans-serif; font-size: 24px; color: var(--dark);">
@@ -143,6 +142,7 @@
     </div>
 
     <main class="layout-container">
+        <!-- بەشی سەرەکی (هەواڵەکان) -->
         <section>
             
             <div id="home-featured" class="category-section">
@@ -278,14 +278,47 @@
 
         </section>
 
+        <!-- بەشی لاتەنیشت (Sidebar) کە بۆشاییەکەی تێدا پڕکراوەتەوە -->
         <aside>
+            <!-- بۆکسی یەکەم: زۆرترین خوێندراوەکان -->
             <div class="sidebar-box">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg><span data-key="side_trend">زۆرترین خوێندراوەکان</span></div>
                 <a href="post-8.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات</span></a>
                 <a href="post-7.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە</span></a>
                 <a href="post-5.html" class="trend-item"><span class="trend-num">٣</span><span class="trend-text" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</span></a>
             </div>
+
+            <!-- بۆکسی دووەم: هەڵبژاردەی سەرنووسەر (نوێ) -->
+            <div class="sidebar-box">
+                <div class="sidebar-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span data-key="side_editor">هەڵبژاردەی سەرنووسەر</span>
+                </div>
+                <a href="post-4.html" class="trend-item" style="align-items: center;">
+                    <img src="news-4.jpg" style="width: 65px; height: 65px; border-radius: 6px; object-fit: cover; flex-shrink: 0;" alt="news">
+                    <span class="trend-text" data-key="post4_title" style="font-size: 13px;">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</span>
+                </a>
+                <a href="post-2.html" class="trend-item" style="align-items: center; border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                    <img src="news-2.jpg" style="width: 65px; height: 65px; border-radius: 6px; object-fit: cover; flex-shrink: 0;" alt="news">
+                    <span class="trend-text" data-key="main_title" style="font-size: 13px;">تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە</span>
+                </a>
+            </div>
+
+            <!-- بۆکسی سێیەم: سۆشیاڵ میدیا (نوێ) -->
+            <div class="sidebar-box">
+                <div class="sidebar-title">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 0 0-2 2v6"/><path d="M8 16h6a2 2 0 0 0 2-2V8"/></svg>
+                    <span data-key="side_social">لەگەڵمان بن</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <a href="#" style="background: #1877F2; color: white; padding: 10px; border-radius: 6px; text-align: center; font-size: 13px; font-weight: 800; transition: 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Facebook</a>
+                    <a href="#" style="background: #E1306C; color: white; padding: 10px; border-radius: 6px; text-align: center; font-size: 13px; font-weight: 800; transition: 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Instagram</a>
+                    <a href="#" style="background: #1DA1F2; color: white; padding: 10px; border-radius: 6px; text-align: center; font-size: 13px; font-weight: 800; transition: 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Twitter</a>
+                    <a href="#" style="background: #FF0000; color: white; padding: 10px; border-radius: 6px; text-align: center; font-size: 13px; font-weight: 800; transition: 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">YouTube</a>
+                </div>
+            </div>
         </aside>
+
     </main>
 
     <footer>
@@ -307,6 +340,10 @@
                 ticker_4: "کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن! ــ ئاکام کوردی",
                 sec_home: "سەرەکی • هەواڵی گرنگ", badge_lead: "مانشێتی ڕۆژ", 
                 
+                side_trend: "زۆرترین خوێندراوەکان",
+                side_editor: "هەڵبژاردەی سەرنووسەر",
+                side_social: "لەگەڵمان بن",
+
                 breaking_tag_news: "هەواڵ • بەپەلە",
                 post8_title: "دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات", post8_desc: "دەزگای ئاسایشی هەرێم ڕایگەیاند کە ئەمشەو توانیویانە لە قەزای خورماڵ ئەمیرێکی داعش و ٢٢ ئەندامی تری ئەو گرووپە دەستگیر بکەن...",
                 post7_title: "ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە", post7_desc: "لە ئایندەی سیاسیی عێراقدا، تاقیکردنەوەی چارەسەرە تەقلیدییەکان و پشت بەستن بە بەڵێنەکانی چاکسازی لە سەرەوە...",
@@ -314,7 +351,7 @@
                 post5_cat: "بۆچوون • ڕاپۆرت", post5_title: "کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!", post5_desc: "پێم وایە لەئێستادا، بەدوای پاکەوان و کارمەندانی ژینگەپارێز، کارمەندانی کۆمپانیا سکیوریتیەکان مەحرومترین و بێبەش ترین کەسانێکن لەم وڵاتەدا...",
                 main_cat: "کوردستان • بەپەلە", main_title: "تیرۆرکردنی شەڕڤان سیپان حوزنی دوای ڕفاندنی لە گوندەواری حەسەکە", main_desc: "شەڕڤان سیپان حوزنی لەلایەن چەکدارانی عەشیرەتی ئەبو حەسەن ڕفێندرا و دواتر تیرۆرکرا...",
                 sec_breaking: "هەواڵە بەپەلەکان", badge_urgent: "نوێکراوەتەوە", breaking_tag_opinion: "بۆچوون • بەپەلە", post4_title: "ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ", post4_desc: "تێکۆشان بۆ گۆڕینی کۆمەڵگە بەر لەوەی ململانێیەکی وشەیی بێت، تەقینەوەی ئەو ڕقە چینایەتییەیە...",
-                sec_kurdistan: "هەواڵەکانی کوردستان", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد.", side_trend: "زۆرترین خوێندراوەکان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
+                sec_kurdistan: "هەواڵەکانی کوردستان", oil_title: "نرخی نەوت 6٪ بەرزبووەوە و گەیشتە 107 دۆلار", oil_desc: "لە بازاڕەکانی جیهاندا بەرمیلێک نەوتی خاو بازدانێکی بەرچاوی تۆمارکرد.", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026"
             },
             en: { 
                 site_title: "Reed Media | Red Media News", live_badge: "LIVE", slogan: "Independent & Fast Journalism",
@@ -326,6 +363,10 @@
                 ticker_4: "Security Company Employees Are Human Too! - Akam Kurdi",
                 sec_home: "Home • Featured Story", badge_lead: "Lead Headline", 
                 
+                side_trend: "Most Read",
+                side_editor: "Editor's Picks",
+                side_social: "Follow Us",
+
                 breaking_tag_news: "News • Breaking",
                 post8_title: "Kurdistan Region Security Agency arrests ISIS Emir and 22 members in Khurmal", post8_desc: "The Kurdistan Region Security Agency announced that tonight they were able to arrest an ISIS emir and 22 members of the group in Khurmal district...",
                 post7_title: "The Way Out of Crises: Establishing Direct Council Power of the Masses", post7_desc: "In the political future of Iraq, experimenting with traditional solutions and relying on top-down reform promises will no longer answer structural crises...",
@@ -333,7 +374,7 @@
                 post5_cat: "Opinion • Report", post5_title: "Security Company Employees Are Human Too!", post5_desc: "I believe that currently, after cleaners and environmental workers, security company employees are the most deprived and marginalized people...",
                 main_cat: "Kurdistan • Breaking", main_title: "Assassination of Fighter Sipan Hozni after Abduction in Hasakah", main_desc: "Fighter Sipan Hozni was abducted by militants and assassinated later...",
                 sec_breaking: "Breaking News", badge_urgent: "Updated", breaking_tag_opinion: "Opinion • Breaking", post4_title: "Class Will and Change in Iraq: Communism as the Horizon of Emancipation", post4_desc: "The struggle to change society is the explosion of class anger suppressed for years...",
-                sec_kurdistan: "Kurdistan News", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", side_trend: "Most Read", footer_text: "All rights reserved © Reed Media 2026"
+                sec_kurdistan: "Kurdistan News", oil_title: "Oil prices jump 6% reaching $107 per barrel", oil_desc: "Crude oil rallies sharply in international markets hitting $107 per barrel.", footer_text: "All rights reserved © Reed Media 2026"
             },
             ar: { 
                 site_title: "ريد ميديا | الإعلام الأحمر", live_badge: "بث مباشر", slogan: "صحافة مستقلة وسريعة",
@@ -345,6 +386,10 @@
                 ticker_4: "موظفو الشركات الأمنية بشر أيضاً! - آكام كردي",
                 sec_home: "الرئيسية • أبرز الأخبار", badge_lead: "مانشيت اليوم", 
                 
+                side_trend: "الأكثر قراءة",
+                side_editor: "مختارات المحرر",
+                side_social: "تابعنا",
+
                 breaking_tag_news: "أخبار • عاجل",
                 post8_title: "جهاز أمن إقليم كردستان يعتقل أميراً لداعش و22 عنصراً في خرمال", post8_desc: "أعلن جهاز أمن إقليم كردستان أنه تمكن الليلة في قضاء خرمال من اعتقال أمير لداعش و 22 عنصراً آخرين من المجموعة...",
                 post7_title: "طريق الخلاص من الأزمات: إرساء السلطة المجالسية المباشرة للجماهير", post7_desc: "في المستقبل السياسي للعراق، لن تكون تجربة الحلول التقليدية والاعتماد على وعود الإصلاح الفوقية قادرة على الاستجابة للأزمات الهيكلية...",
@@ -352,7 +397,7 @@
                 post5_cat: "آراء • تقرير", post5_title: "موظفو الشركات الأمنية بشر أيضاً!", post5_desc: "أعتقد أنه في الوقت الحالي، بعد عمال النظافة وعمال البيئة، فإن موظفي الشركات الأمنية هم الأشخاص الأكثر حرماناً وتهميشاً...",
                 main_cat: "كردستان • عاجل", main_title: "اغتيال المقاتل سيبان حوزني بعد اختطافه من ريف الحسكة", main_desc: "المقاتل سيبان حوزني تم اختطافه من قبل مسلحين ومن ثم اغتياله...",
                 sec_breaking: "الأخبار العاجلة", badge_urgent: "محدّث", breaking_tag_opinion: "آراء • عاجل", post4_title: "الإرادة الطبقية والتغيير في العراق: الشيوعية كأفق لتحرر الإنسان", post4_desc: "النضال من أجل تغيير المجتمع هو انفجار للغضب الطبقي المكبوت منذ سنوات...",
-                sec_kurdistan: "أخبار كردستان", oil_title: "أسعار النفط تقفز 6% وتصل إلى 107 دولارات للبرميل", oil_desc: "ارتفاع حاد في أسواق الطاقة العالمية مع تداول خام النفط عند 107 دولارات.", side_trend: "الأكثر قراءة", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026"
+                sec_kurdistan: "أخبار كردستان", oil_title: "أسعار النفط تقفز 6% وتصل إلى 107 دولارات للبرميل", oil_desc: "ارتفاع حاد في أسواق الطاقة العالمية مع تداول خام النفط عند 107 دولارات.", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026"
             }
         };
 
