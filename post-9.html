@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title_tag">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا - Reed Media</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --red: #D91C24; --dark: #0B0F19; --white: #FFFFFF; --text-dark: #0F172A; --text-muted: #64748B; --border: #E2E8F0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; text-decoration: none; color: inherit; }
+        body { background-color: #F1F5F9; line-height: 1.65; }
+        .top-bar { background-color: var(--dark); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .live-tag { display: inline-flex; align-items: center; gap: 7px; color: #FFFFFF; background-color: var(--red); padding: 3px 9px; border-radius: 4px; font-size: 11px; font-weight: 800; }
+        .pulse { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; }
+        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
+        header { background-color: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo { font-size: 24px; font-weight: 900; line-height: 1; color: var(--dark); }
+        nav { background-color: var(--white); border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.04); overflow-x: auto; white-space: nowrap; }
+        .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 0 15px; }
+        .nav-link { padding: 13px 18px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; border-bottom: 3px solid transparent;}
+        .nav-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .nav-link:hover, .nav-link.active { color: var(--red); background: #FEF2F2; border-bottom-color: var(--red); }
+        .article-container { max-width: 800px; margin: 40px auto; background: var(--white); padding: 35px; border-radius: 12px; border: 1px solid var(--border); }
+        .article-cat { background: #FEE2E2; color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 15px; display: inline-block; padding: 4px 12px; border-radius: 4px;}
+        .article-title { font-size: 28px; font-weight: 900; margin-bottom: 20px; line-height: 1.5; color: var(--dark); }
+        .article-meta-wrapper { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .meta-info-group { display: flex; flex-direction: column; gap: 12px; }
+        .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .article-author { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: var(--white); background: var(--dark); padding: 6px 14px; border-radius: 6px; }
+        .article-author svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .article-date, .view-badge { font-size: 12px; font-weight: 800; color: var(--text-muted); background: #F8FAFC; border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; }
+        .view-badge svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .fb-share-btn { display: inline-flex; align-items: center; gap: 6px; background-color: #F1F5F9; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 800; transition: 0.2s; border: 1px solid var(--border); }
+        .fb-share-btn:hover { background-color: #E2E8F0; color: var(--dark); }
+        .fb-share-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .article-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
+        .article-content { font-size: 17px; line-height: 2.1; color: #334155; font-weight: 500;}
+        .article-content p { margin-bottom: 18px; text-align: justify; }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: var(--dark); color: var(--white); border-radius: 6px; font-weight: 800; transition: 0.2s;}
+        .back-btn:hover { background: var(--red); }
+        @media (max-width: 600px) { .article-container { margin: 20px 15px; padding: 20px; } .article-title { font-size: 22px; } }
+        footer { background-color: var(--dark); color: #94A3B8; padding: 35px 20px; margin-top: 50px; font-size: 13px; border-top: 3px solid var(--red); text-align: center;}
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="live-tag"><span class="pulse"></span><span data-key="live_badge">پەخشی ڕاستەوخۆ</span></div>
+        <div class="lang-switcher">
+            <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+            <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+            <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-area">
+            <a href="index.html" class="logo">
+                میدیای <span style="color: var(--red) !important;">سوور</span> 
+                <span style="color: #CBD5E1 !important; margin: 0 8px; font-weight: 400;">|</span> 
+                <span style="color: var(--red) !important; font-family: 'Inter', sans-serif;">Reed</span> 
+                <span style="color: var(--dark) !important; font-family: 'Inter', sans-serif;">Media</span>
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-key="nav_home">سەرەکی</span></a>
+            <a href="index.html#breaking" class="nav-link"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="nav_breaking">بەپەلە</span></a>
+            <a href="index.html#world" class="nav-link active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg><span data-key="nav_world">جیهان</span></a>
+        </div>
+    </nav>
+
+    <main class="article-container">
+        <span class="article-cat" data-key="article_cat">جیهان • بۆچوون و شیکاری</span>
+        <h1 class="article-title" data-key="article_title">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا</h1>
+        
+        <div class="article-meta-wrapper">
+            <div class="meta-info-group">
+                <div class="article-author">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span data-key="author_name">نووسەر : دیار بەرزنجی</span>
+                </div>
+                <div class="meta-row">
+                    <div class="article-date">
+                        <span data-key="post_time_label">کاتی بڵاوکردنەوە:</span>
+                        <time datetime="2026-09-15T15:10:00+03:00"></time>
+                    </div>
+                    <div class="view-badge">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span id="post-view-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
+                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                <span data-key="fb_share_text">هاوبەشبکە</span>
+            </a>
+        </div>
+
+        <img src="news-9.jpg" alt="سوریا" class="article-img">
+        
+        <div class="article-content">
+            <p data-key="p1">چەندڕۆژێکە خۆپیشاندان و ناڕەزایەتی خەڵک لەچەند شارێکی سوریا سەریهەڵداوە، خۆپیشاندەران لەدژی گرانبوونی نرخی سوتەمەنی و خۆراک و شمەک هاتوونەتە سەرشەقامەکان، بەڵام دەسەڵاتەکەی شەرع، بەدەستڕێژی گوللە وەڵامی خەڵک ئەداتەوەو چەندکەسێک کوژراون و برینداربوون.</p>
+            <p data-key="p2">هۆکارەکانی ئەم خۆپیشاندانانە لەڕواڵەتدا لەدژی گرانی و خراپی دۆخی ئابووریە، بەڵام هۆکارێکی سەرەکی لەپشتی ئەم خۆپیشاندانانە هەیە، ئەویش ئاڵوگۆڕی سیستمی سیاسی و ئابووری سوریایە، لە سەرمایەداریی دەوڵەتیەوە بۆ بازاڕی ئازاد و کۆمپانیاکان، خەڵکی سوریاش بەم سیستمە نوێیە ڕانەهاتوون و بۆ ئەوان شۆکە!</p>
+            <p data-key="p3">لەبەرئەوەی سیستمی سیاسی دەسەڵاتەکەی ئەسەد سەرمایەداریی دەوڵەتی بوو، دەوڵەت دەخالەتی هەبوو لە زۆربەی سێکتەرە جیاوازەکاندا، بەڵام ئێستا شەرع، شانی خۆی خاڵیکردۆتەوە لەهەر بەرپرسیارێتیەک لەبەرامبەر ژیانی خەڵک، ئەم سیستمە نوێیە بۆ سوریا کاتی زۆری دەوێت هەتا جێگاپێی خۆی قایم ئەکات و خەڵک لەسەری ڕادێن، بۆیە ئەگەری کێشەی گەورەتر و خۆپیشاندان و ئاڵۆزی لە داهاتووشدا هەیە!</p>
+            <p data-key="p4">هەسەدە لەناوچەکانی ژێردەسەڵاتی خۆیدا، سیستمی بازاڕی ڕەتکردبووەوە، جۆرێکی تایبەت سیستمی خۆی هەبوو بۆ ئیدارەکردنی خەڵک و یاسا و ڕێسای خۆی هەبوو، نرخی خۆراک و پێداویستیەکانی ژیان زۆر هەرزانتر بوو لەچاو نرخی ئێستای خۆراک و پێداویستیەکانی ژیان لەسایەی دەوڵەتەکەی شەرعدا!</p>
+            <p data-key="p5">بۆیە ناوبەناو دەبینین خەڵک لە تەواوی سوریاوە باس لە ئەزموونی هەسەدە ئەکەن و بەجۆرێک پەسنی ئەکەن، ئەمەش دەوڵەتی شەرعی زۆر نیگەران کردووە و میدیاکارەکانی سەر بە شەرع موەزەف کراون وەڵامی ئەم قسانەی خەڵک بە زنجیرەیەک چەواشەکاریی بەرنامەبۆداڕێژراو بدەنەوە!</p>
+        </div>
+        <a href="index.html" class="back-btn" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
+    </main>
+
+    <footer>
+        <strong style="color: #fff; font-size: 16px;">REED MEDIA</strong>
+        <p style="margin-top: 5px;" data-key="footer_text">هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ku: { 
+                title_tag: "لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_world: "جیهان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "جیهان • بۆچوون و شیکاری", fb_share_text: "هاوبەشبکە", article_title: "لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا", author_name: "نووسەر : دیار بەرزنجی",
+                p1: "چەندڕۆژێکە خۆپیشاندان و ناڕەزایەتی خەڵک لەچەند شارێکی سوریا سەریهەڵداوە، خۆپیشاندەران لەدژی گرانبوونی نرخی سوتەمەنی و خۆراک و شمەک هاتوونەتە سەرشەقامەکان، بەڵام دەسەڵاتەکەی شەرع، بەدەستڕێژی گوللە وەڵامی خەڵک ئەداتەوەو چەندکەسێک کوژراون و برینداربوون.",
+                p2: "هۆکارەکانی ئەم خۆپیشاندانانە لەڕواڵەتدا لەدژی گرانی و خراپی دۆخی ئابووریە، بەڵام هۆکارێکی سەرەکی لەپشتی ئەم خۆپیشاندانانە هەیە، ئەویش ئاڵوگۆڕی سیستمی سیاسی و ئابووری سوریایە، لە سەرمایەداریی دەوڵەتیەوە بۆ بازاڕی ئازاد و کۆمپانیاکان، خەڵکی سوریاش بەم سیستمە نوێیە ڕانەهاتوون و بۆ ئەوان شۆکە!",
+                p3: "لەبەرئەوەی سیستمی سیاسی دەسەڵاتەکەی ئەسەد سەرمایەداریی دەوڵەتی بوو، دەوڵەت دەخالەتی هەبوو لە زۆربەی سێکتەرە جیاوازەکاندا، بەڵام ئێستا شەرع، شانی خۆی خاڵیکردۆتەوە لەهەر بەرپرسیارێتیەک لەبەرامبەر ژیانی خەڵک، ئەم سیستمە نوێیە بۆ سوریا کاتی زۆری دەوێت هەتا جێگاپێی خۆی قایم ئەکات و خەڵک لەسەری ڕادێن، بۆیە ئەگەری کێشەی گەورەتر و خۆپیشاندان و ئاڵۆزی لە داهاتووشدا هەیە!",
+                p4: "هەسەدە لەناوچەکانی ژێردەسەڵاتی خۆیدا، سیستمی بازاڕی ڕەتکردبووەوە، جۆرێکی تایبەت سیستمی خۆی هەبوو بۆ ئیدارەکردنی خەڵک و یاسا و ڕێسای خۆی هەبوو، نرخی خۆراک و پێداویستیەکانی ژیان زۆر هەرزانتر بوو لەچاو نرخی ئێستای خۆراک و پێداویستیەکانی ژیان لەسایەی دەوڵەتەکەی شەرعدا!",
+                p5: "بۆیە ناوبەناو دەبینین خەڵک لە تەواوی سوریاوە باس لە ئەزموونی هەسەدە ئەکەن و بەجۆرێک پەسنی ئەکەن، ئەمەش دەوڵەتی شەرعی زۆر نیگەران کردووە و میدیاکارەکانی سەر بە شەرع موەزەف کراون وەڵامی ئەم قسانەی خەڵک بە زنجیرەیەک چەواشەکاریی بەرنامەبۆداڕێژراو بدەنەوە!"
+            },
+            en: { 
+                title_tag: "Consequences of Political and Economic System Change in Syria - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_world: "World", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published Time:", back_btn: "Back to Home", article_cat: "World • Analysis", fb_share_text: "Share", article_title: "Consequences of the Political and Economic Shift in Syria", author_name: "By: Diyar Barzanji",
+                p1: "For several days, protests and public discontent have erupted across several Syrian cities. Demonstrators took to the streets against rising prices of fuel, food, and basic commodities, but the al-Sharaa regime responded with gunfire, leaving several dead and injured.",
+                p2: "On the surface, the driver of these protests is inflation and economic hardship, but the deeper root lies in the rapid shift of Syria's socio-economic model: from state capitalism to an open market dominated by corporations, an abrupt transition that shocked Syrian society.",
+                p3: "Under the previous Assad rule, state capitalism prevailed with direct state intervention across public sectors. Today, the al-Sharaa administration has largely disengaged from social welfare responsibilities. This shock-therapy market system faces fierce resistance and will likely trigger wider protests and volatility ahead.",
+                p4: "Conversely, the Autonomous Administration (SDF) rejected neoliberal free-market models in areas under its jurisdiction, establishing subsidized staples and localized economic planning where basic necessities remained substantially more affordable than in state-held areas.",
+                p5: "Consequently, voices across Syrian provinces increasingly point to the Rojava/SDF economic model as a viable alternative, alarming authorities who have mobilized state-aligned media apparatuses in a systematic counter-campaign."
+            },
+            ar: { 
+                title_tag: "تداعيات تحول النظام السياسي والاقتصادي في سوريا - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_world: "عالم", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "عالم • تحليلات وآراء", fb_share_text: "مشاركة", article_title: "تداعيات تحول النظام السياسي والاقتصادي في سوريا", author_name: "بقلم: ديار برزنجي",
+                p1: "منذ أيام، اندلعت مظاهرات واحتجاجات شعبية في عدة مدن سورية احتجاجاً على الارتفاع الحاد في أسعار الوقود والغذاء والسلع الأساسية، إلا أن سلطة الشرع واجهت المحتجين بإطلاق النار مما أسفر عن سقوط قتلى وجرحى.",
+                p2: "تبدو هذه الاحتجاجات في ظاهرها ضد الغلاء وتردي الوضع المعيشي، لكن المحرك الجوهري يتمثل في التحول الجذري للنظام الاقتصادي من رأسمالية الدولة إلى اقتصاد السوق المفتوح والشركات، وهو نظام لم يعتده الشعب السوري ويشكل صدمة مجتمعية.",
+                p3: "في ظل النظام السابق، كانت الدولة تتدخل بصورة واسعة في دعم القطاعات، بينما تنصلت السلطة الحالية من مسؤولياتها تجاه معيشة الناس، ما ينذر بمزيد من الاضطرابات في المستقبل المنظور.",
+                p4: "في المقابل، اتبعت الإدارة الذاتية (قسد) في مناطق نفوذها نموذجاً يرفض تحرير السوق العشوائي مع ضمان أسعار مدعومة وأرخص بكثير مقارنة بما آلت إليه الأوضاع تحت سلطة الشرع.",
+                p5: "لذا، تتصاعد الإشادات الشعبية في شتى أنحاء سوريا بتجربة الإدارة الذاتية، الأمر الذي أثار حفيظة السلطات ودفع وسائل إعلامها لشن حملات تضليل ممنهجة للرد على تطلعات الشارع."
+            }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = (lang === 'ku' ? 'ckb' : lang); document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+            document.querySelectorAll('[data-key]').forEach(el => { const key = el.getAttribute('data-key'); if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if(document.getElementById('btn-' + lang)) document.getElementById('btn-' + lang).classList.add('active');
+            localStorage.setItem('reed_lang', lang); updateSmartFeatures(lang);
+        }
+
+        function updateSmartFeatures(lang) {
+            document.getElementById('fb-share').href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+            document.querySelectorAll("time[datetime]").forEach(el => {
+                const diff = Math.floor((new Date() - new Date(el.getAttribute("datetime"))) / 1000); 
+                if (lang === 'en') { if (diff < 60) el.textContent = "Just now"; else if (diff < 3600) el.textContent = `${Math.floor(diff/60)}m ago`; else if (diff < 86400) el.textContent = `${Math.floor(diff/3600)}h ago`; else el.textContent = `${Math.floor(diff/86400)}d ago`; } 
+                else if (lang === 'ar') { if (diff < 60) el.textContent = "الآن"; else if (diff < 3600) el.textContent = `منذ ${Math.floor(diff/60)} دقيقة`; else if (diff < 86400) el.textContent = `منذ ${Math.floor(diff/3600)} ساعة`; else el.textContent = `منذ ${Math.floor(diff/86400)} يوم`; } 
+                else { if (diff < 60) el.textContent = "ئێستا"; else if (diff < 3600) el.textContent = `پێش ${Math.floor(diff/60)} خولەک`; else if (diff < 86400) el.textContent = `پێش ${Math.floor(diff/3600)} کاتژمێر`; else el.textContent = `پێش ${Math.floor(diff/86400)} ڕۆژ`; }
+            });
+        }
+
+        async function registerRealView(postId, baseViews) {
+            let viewElement = document.getElementById('post-view-count');
+            try {
+                let url = `https://api.counterapi.dev/v1/reedmedia/${postId}`;
+                if (!localStorage.getItem('real_view_' + postId)) {
+                    url = `https://api.counterapi.dev/v1/reedmedia/${postId}/up`;
+                    localStorage.setItem('real_view_' + postId, 'true');
+                }
+                let response = await fetch(url);
+                let data = await response.json();
+                let realClicks = data.count || 0;
+                viewElement.textContent = (baseViews + realClicks).toLocaleString('en-US');
+            } catch(error) {
+                viewElement.textContent = baseViews.toLocaleString('en-US');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setLang(localStorage.getItem('reed_lang') || 'ku');
+            registerRealView("post-9", 160); 
+        });
+    </script>
+</body>
+</html>
 
