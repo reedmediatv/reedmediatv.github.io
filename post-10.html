@@ -35,9 +35,17 @@
         .article-author svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
         .article-date, .view-badge { font-size: 12px; font-weight: 800; color: var(--text-muted); background: #F8FAFC; border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; }
         .view-badge svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
-        .fb-share-btn { display: inline-flex; align-items: center; gap: 6px; background-color: #F1F5F9; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 800; transition: 0.2s; border: 1px solid var(--border); }
-        .fb-share-btn:hover { background-color: #E2E8F0; color: var(--dark); }
-        .fb-share-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        
+        /* دیزاینی دوگمەی لایک و شەیر */
+        .action-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .fb-share-btn, .like-btn { display: inline-flex; align-items: center; gap: 6px; background-color: #F1F5F9; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 800; transition: 0.2s; border: 1px solid var(--border); cursor: pointer; user-select: none; }
+        .fb-share-btn:hover, .like-btn:hover { background-color: #E2E8F0; color: var(--dark); }
+        .fb-share-btn svg, .like-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        
+        .like-btn svg { fill: none; stroke: currentColor; stroke-width: 2; transition: 0.3s; }
+        .like-btn.liked { color: var(--red); background-color: #FEE2E2; border-color: #FCA5A5; }
+        .like-btn.liked svg { fill: var(--red); stroke: var(--red); transform: scale(1.1); }
+        
         .article-img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
         .article-content { font-size: 17px; line-height: 2.1; color: #334155; font-weight: 500;}
         .article-content p { margin-bottom: 18px; text-align: justify; }
@@ -99,10 +107,19 @@
                 </div>
             </div>
 
-            <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
-                <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
-                <span data-key="fb_share_text">هاوبەشبکە</span>
-            </a>
+            <div class="action-btns">
+                <!-- دوگمەی لایک لێرە زیاد کرا -->
+                <div id="like-btn" class="like-btn" onclick="handleLike('post-10')">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    <span data-key="like_text">بەدڵمە</span>
+                    <span id="post-like-count" style="margin-inline-start: 4px; font-weight: 900; font-family: 'Inter', sans-serif;">0</span>
+                </div>
+
+                <a href="#" id="fb-share" target="_blank" class="fb-share-btn">
+                    <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+                    <span data-key="fb_share_text">هاوبەشبکە</span>
+                </a>
+            </div>
         </div>
 
         <img src="news-10.jpg" alt="قوتابخانە" class="article-img">
@@ -124,21 +141,21 @@
     <script>
         const translations = {
             ku: { 
-                title_tag: "قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "سەرەکی • پەروەردە", fb_share_text: "هاوبەشبکە", article_title: "قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان", author_name: "نووسەر : دیار بەرزنجی",
+                title_tag: "قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان - Reed Media", live_badge: "پەخشی ڕاستەوخۆ", nav_home: "سەرەکی", nav_breaking: "بەپەلە", nav_kurdistan: "کوردستان", footer_text: "هەموو مافەکانی پارێزراوە بۆ © Reed Media 2026", post_time_label: "کاتی بڵاوکردنەوە:", back_btn: "گەڕانەوە بۆ سەرەکی", article_cat: "سەرەکی • پەروەردە", fb_share_text: "هاوبەشبکە", like_text: "بەدڵمە", article_title: "قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان", author_name: "نووسەر : دیار بەرزنجی",
                 p1: "ساڵانە، لەگەڵ دەستپێکردنەوەی پڕۆسەی خوێندندا، کێبڕکێی خەڵک بۆ تۆمارکردنی منداڵەکانیان لەو قوتابخانە حکومیانەی کە ئاستیان بەرزترە دەستپێدەکات، خەڵک ناچارن هانا بۆ واستە و واستەکاریی ببەن.",
                 p2: "ئەو قوتابخانانەی کە دەوترێت ئاستی زانستیان بەرزە و حکومین، دەرخەری ئەو چینایەتی و جیاکاریە زەقەیە کە بەمەبەست هەندێک قوتابخانە گرنگیان پێ دەدرێت، بەڵام قوتابخانەکانی دیکە فەرامۆش دەکرێن و خەڵک بیر لە گواستنەوەی منداڵەکانیان دەکەنەوە بۆ قوتابخانەکانی دیکە.",
                 p3: "بەڵێ لە هەندێک لەو قوتابخانە حکومیانەدا بە هەوڵ و ماندووبوونی مامۆستاکان ئاستی زانستی و خزمەتگوزاریەکان بەراورد بە قوتابخانەکانی دیکە باشترە، بەڵام قسە لەسەر ڕۆڵی وەزارەتی پەروەردە و حکومەتە، کە چۆن ڕێگا دەدات جیاکاری لەنێو قوتابخانە حکومیەکانیشدا بکرێت، لەکاتێکدا پێویستە سەرجەم قوتابخانە حکومیەکان سودمەند بن لە هەموو ئیمتیاز و پێداویستیەکی خوێندنی هاوچەرخ!",
                 p4: "ئێمە چاوەڕوانی ئەوەبووین هەوڵبدرێت لەڕێگای باشکردنی دۆخی خزمەتگوزاری و بەرزکردنەوەی ئاستی زانستی قوتابخانەکان، قوتابخانە و خوێندنگا ئەهلیەکان بەرەو لاوازبوون و نەمان بچن، بەڵام جیاکاریی لەنێو قوتابخانە حکومیەکانیشدا دروست بووە، ئەو قوتابخانانەی لە ئەولەویەتی وەزارەتی پەروەردەدان زۆرترین گرنگیان پێ دەدرێت، بەجۆرێک ڕۆڵی خوێندنگا و قوتابخانەی ئەهلی دەگێڕن و منداڵانی هەژار زۆر بەکەمی چانسی وەرگرتنیان لەو قوتابخانانە هەیە!"
             },
             en: { 
-                title_tag: "Private Schools within Public Schools - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published Time:", back_btn: "Back to Home", article_cat: "Home • Education", fb_share_text: "Share", article_title: "Private Schools within Public Schools", author_name: "By: Diyar Barzanji",
+                title_tag: "Private Schools within Public Schools - Reed Media", live_badge: "LIVE", nav_home: "Home", nav_breaking: "Breaking", nav_kurdistan: "Kurdistan", footer_text: "All rights reserved © Reed Media 2026", post_time_label: "Published Time:", back_btn: "Back to Home", article_cat: "Home • Education", fb_share_text: "Share", like_text: "Like", article_title: "Private Schools within Public Schools", author_name: "By: Diyar Barzanji",
                 p1: "Every year, with the start of the academic process, people's competition begins to register their children in public schools that have a higher standard, forcing people to resort to nepotism and favoritism.",
                 p2: "Those schools that are said to have high academic standards and are public, reflect the glaring classism and discrimination where certain schools are intentionally prioritized, while others are neglected, prompting people to consider transferring their children.",
                 p3: "Yes, in some of those public schools, thanks to the efforts and hard work of the teachers, the academic level and services are better compared to others. However, the discussion is about the role of the Ministry of Education and the government: how do they allow discrimination within public schools when all public schools should benefit from modern educational privileges and necessities!",
                 p4: "We expected efforts to be made, through improving services and raising academic standards, to weaken and eliminate private schools. Instead, discrimination has emerged within public schools themselves. The schools prioritized by the Ministry receive the most attention, effectively playing the role of private schools, while poor children have very little chance of being accepted there!"
             },
             ar: { 
-                title_tag: "المدارس الأهلية داخل المدارس الحكومية - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "الرئيسية • التعليم", fb_share_text: "مشاركة", article_title: "المدارس الأهلية داخل المدارس الحكومية", author_name: "بقلم: ديار برزنجي",
+                title_tag: "المدارس الأهلية داخل المدارس الحكومية - ريد ميديا", live_badge: "بث مباشر", nav_home: "الرئيسية", nav_breaking: "عاجل", nav_kurdistan: "كردستان", footer_text: "جميع الحقوق محفوظة لـ © ريد ميديا 2026", post_time_label: "وقت النشر:", back_btn: "العودة للرئيسية", article_cat: "الرئيسية • التعليم", fb_share_text: "مشاركة", like_text: "إعجاب", article_title: "المدارس الأهلية داخل المدارس الحكومية", author_name: "بقلم: ديار برزنجي",
                 p1: "سنوياً، ومع بدء العملية التعليمية، يبدأ تنافس الناس لتسجيل أبنائهم في المدارس الحكومية ذات المستوى الأعلى، مما يضطر الناس للجوء إلى الواسطة والمحسوبية.",
                 p2: "تلك المدارس التي يُقال إن مستواها العلمي مرتفع وهي حكومية، تُظهر الطبقية والتمييز الصارخ حيث يتم الاهتمام بمدارس معينة عمداً بينما تُهمل أخرى، مما يدفع الناس للتفكير في نقل أبنائهم لمدارس أخرى.",
                 p3: "نعم، في بعض تلك المدارس الحكومية، وبفضل جهود وتعب المعلمين، يكون المستوى العلمي والخدمات أفضل مقارنة بغيرها. لكن الحديث هنا عن دور وزارة التربية والحكومة: كيف تسمح بوجود تمييز داخل المدارس الحكومية ذاتها، في حين يجب أن تستفيد جميع المدارس الحكومية من كافة الامتيازات ومستلزمات التعليم المعاصر!",
@@ -181,9 +198,48 @@
             }
         }
 
+        /* بەشی هێنان و زیادکردنی لایکەکان */
+        async function fetchLikes(postId) {
+            let likeElement = document.getElementById('post-like-count');
+            let likeBtn = document.getElementById('like-btn');
+            try {
+                let response = await fetch(`https://api.counterapi.dev/v1/reedmedia_likes/${postId}`);
+                let data = await response.json();
+                likeElement.textContent = (data.count || 0).toLocaleString('en-US');
+            } catch(error) {
+                likeElement.textContent = '0';
+            }
+            if (localStorage.getItem('liked_' + postId)) {
+                likeBtn.classList.add('liked');
+            }
+        }
+
+        async function handleLike(postId) {
+            let likeBtn = document.getElementById('like-btn');
+            let likeElement = document.getElementById('post-like-count');
+
+            if (localStorage.getItem('liked_' + postId)) {
+                return; // پێشتر لایکی کردووە
+            }
+
+            // یەکسەر ڕەنگەکەی دەگۆڕێت و ژمارەکە زیاد دەکات
+            let currentLikes = parseInt(likeElement.textContent.replace(/,/g, '') || 0);
+            likeElement.textContent = (currentLikes + 1).toLocaleString('en-US');
+            likeBtn.classList.add('liked');
+            localStorage.setItem('liked_' + postId, 'true');
+
+            // ناردنی بۆ ناو داتابەیسەکە
+            try {
+                await fetch(`https://api.counterapi.dev/v1/reedmedia_likes/${postId}/up`);
+            } catch(error) {
+                console.error("هەڵەیەک ڕوویدا لە کاتی لایککردن");
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             setLang(localStorage.getItem('reed_lang') || 'ku');
             registerRealView("post-10", 280); 
+            fetchLikes("post-10"); // هێنانی ژمارەی لایکەکان لەگەڵ کردنەوەی پەڕەکە
         });
     </script>
 </body>
