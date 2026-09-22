@@ -22,7 +22,7 @@
             --border: #1E293B; --header-bg: #111827; --nav-bg: #111827;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; scroll-behavior: smooth; transition: background-color 0.3s, color 0.3s; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; scroll-behavior: smooth; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
         a { text-decoration: none; color: inherit; display: block; cursor: pointer; }
         body { background-color: var(--bg-color); line-height: 1.65; color: var(--text-main); }
         
@@ -152,7 +152,6 @@
         </div>
     </nav>
 
-    <!-- شریتی بەپەلە -->
     <div class="breaking-bar">
         <span class="breaking-tag"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="breaking_tag">سەردێڕ</span></span>
         <div class="ticker-container">
@@ -190,13 +189,13 @@
                 </a>
             </div>
 
-            <div id="breaking" class="category-section">
+            <div id="breaking" class="category-section searchable">
                 <div class="section-header">
                     <div class="section-title"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span data-key="sec_breaking">هەواڵە بەپەلەکان</span></div>
                     <span class="section-badge" data-key="badge_urgent">نوێکراوەتەوە</span>
                 </div>
                 <div class="cards-grid">
-                    <a href="post-8.html" class="news-card red-border searchable">
+                    <a href="post-8.html" class="news-card red-border">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="breaking_tag_news">هەواڵ • بەپەلە</span>
                             <time class="post-time-badge" datetime="2026-09-13T08:15:00+03:00"></time>
@@ -204,7 +203,7 @@
                         <h3 class="news-text" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات</h3>
                     </a>
 
-                    <a href="post-7.html" class="news-card red-border searchable">
+                    <a href="post-7.html" class="news-card red-border">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
                             <time class="post-time-badge" datetime="2026-09-12T13:10:00+03:00"></time>
@@ -212,7 +211,7 @@
                         <h3 class="news-text" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی شورایی ڕاستەوخۆی جەماوەرە</h3>
                     </a>
 
-                    <a href="post-4.html" class="news-card red-border searchable">
+                    <a href="post-4.html" class="news-card red-border">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="breaking_tag_opinion">بۆچوون • بەپەلە</span>
                             <time class="post-time-badge" datetime="2026-09-11T12:45:00+03:00"></time>
@@ -220,7 +219,7 @@
                         <h3 class="news-text" data-key="post4_title">ئیرادەی چینایەتی و گۆڕانکاری لە عێراق: کۆمۆنیزم وەک ئاسۆی ڕزگاریی مرۆڤ</h3>
                     </a>
 
-                    <a href="post-5.html" class="news-card searchable">
+                    <a href="post-5.html" class="news-card">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="post5_cat">بۆچوون • ڕاپۆرت</span>
                             <time class="post-time-badge" datetime="2026-09-11T22:30:00+03:00"></time>
@@ -230,12 +229,12 @@
                 </div>
             </div>
 
-            <div id="kurdistan" class="category-section">
+            <div id="kurdistan" class="category-section searchable">
                 <div class="section-header">
                     <div class="section-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><span data-key="sec_kurdistan">هەواڵەکانی کوردستان</span></div>
                 </div>
                 <div class="cards-grid">
-                    <a href="post-2.html" class="news-card searchable">
+                    <a href="post-2.html" class="news-card">
                         <div class="post-meta-line">
                             <span class="cat-pill" data-key="nav_kurdistan">کوردستان</span>
                             <time class="post-time-badge" datetime="2026-09-11T09:10:00+03:00"></time>
@@ -248,15 +247,15 @@
 
         <!-- بەشی چەپ (لاتەنیشت - تێیدا جیهان، ئابووری، و ئەرشیف جێگیر کراون) -->
         <aside>
-            <div class="sidebar-box">
+            <div class="sidebar-box searchable">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg><span data-key="side_trend">زۆرترین خوێندراوەکان</span></div>
-                <a href="post-10.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text" data-key="post10_title">قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان</span></a>
-                <a href="post-9.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text" data-key="post9_title">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا</span></a>
-                <a href="post-8.html" class="trend-item" style="border:none; margin:0; padding:0;"><span class="trend-num">٣</span><span class="trend-text" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات</span></a>
+                <a href="post-10.html" class="trend-item"><span class="trend-num">١</span><span class="trend-text news-text" data-key="post10_title">قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان</span></a>
+                <a href="post-9.html" class="trend-item"><span class="trend-num">٢</span><span class="trend-text news-text" data-key="post9_title">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا</span></a>
+                <a href="post-8.html" class="trend-item" style="border:none; margin:0; padding:0;"><span class="trend-num">٣</span><span class="trend-text news-text" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش لە خورماڵ دەستگیر دەکات</span></a>
             </div>
 
-            <!-- بەشی جیهان گواسترایەوە بۆ ئێرە -->
-            <div id="world" class="sidebar-box category-section searchable">
+            <!-- بەشی جیهان -->
+            <div id="world" class="sidebar-box searchable">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg><span data-key="nav_world">جیهان</span></div>
                 <a href="post-9.html" class="trend-item" style="align-items: center;">
                     <img src="news-9.jpg" style="width: 65px; height: 65px; border-radius: 6px; object-fit: cover; flex-shrink: 0;" alt="سوریا">
@@ -268,8 +267,8 @@
                 </a>
             </div>
 
-            <!-- بەشی ئابووری گواسترایەوە بۆ ئێرە -->
-            <div id="economy" class="sidebar-box category-section searchable">
+            <!-- بەشی ئابووری -->
+            <div id="economy" class="sidebar-box searchable">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span data-key="nav_economy">ئابووری</span></div>
                 <a href="post-3.html" class="trend-item" style="align-items: center; border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
                     <img src="news-3.jpg" style="width: 65px; height: 65px; border-radius: 6px; object-fit: cover; flex-shrink: 0;" alt="نەوت">
@@ -277,16 +276,16 @@
                 </a>
             </div>
 
-            <!-- بەشی ئەرشیف گواسترایەوە بۆ ئێرە -->
-            <div id="archive" class="sidebar-box category-section">
+            <!-- بەشی ئەرشیف -->
+            <div id="archive" class="sidebar-box searchable">
                 <div class="sidebar-title"><svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/></svg><span data-key="nav_archive">ئەرشیف</span></div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <a href="post-10.html" class="trend-text" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post10_title">قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان</a>
-                    <a href="post-9.html" class="trend-text" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post9_title">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا</a>
-                    <a href="post-8.html" class="trend-text" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش...</a>
-                    <a href="post-7.html" class="trend-text" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی...</a>
-                    <a href="post-6.html" class="trend-text" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post6_title">ئەگەر دووبارە ببمە سەرۆکی ئەمریکا...</a>
-                    <a href="post-5.html" class="trend-text" style="padding: 8px; border-bottom: none;" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</a>
+                    <a href="post-10.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post10_title">قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان</a>
+                    <a href="post-9.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post9_title">لێکەوتەکانی ئاڵوگۆڕی سیستمی سیاسی و ئابووری لە سوریا</a>
+                    <a href="post-8.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post8_title">دەزگای ئاسایشی هەرێم 22 ئەندام و ئەمیرێکی داعش...</a>
+                    <a href="post-7.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post7_title">ڕێگەی دەربازبوون لە قەیرانەکان بەرپا کردنی دەسەڵاتی...</a>
+                    <a href="post-6.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: 1px dashed var(--border);" data-key="post6_title">ئەگەر دووبارە ببمە سەرۆکی ئەمریکا...</a>
+                    <a href="post-5.html" class="trend-text news-text archive-item" style="padding: 8px; border-bottom: none;" data-key="post5_title">کارمەندانی کۆمپانیا سکیوریتیەکانیش مرۆڤن!</a>
                 </div>
             </div>
 
@@ -319,30 +318,61 @@
             if (currentTheme === 'dark') {
                 body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>'; // مانگ
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
             } else {
                 body.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'; // خۆر
+                icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
             }
         }
         
-        // جێگیرکردنی دۆخی تاریک پێشتر هەڵبژێردراو
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             document.querySelector('#theme-toggle svg').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
         }
 
-        // بزوێنەری گەڕان
+        // بزوێنەری گەڕانی زیرەک بۆ هەواڵ و بەشەکان
         function searchNews() {
             let input = document.getElementById('searchInput').value.toLowerCase();
-            let items = document.querySelectorAll('.searchable');
-            items.forEach(item => {
-                let text = item.querySelector('.news-text').textContent.toLowerCase();
-                if (text.includes(input)) {
-                    item.style.display = "";
+            let sections = document.querySelectorAll('.category-section, .sidebar-box');
+            
+            if (input.trim() === '') {
+                sections.forEach(sec => sec.style.display = '');
+                document.querySelectorAll('.card-wrapper, .news-card, .trend-item, .archive-item').forEach(item => {
+                    item.style.display = '';
+                });
+                return;
+            }
+
+            sections.forEach(section => {
+                // دەستنیشانکردنی تەنها ئەو ئایتمانەی کە شیاوی گەڕانن
+                let items = section.querySelectorAll('.card-wrapper, .news-card, .trend-item, .archive-item');
+                let sectionTitle = section.querySelector('.section-title, .sidebar-title');
+                let titleText = sectionTitle ? sectionTitle.textContent.toLowerCase() : '';
+                
+                let isSectionMatch = titleText.includes(input);
+                let hasVisibleItem = false;
+
+                items.forEach(item => {
+                    // خۆلادان لە تێکەڵبوونی trend-text لەناو trend-item
+                    if (item.classList.contains('archive-item') || !item.parentElement.classList.contains('trend-item')) {
+                        let itemText = item.textContent.toLowerCase();
+                        if (isSectionMatch || itemText.includes(input)) {
+                            item.style.display = '';
+                            hasVisibleItem = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+
+                // شاردنەوەی بەشەکە ئەگەر هیچ هەواڵێکی تێدا نەبوو و ناوی بەشەکەش نەگەڕابوو
+                if (!isSectionMatch && !hasVisibleItem) {
+                    if(items.length > 0) {
+                        section.style.display = 'none';
+                    }
                 } else {
-                    item.style.display = "none";
+                    section.style.display = '';
                 }
             });
         }
