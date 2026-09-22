@@ -33,7 +33,7 @@
         .guest-btn { width: 100%; background: transparent; color: #64748B; border: 1px solid var(--border); padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 15px; text-align: center; display: block; text-decoration: none; }
         .guest-btn:hover { background: #F1F5F9; color: var(--dark); }
 
-        /* شاردنەوەی فۆڕمەکان */
+        /* شاردنەوەی فۆڕمەکان بۆ گۆڕینی تابەکان */
         #register-form { display: none; }
     </style>
 </head>
@@ -81,7 +81,7 @@
                 <button type="submit" class="submit-btn">دروستکردنی هەژمار</button>
             </form>
 
-            <button onclick="continueAsGuest()" class="guest-btn" type="button">دواتر ئەکاونت دروست دەکەم (میوان)</button>
+            <button onclick="continueAsGuest()" class="guest-btn" type="button">دواتر ئەکاونت دروست دەکەم (وەک میوان)</button>
         </div>
     </div>
 
@@ -109,7 +109,7 @@
             localStorage.setItem('reed_user_email', email);
             
             alert('بە سەرکەوتوویی هەژمارەکەت دروستکرا! بەخێربێیت ' + name);
-            window.location.href = 'index.html'; // گەڕانەوە بۆ لاپەڕەی سەرەکی
+            window.location.replace('index.html'); // گەڕانەوە بۆ لاپەڕەی سەرەکی
         }
 
         // کۆدی چوونەژوورەوە (Login)
@@ -120,19 +120,19 @@
 
             if (savedEmail && email === savedEmail) {
                 localStorage.setItem('reed_auth', 'true');
-                window.location.href = 'index.html';
+                window.location.replace('index.html');
             } else {
                 // ئەگەر پێشتر ئەکاونتی نەبوو، هەر ڕێگەی پێ دەدەین وەک پرۆفایلێکی نوێ
                 localStorage.setItem('reed_auth', 'true');
                 localStorage.setItem('reed_user_name', email.split('@')[0]); 
-                window.location.href = 'index.html';
+                window.location.replace('index.html');
             }
         }
 
         // چوونەژوورەوە بەبێ ئەکاونت
         function continueAsGuest() {
             localStorage.setItem('reed_auth', 'guest');
-            window.location.href = 'index.html';
+            window.location.replace('index.html');
         }
     </script>
 </body>
