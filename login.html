@@ -33,7 +33,7 @@
         .guest-btn { width: 100%; background: transparent; color: #64748B; border: 1px solid var(--border); padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 15px; text-align: center; display: block; text-decoration: none; }
         .guest-btn:hover { background: #F1F5F9; color: var(--dark); }
 
-        /* شاردنەوەی فۆڕمەکان بۆ گۆڕینی تابەکان */
+        /* شاردنەوەی فۆڕمی دروستکردنی هەژمار لە سەرەتادا */
         #register-form { display: none; }
     </style>
 </head>
@@ -64,7 +64,7 @@
                 <button type="submit" class="submit-btn">چوونەژوورەوە</button>
             </form>
 
-            <!-- فۆڕمی خۆتۆمارکردن -->
+            <!-- فۆڕمی دروستکردنی هەژمار -->
             <form id="register-form" onsubmit="handleRegister(event)">
                 <div class="form-group">
                     <label>ناوی تەواو</label>
@@ -81,12 +81,13 @@
                 <button type="submit" class="submit-btn">دروستکردنی هەژمار</button>
             </form>
 
-            <button onclick="continueAsGuest()" class="guest-btn" type="button">دواتر ئەکاونت دروست دەکەم (وەک میوان)</button>
+            <!-- دوگمەی چوونەژوورەوە وەک میوان -->
+            <button onclick="continueAsGuest()" class="guest-btn" type="button">دواتر ئەکاونت دروست دەکەم (میوان)</button>
         </div>
     </div>
 
     <script>
-        // گۆڕینی تابی نێوان لۆگین و ڕێجێستەر
+        // فەنکشنی گۆڕینی تابەکان لە نێوان لۆگین و ڕێجێستەر
         function switchTab(tab) {
             document.getElementById('tab-login').classList.remove('active');
             document.getElementById('tab-register').classList.remove('active');
@@ -97,22 +98,22 @@
             document.getElementById(tab + '-form').style.display = 'block';
         }
 
-        // کۆدی خۆتۆمارکردن (Sign Up)
+        // فەنکشنی خۆتۆمارکردن
         function handleRegister(e) {
             e.preventDefault();
             let name = document.getElementById('reg-name').value;
             let email = document.getElementById('reg-email').value;
             
-            // خەزنکردنی زانیارییەکان لەسەر براوسەری بەکارهێنەر
+            // خەزنکردنی زانیارییەکان لەسەر مۆبایلی بەکارهێنەر
             localStorage.setItem('reed_auth', 'true');
             localStorage.setItem('reed_user_name', name);
             localStorage.setItem('reed_user_email', email);
             
             alert('بە سەرکەوتوویی هەژمارەکەت دروستکرا! بەخێربێیت ' + name);
-            window.location.replace('index.html'); // گەڕانەوە بۆ لاپەڕەی سەرەکی
+            window.location.replace('index.html'); // ناردنی بۆ پەڕەی سەرەکی
         }
 
-        // کۆدی چوونەژوورەوە (Login)
+        // فەنکشنی چوونەژوورەوە
         function handleLogin(e) {
             e.preventDefault();
             let email = document.getElementById('login-email').value;
@@ -122,14 +123,13 @@
                 localStorage.setItem('reed_auth', 'true');
                 window.location.replace('index.html');
             } else {
-                // ئەگەر پێشتر ئەکاونتی نەبوو، هەر ڕێگەی پێ دەدەین وەک پرۆفایلێکی نوێ
                 localStorage.setItem('reed_auth', 'true');
                 localStorage.setItem('reed_user_name', email.split('@')[0]); 
                 window.location.replace('index.html');
             }
         }
 
-        // چوونەژوورەوە بەبێ ئەکاونت
+        // فەنکشنی میوان
         function continueAsGuest() {
             localStorage.setItem('reed_auth', 'guest');
             window.location.replace('index.html');
