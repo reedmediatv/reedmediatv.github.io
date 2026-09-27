@@ -24,6 +24,9 @@
         .top-bar { background-color: var(--dark-header); color: #94A3B8; padding: 7px 20px; display: flex; justify-content: space-between; }
         .theme-btn { background: transparent; border: none; color: #fff; cursor: pointer; }
         .theme-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .lang-switcher { display: inline-flex; gap: 3px; background: rgba(255, 255, 255, 0.08); padding: 2px 4px; border-radius: 6px; margin-inline-start: 15px; }
+        .lang-btn { background: transparent; border: none; color: #CBD5E1; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .lang-btn.active { background-color: var(--red); color: #FFFFFF; }
         header, nav { background-color: var(--header-bg); border-bottom: 1px solid var(--border); padding: 15px 20px;}
         .logo { font-size: 24px; font-weight: 900; color: var(--text-main); }
         .article-container { max-width: 800px; margin: 40px auto; background: var(--card-bg); padding: 35px; border-radius: 12px; border: 1px solid var(--border); }
@@ -50,6 +53,7 @@
         .like-btn.liked { color: var(--red); background-color: #FEE2E2; border-color: #FCA5A5; }
         .like-btn.liked svg { fill: var(--red); stroke: var(--red); transform: scale(1.1); }
         footer { background-color: var(--dark-header); color: #94A3B8; padding: 35px; margin-top: 50px; text-align: center; }
+        .top-right-group { display: flex; align-items: center; }
     </style>
 </head>
 <body>
@@ -60,9 +64,16 @@
 
     <div class="top-bar">
         <div class="live-tag">پەخشی ڕاستەوخۆ</div>
-        <button class="theme-btn" onclick="toggleTheme()" id="theme-toggle">
-            <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
+        <div class="top-right-group">
+            <button class="theme-btn" onclick="toggleTheme()" id="theme-toggle">
+                <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <div class="lang-switcher">
+                <button onclick="setLang('ku')" class="lang-btn active" id="btn-ku">کوردی</button>
+                <button onclick="setLang('en')" class="lang-btn" id="btn-en">English</button>
+                <button onclick="setLang('ar')" class="lang-btn" id="btn-ar">العربية</button>
+            </div>
+        </div>
     </div>
 
     <header>
@@ -106,9 +117,17 @@
             <a href="#" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href)); return false;" class="share-btn btn-tg">Telegram</a>
         </div>
 
+        <div class="related-news">
+            <h3 style="font-weight: 900; color: var(--text-main);" data-key="related_title">پێشنیارکراو بۆ تۆ</h3>
+            <div class="related-grid">
+                <a href="post-10.html" class="related-card"><img src="news-10.jpg" onerror="this.src='favicon.png'"><h4>قوتابخانە ئەهلیەکانی نێو قوتابخانە حکومیەکان</h4></a>
+                <a href="post-9.html" class="related-card"><img src="news-9.jpg" onerror="this.src='favicon.png'"><h4>لێکەوتەکانی ئاڵوگۆڕی سیستمی سوریا</h4></a>
+                <a href="post-8.html" class="related-card"><img src="news-8.jpg" onerror="this.src='favicon.png'"><h4>دەستگیرکردنی ئەمیرێکی داعش لە خورماڵ</h4></a>
+            </div>
+        </div>
+
         <div class="comments-section">
             <h3 style="margin-bottom: 15px; color: var(--text-main);"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:var(--red);stroke-width:2;vertical-align:middle;margin-left:8px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span data-key="comment_title">سەرنج و بۆچوونەکان</span></h3>
-            <!-- لینکی پۆستی 11 بۆ کۆمێنتەکان -->
             <div class="fb-comments" data-href="https://reedmediatv.github.io/post-11.html" data-width="100%" data-numposts="5"></div>
         </div>
         <a href="index.html" style="display: inline-block; margin-top: 30px; padding: 12px 24px; background: var(--dark-header); color: #fff; border-radius: 6px; font-weight: 800; transition: 0.2s;" data-key="back_btn">گەڕانەوە بۆ سەرەکی</a>
@@ -117,21 +136,21 @@
     <script>
         const translations = {
             ku: { 
-                title_tag: "پێنجوێن سەرکەوت بەڵام... - Reed Media", article_cat: "بۆچوون • شیکاری", article_title: "پێنجوێن سەرکەوت بەڵام...", author_name: "شاباز مەحموود", like_text: "بەدڵمە", comment_title: "سەرنج و بۆچوونەکان", back_btn: "گەڕانەوە بۆ سەرەکی",
+                title_tag: "پێنجوێن سەرکەوت بەڵام... - Reed Media", article_cat: "بۆچوون • شیکاری", article_title: "پێنجوێن سەرکەوت بەڵام...", author_name: "شاباز مەحموود", like_text: "بەدڵمە", comment_title: "سەرنج و بۆچوونەکان", back_btn: "گەڕانەوە بۆ سەرەکی", related_title: "پێشنیارکراو بۆ تۆ",
                 p1: "کاتێک ستەم و بڕیاری نادادپەروەرانە دەگاتە لوتکە چاوەڕوانی دەبنە خیانەت لە داهاتوو. تاکە زمانی دەسەڵات لە کوردستاندا زمانی زۆر و سەرکوتە، بەڵام وەڵامی زۆرینەی ستەملێکراویش تەنها یەک شتە: هەڵوێست کۆڵنەدان و ڕێکخستنی جەماوەری لە خوارەوە. نموونەی زیندووی ڕۆژانی ڕابردووی پێنجوێن، سەلمێنەری ڕاستییەکی مێژووییە کاتێک خەڵک لە پێناوی ژیان و قووتی خۆیاندا دێنە سەر شەقام و دەسەڵات پەنا بۆ دەستگیرکردن و ترساندن دەبات، ئەگەر کۆمەڵگا یەکگرتوو بێت، دەسەڵات مەحکومە بە پاشەکشە. ئەو فشارە جەماوەرییە توندەی کە دەسەڵاتی ناچارکرد سەرجەم دەستگیرکراوەکان بێ مەرج ئازاد بکات، نیشانەی ئەوەیە کە هێزی سەرکوتی دەسەڵات لەبەردەم ڕووبەڕووبوونەوەی یەکگرتووی خەڵکدا پووچەڵ دەبێتەوە.",
                 p2: "بەڵام پرسیارەکە لێرەدایە؟ ئایا ئەم سەرکەوتنە کاتییە چۆن دەکرێت بپارێزرێت و نەبێتە قوربانیی پیلانگێڕیی داهاتووی دەسەڵات؟ بزووتنەوەی ناڕەزایەتی کاتێک دەبێتە مەترسی بۆ سەر بناغەی ستەم، کە تەنهابەشێکی کۆمەڵگەیەک نەبێت، بەڵکو هەموو چین و توێژەکان پێکەوە مەیدانەکە پڕ بکەنەوە. ژن و پیاو، گەنج و پیری کۆمەڵگا کاتێک شانبەشانی یەکتر دەبنە قەڵغان، و کاتێک کاسبکار، زەحمەتکێش و کرێکار لە ڕێگەی داخستنی بازاڕ و ڕاگرتنی چەرخی کارەوە پشتیوانیی یەکتر دەکەن، کاتێک مەرزەکان دادەخرێن دەسەڵات ناچارە مل بدات. سەرکەوتنی پێنجوێن سەلماند کە بەشداریی سەرتاسەری و یەکڕیزیی چینایەتی خەڵک کلیلی سەرەکیی سەرکەوتنە.",
                 p3: "سەرهەڵدانی ناڕەزایەتی پێویستی بە بەردەوامی و ڕێکخستن هەیە لێرەدا پرسیاری بەڵام دەبێتە خاڵی وەرچەرخان. هەتا ئەگەر ناڕەزایەتییەکان لە شێوەی تەقینەوەی کاتیدا بمێننەوە، دەسەڵات دەتوانێت لە داهاتوودا دووبارە پاشەکشە پێیان بکات یان هەوڵی تۆڵەسەندنەوە بدات. بۆ ئەوەی ئەم خەباتە لە ڕێڕەوی خۆی نەلادات، پێویستە هێزی جەماوەر لە گەڕەک، شارۆچکە، کارگە و شوێنی کاردا لە ڕێگەی شورای سەربەخۆی خەڵکەوە ڕێک بخرێت.",
                 p4: "شوراکان قەڵای پۆڵایینی پاراستنی دەستکەوتەکانن. ئەرکی ئەم شورایانە ئەوەیە کە بڕیارەکان لە پشت درگای داخراوەوە نەدرێ بەڵکو لە خوارەوە بۆ سەرەوە ڕێبەریی خەبات بکەن و چاودێر بن بەسەر جێبەجێکردنی خواستەکانەوە. ئەزموونی پێنجوێن نیشانەی ئەوەیە کە خەڵک خاوەنی هێزێکی گەورەیە، بەڵام ئەم هێزە کاتێک مسۆگەرتر دەبێت کە لە ناو شورا سەربەخۆکاندا ڕێک بخرێت و ببێتە خاوەن بڕیاری سیاسیی خۆی. ماف سەندن دەوێت، نادرێ. پێنجوێن سەرکەوت، بەڵام بۆ هەمیشەییبوونی ئەم سەرکەوتنە، دەبێت هەموو کۆمەڵگا لە شوێنی کار و گەڕەکەکاندا ببێتە خاوەن هێزی ڕێکخراوی خۆی."
             },
             en: { 
-                title_tag: "Penjwen Succeeded, But... - Reed Media", article_cat: "Opinion • Analysis", article_title: "Penjwen Succeeded, But...", author_name: "Shabaz Mahmud", like_text: "Like", comment_title: "Comments", back_btn: "Back to Home",
+                title_tag: "Penjwen Succeeded, But... - Reed Media", article_cat: "Opinion • Analysis", article_title: "Penjwen Succeeded, But...", author_name: "Shabaz Mahmud", like_text: "Like", comment_title: "Comments", back_btn: "Back to Home", related_title: "Recommended for you",
                 p1: "When oppression and unjust decisions reach their peak, waiting becomes treason to the future. The only language of power in Kurdistan is coercion and suppression, but the response of the majority of the oppressed is only one thing: an unyielding stance and grassroots mass organization. The recent living example of Penjwen proves a historical truth: when people take to the streets for their lives and livelihoods, and the authority resorts to arrests and intimidation, if society is united, the authority is doomed to retreat. The intense public pressure that forced the authority to unconditionally release all detainees indicates that the oppressive power of the state crumbles in the face of the people's united confrontation.",
                 p2: "But the question lies here: How can this temporary victory be preserved and not become a victim of the authority's future conspiracies? A protest movement becomes a threat to the foundation of oppression not when it is just a part of a society, but when all classes and strata fill the square together. When men and women, young and old of society become a shield side by side, and when tradesmen, toilers, and workers support each other by shutting down the market and halting the wheels of work, when borders are closed, the authority is forced to bow down. Penjwen's victory proved that the nationwide participation and class unity of the people is the main key to success.",
                 p3: "The emergence of protests requires continuity and organization; here the question of 'but' becomes the turning point. As long as protests remain in the form of a temporary explosion, the authority can push them back in the future or seek revenge. To prevent this struggle from deviating from its path, the power of the masses must be organized in neighborhoods, towns, factories, and workplaces through independent people's councils.",
                 p4: "Councils are the steel fortresses for protecting achievements. The duty of these councils is not to make decisions behind closed doors, but to lead the struggle from the bottom up and oversee the implementation of demands. Penjwen's experience indicates that the people possess great power, but this power becomes more secure when it is organized within independent councils and takes ownership of its political decisions. Rights must be taken, not given. Penjwen succeeded, but for this victory to be permanent, the entire society must have its own organized power in workplaces and neighborhoods."
             },
             ar: { 
-                title_tag: "بنجوين انتصرت، ولكن... - ريد ميديا", article_cat: "آراء • تحليلات", article_title: "بنجوين انتصرت، ولكن...", author_name: "شاباز محمود", like_text: "إعجاب", comment_title: "التعليقات", back_btn: "العودة للرئيسية",
+                title_tag: "بنجوين انتصرت، ولكن... - ريد ميديا", article_cat: "آراء • تحليلات", article_title: "بنجوين انتصرت، ولكن...", author_name: "شاباز محمود", like_text: "إعجاب", comment_title: "التعليقات", back_btn: "العودة للرئيسية", related_title: "موصى به لك",
                 p1: "عندما يصل الظلم والقرارات الجائرة إلى ذروتها، يصبح الانتظار خيانة للمستقبل. لغة السلطة الوحيدة في كردستان هي القمع والإكراه، لكن رد الأغلبية المظلومة هو شيء واحد فقط: الموقف الثابت والتنظيم الجماهيري من القاعدة. المثال الحي الأخير في بنجوين يثبت حقيقة تاريخية: عندما ينزل الناس إلى الشوارع من أجل حياتهم وأرزاقهم، وتلجأ السلطة إلى الاعتقالات والترهيب، فإذا كان المجتمع موحداً، فإن السلطة محكوم عليها بالتراجع. الضغط الشعبي الشديد الذي أجبر السلطة على الإفراج غير المشروط عن جميع المعتقلين يشير إلى أن قوة القمع تنهار أمام المواجهة الموحدة للشعب.",
                 p2: "لكن السؤال هنا: كيف يمكن الحفاظ على هذا الانتصار المؤقت وألا يصبح ضحية لمؤامرات السلطة المستقبلية؟ تصبح الحركة الاحتجاجية تهديداً لأساس الظلم ليس عندما تمثل جزءاً من المجتمع فقط، بل عندما تملأ جميع الطبقات والفئات الساحات معاً. عندما يصبح الرجال والنساء، شباب وشيوخ المجتمع درعاً جنباً إلى جنب، وعندما يدعم الكادحون والعمال والتجار بعضهم البعض بإغلاق الأسواق وإيقاف عجلة العمل، وإغلاق الحدود، تُجبر السلطة على الرضوخ. أثبت انتصار بنجوين أن المشاركة الشاملة والوحدة الطبقية للشعب هي المفتاح الرئيسي للنجاح.",
                 p3: "يتطلب ظهور الاحتجاجات الاستمرارية والتنظيم، وهنا تصبح كلمة 'ولكن' نقطة التحول. طالما بقيت الاحتجاجات على شكل انفجار مؤقت، يمكن للسلطة أن تتراجع عنها في المستقبل أو تسعى للانتقام. لكي لا ينحرف هذا النضال عن مساره، يجب تنظيم قوة الجماهير في الأحياء والمدن والمصانع وأماكن العمل من خلال مجالس شعبية مستقلة.",
@@ -215,4 +234,3 @@
     </script>
 </body>
 </html>
-
